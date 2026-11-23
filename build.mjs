@@ -8,7 +8,7 @@ import { guides } from './src/guides.mjs';
 import { legacy } from './src/redirects.mjs';
 import {
   esc, abs, registry, layout, crumbTrail, crumbsHtml, crumbsSchema, faqHtml, faqSchema, ul, indexList,
-  ctaBand, field, formShell, contactButtons, waLink, telLink, mailLink
+  ctaBand, field, formShell, contactButtons, waLink, telLink, mailLink, consultationLink
 } from './src/render.mjs';
 
 const DIST = path.resolve('dist');
@@ -93,7 +93,7 @@ guides.forEach((g) => add(g.path, g.h1.replace(/^./, (c) => c.toUpperCase()), g.
 // ---------------------------------------------------------------- helpers
 const emit = (p, html, noindex = false) => pages.push({ path: p, html, noindex });
 const quoteLink = (p) => `/get-a-quote/?cover=${encodeURIComponent(p)}`;
-const heroCtas = (p, who = 'a quote') => `<div class="btn-row"><a class="btn btn-primary" href="${quoteLink(p)}">Request ${who}</a><a class="btn btn-ghost" href="/contact-us/">Speak to an advisor</a></div>`;
+const heroCtas = (p, who = 'a quote') => `<div class="btn-row"><a class="btn btn-primary" href="${quoteLink(p)}">Request ${who}</a><a class="btn btn-ghost" href="${esc(consultationLink())}">Speak to an advisor</a></div>`;
 const disclaimer = '<p class="callout callout-teal"><strong>General information only.</strong> What is covered, the terms and the premium depend on the insurer\u2019s policy wording, your circumstances and the information you disclose. Nothing here is a promise of cover.</p>';
 
 // ---------------------------------------------------------------- product pages
@@ -112,7 +112,7 @@ function productPage(p) {
   <p style="margin-top:var(--s5)"><span class="pill${isFin ? ' pill-fin' : ''}">${group}</span></p>
   <h1>${esc(p.h1)}</h1>
   <p class="lead">${esc(p.lead)}</p>
-  ${isFin ? `<div class="btn-row"><a class="btn btn-primary" href="/contact-us/">Speak to an advisor</a></div>` : heroCtas(p.path)}
+  ${isFin ? `<div class="btn-row"><a class="btn btn-primary" href="${esc(consultationLink())}">Speak to an advisor</a></div>` : heroCtas(p.path)}
 </div></section>
 <div class="wrap product-grid">
   <article class="prose">
@@ -132,7 +132,7 @@ function productPage(p) {
     <div class="aside-box">
       <h2>${isFin ? 'Talk to an advisor' : `Request a ${esc(p.label.toLowerCase())} quote`}</h2>
       <p>${isFin ? 'Tell us your goal and we will explain what is available and what Chestnut can assist with.' : 'Share a few details and an advisor will respond with options. It takes about two minutes.'}</p>
-      <a class="btn btn-primary" href="${isFin ? '/contact-us/' : quoteLink(p.path)}">${isFin ? 'Speak to an advisor' : 'Get a quote'}</a>
+      <a class="btn btn-primary" href="${isFin ? consultationLink() : quoteLink(p.path)}">${isFin ? 'Speak to an advisor' : 'Get a quote'}</a>
       ${site.whatsapp ? `<a class="btn btn-ghost" href="${esc(waLink(`Hello Chestnut, I would like to ask about ${p.label}.`))}" rel="noopener">Chat on WhatsApp</a>` : ''}
       ${site.phone ? `<a class="btn btn-ghost" href="${esc(telLink())}">Call ${esc(site.phoneDisplay || site.phone)}</a>` : ''}
     </div>
@@ -164,7 +164,7 @@ function guidePage(g) {
 <article class="article">
   <p class="answer">${esc(g.answer)}</p>
   ${g.sections.map((s) => `<h2>${esc(s.h)}</h2>${(s.p || []).map((x) => `<p>${esc(x)}</p>`).join('')}${s.ul ? ul(s.ul) : ''}`).join('')}
-  <p class="callout callout-teal">This guide is general education about insurance in Kenya. It is not legal or financial advice and does not describe any specific policy. Policy wording, exclusions and the law that applies at the time govern. <a href="/contact-us/">Speak to an advisor</a> about your situation.</p>
+  <p class="callout callout-teal">This guide is general education about insurance in Kenya. It is not legal or financial advice and does not describe any specific policy. Policy wording, exclusions and the law that applies at the time govern. <a href="${esc(consultationLink())}">Speak to an advisor</a> about your situation.</p>
   <div class="btn-row"><a class="btn btn-primary" href="/get-a-quote/">Get a quote</a><a class="btn btn-ghost" href="/insurance-portfolio-review/">Request a review</a></div>
   <div class="read-next"><h2 style="font-size:1.3rem">Related</h2>${indexList(rel, (p, r) => r.blurb)}</div>
 </article>`;
@@ -265,10 +265,10 @@ ${ctaBand()}`;
 {
   const cats = [...new Set(guides.map((g) => g.category))];
   hubPage({
-    path: '/insurance-guides/', label: 'Resources',
-    title: 'Insurance Guides for Kenya | Chestnut Resources',
-    desc: 'Plain-language insurance guides for Kenyan businesses, professionals and families: WIBA, professional indemnity, motor, SME checklists and more.',
-    h1: 'Insurance guides and resources', lead: 'Clear, practical explanations written for Kenyan businesses, professionals and families. Each guide links to the cover it explains and to the next step.',
+    path: '/insurance-guides/', label: 'Our Blog',
+    title: 'Insurance Blog Kenya | Chestnut Insurance Agency',
+    desc: 'Insurance blog and guides for Kenya: business cover, WIBA, professional indemnity, motor, medical, marine cargo, claims, costs and risk management.',
+    h1: 'Insurance Blog: Guides, Risk Insights & Practical Advice for Kenya', lead: 'Insurance insights for Kenyan businesses, professionals, employers, families, motorists, importers and property owners. Explore practical guides, risk checklists, insurance costs, claims advice and cover requirements.',
     body: `<section class="section"><div class="wrap">${cats.map((c) => `<h2 style="margin-top:var(--s6)">${esc(c)}</h2>${indexList(guides.filter((g) => g.category === c).map((g) => g.path), (p) => guides.find((g) => g.path === p).desc)}`).join('')}</div></section>`
   });
 }
@@ -307,13 +307,13 @@ ${site.whatsapp ? `<a class="btn btn-ghost" href="${esc(waLink())}" rel="noopene
 {
   const trail = crumbTrail('/contact-us/', 'Contact');
   const items = [];
-  if (site.whatsapp) items.push(`<li><strong>WhatsApp</strong><a href="${esc(waLink())}" rel="noopener">Start a chat</a></li>`); else items.push(`<li><strong>WhatsApp</strong>${todo('Add WhatsApp number in src/config.mjs')}</li>`);
-  if (site.phone) items.push(`<li><strong>Phone</strong><a href="${esc(telLink())}">${esc(site.phoneDisplay || site.phone)}</a></li>`); else items.push(`<li><strong>Phone</strong>${todo('Add phone number in src/config.mjs')}</li>`);
-  if (site.email) items.push(`<li><strong>Email</strong><a href="${esc(mailLink())}">${esc(site.email)}</a></li>`); else items.push(`<li><strong>Email</strong>${todo('Add email address in src/config.mjs')}</li>`);
-  items.push(`<li><strong>Office</strong>${esc(site.addressLine)}${site.addressLine === 'Lavington Mall, Nairobi' ? ' ' + todo('Confirm floor, unit and street') : ''}</li>`);
+  if (site.whatsapp) items.push(`<li><strong><span aria-hidden="true">☏</span> WhatsApp</strong><a href="${esc(waLink())}" rel="noopener">Start a chat</a></li>`); else items.push(`<li><strong><span aria-hidden="true">☏</span> WhatsApp</strong>${todo('Add WhatsApp number in src/config.mjs')}</li>`);
+  if (site.phone) items.push(`<li><strong><span aria-hidden="true">☎</span> Phone</strong><a href="${esc(telLink())}">${esc(site.phoneDisplay || site.phone)}</a></li>`); else items.push(`<li><strong><span aria-hidden="true">☎</span> Phone</strong>${todo('Add phone number in src/config.mjs')}</li>`);
+  if (site.email) items.push(`<li><strong><span aria-hidden="true">✉</span> Email</strong><a href="${esc(mailLink())}">${esc(site.email)}</a></li>`); else items.push(`<li><strong><span aria-hidden="true">✉</span> Email</strong>${todo('Add email address in src/config.mjs')}</li>`);
+  items.push(`<li><strong><span aria-hidden="true">📍</span> Office</strong>${esc(site.addressLine)}${site.addressLine === 'Lavington Mall, Nairobi' ? ' ' + todo('Confirm floor, unit and street') : ''}</li>`);
   items.push(`<li><strong>Hours</strong>${site.officeHours ? esc(site.officeHours) : todo('Add office hours in src/config.mjs')}</li>`);
   const body = `
-<section class="page-hero"><div class="wrap">${crumbsHtml(trail)}<h1 style="margin-top:var(--s5)">Contact Chestnut Insurance Agency</h1><p class="lead">Speak to an insurance advisor about business, professional or personal cover, a renewal, or a claim.</p></div></section>
+<section class="page-hero"><div class="wrap">${crumbsHtml(trail)}<h1 style="margin-top:var(--s5)">Contact Chestnut Insurance Agency</h1><p class="lead">Speak to an insurance advisor about business, professional or personal cover, a renewal, or a claim.</p><div class="btn-row"><a class="btn btn-primary" href="${esc(consultationLink())}">Book a Consultation</a><a class="btn btn-ghost" href="/insurance-portfolio-review/">Request a Free Review</a></div></div></section>
 <div class="wrap section"><div class="split split-even">
   <div><h2>Reach us</h2><ul class="contact-list">${items.join('')}</ul>
     <p style="margin-top:var(--s5)" class="form-note">Prefer to start with details? Use <a href="/get-a-quote/">the quote form</a>, <a href="/insurance-portfolio-review/">request a review</a> or <a href="/claims-assistance/">ask for claims help</a>.</p></div>
@@ -379,9 +379,9 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
   <div>
     <p class="eyebrow">The Insurance Experts &middot; Nairobi</p>
     <h1>Insurance advice and protection for <em>individuals, businesses and organisations</em></h1>
-    <p class="lead">Chestnut Insurance Agency helps you understand your risks, choose suitable cover, compare options and handle renewals and claims. Advice first, plain language always.</p>
-    <div class="btn-row"><a class="btn btn-primary" href="/get-a-quote/">Get a quote</a><a class="btn btn-ghost" href="/insurance-portfolio-review/">Request an insurance review</a></div>
-    <p class="hero-note">${esc(site.iraLicenceNote)} </p>
+    <p class="lead">Chestnut Insurance Agency is a Kenyan insurance agency helping businesses, professionals, families and organisations arrange motor, medical, business, property, liability, marine cargo and specialist insurance. We work with established insurance companies in Kenya including APA, Britam, CIC, Jubilee, Old Mutual and other providers to source suitable cover, compare terms and support clients through renewals and claims.</p>
+    <div class="btn-row"><a class="btn btn-primary" href="${esc(consultationLink())}">Book a Consultation</a><a class="btn btn-light" href="/insurance-portfolio-review/">Free Insurance Review</a><a class="btn btn-ghost" href="/get-a-quote/">Get a Quote</a></div>
+    <p class="hero-note">Licensed by the Insurance Regulatory Authority of Kenya · ${esc(site.iraLicenceNumber)}</p>
   </div>
   <div class="paths">
     <p class="paths-title">Where would you like to start?</p><p class="paths-sub">Choose the path closest to you.</p>
@@ -395,10 +395,7 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
   </div>
 </div></section>
 
-<section class="section section-warm"><div class="wrap"><div class="split">
-  <div><p class="eyebrow">Explore our solutions</p><h2>Insurance and financial solutions for every need</h2><p class="lead" style="font-size:1.05rem">The covers that protect an enterprise are the ones people understand least. We start by explaining them.</p><p><a class="textlink" href="/insurance-solutions/">Browse all insurance solutions</a></p></div>
-  <div>${indexList(featured)}</div>
-</div></div></section>
+
 
 <section class="section"><div class="wrap">
   <div class="section-head"><p class="eyebrow">Popular solutions</p><h2>Explore insurance and financial solutions</h2><p class="lead">Popular insurance and financial solutions for individuals, families, importers and Kenyan businesses.</p></div>
@@ -412,7 +409,7 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 </div></section>
 
 <section class="section partners-section"><div class="wrap">
-  <div class="section-head"><p class="eyebrow">Our Insurance Partners</p><h2>Insurance solutions backed by leading providers</h2><p class="lead">We work with a range of established insurers to help clients compare suitable cover and options.</p></div>
+  <div class="section-head"><p class="eyebrow">Our Insurance Partners</p><h2>Insurance solutions backed by leading providers</h2><p class="lead">We work with leading insurance companies in Kenya including APA Insurance, Britam, CIC, Jubilee, Old Mutual, ICEA Lion, First Assurance, AAR, GA Insurance, Sanlam Allianz and Fidelity, subject to product availability and underwriting.</p></div>
   <div class="partners-carousel" aria-label="Insurance partner logos">
     <div class="partners-track">
       <div class="partner-logo"><img src="/images/partners/apa.png" alt="APA Insurance" loading="lazy"></div>
@@ -441,13 +438,7 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
   </div>
 </div></section>
 
-<section class="section"><div class="wrap">
-  <div class="section-head"><p class="eyebrow">Our approach</p><h2>Better advice than a comparison site. A better experience than a brochure.</h2></div>
-  <div class="principles">
-    <div><h3>Explained plainly</h3><p>What is covered, what is not, and what to check in the wording. If a clause matters, we say so before you buy.</p></div>
-    <div><h3>Advice before price</h3><p>The cheapest premium is not always the cheapest outcome. We look at limits, excesses and conditions alongside cost.</p></div>
-    <div><h3>Support when it counts</h3><p>Renewals, changes and claims need attention too. We stay involved after the policy is issued.</p></div>
-  </div></div></section>
+
 
 <section class="section section-dark"><div class="wrap"><div class="split">
   <div><p class="eyebrow">Advisory services</p><h2>Useful services for HR, Procurement, Finance and Admin teams</h2><p style="color:rgba(255,255,255,.85)">Ways we help you get more from your Insurance Program.</p></div>
@@ -470,7 +461,7 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 
 
 <section class="section"><div class="wrap"><div class="split">
-  <div><p class="eyebrow">Guides</p><h2>Practical reading for Kenyan businesses</h2><p><a class="textlink" href="/insurance-guides/">All guides</a></p></div>
+  <div><p class="eyebrow">Our Blog</p><h2>Insurance insights for Kenyan businesses, professionals and households</h2><p><a class="textlink" href="/insurance-guides/">Explore the blog</a></p></div>
   <div>${indexList(latest, (p) => guides.find((g) => g.path === p).desc)}</div>
 </div></div></section>
 

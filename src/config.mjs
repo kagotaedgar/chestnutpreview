@@ -30,6 +30,8 @@ export const site = {
   // If empty, forms fall back to opening the visitor's email app (needs `email`).
   // If both are empty, forms validate, then tell the visitor plainly that the form is not connected yet.
   formEndpoint: '',
+  // Add your Calendly booking URL here before publishing consultation CTAs.
+  calendlyUrl: 'https://calendly.com/chestnut-info/30min',
 
   // ---- ANALYTICS ----
   ga4Id: '', // e.g. 'G-XXXXXXXXXX'. Loaded only when set.
