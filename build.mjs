@@ -378,9 +378,10 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 <section class="hero hero-photo"><div class="wrap hero-grid">
   <div>
     <p class="eyebrow">The Insurance Experts &middot; Nairobi</p>
-    <h1>Insurance advice and protection for <span class="hero-highlight">individuals, businesses and organisations</span></h1>
+    <h1>Insurance advice and protection for <em>individuals, businesses and organisations</em></h1>
     <p class="lead">Chestnut Insurance Agency is a Kenyan insurance agency helping businesses, professionals, families and organisations arrange motor, medical, business, property, liability, marine cargo and specialist insurance. We work with established insurance companies in Kenya including APA, Britam, CIC, Jubilee, Old Mutual and other providers to source suitable cover, compare terms and support clients through renewals and claims.</p>
     <div class="btn-row"><a class="btn btn-primary" href="${esc(consultationLink())}">Book a Consultation</a><a class="btn btn-light" href="/insurance-portfolio-review/">Free Insurance Review</a><a class="btn btn-ghost" href="/get-a-quote/">Get a Quote</a></div>
+    <p class="hero-note">Licensed by the Insurance Regulatory Authority of Kenya · ${esc(site.iraLicenceNumber)}</p>
   </div>
   <div class="paths">
     <p class="paths-title">Where would you like to start?</p><p class="paths-sub">Choose the path closest to you.</p>
@@ -395,6 +396,17 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 </div></section>
 
 
+
+<section class="section"><div class="wrap">
+  <div class="section-head"><p class="eyebrow">Popular solutions</p><h2>Explore insurance and financial solutions</h2><p class="lead">Popular insurance and financial solutions for individuals, families, importers and Kenyan businesses.</p></div>
+  <div class="solution-cards">
+    <a class="solution-card" href="/motor-insurance-kenya/"><h3>Motor Insurance</h3><p>Private cars, commercial vehicles, fleets, PSV and taxi cover.</p></a>
+    <a class="solution-card" href="/medical-insurance-kenya/"><h3>Medical Insurance</h3><p>Individual, family, group and employer medical solutions.</p></a>
+    <a class="solution-card" href="/group-life-insurance-kenya/"><h3>Life Insurance</h3><p>Group life protection for employers and organisations, with options to discuss individual needs.</p></a>
+    <a class="solution-card" href="/money-market-funds-kenya/"><h3>Money Market Funds</h3><p>Explore cash management and savings options for short- and medium-term financial goals.</p></a>
+    <a class="solution-card" href="/marine-insurance-kenya/"><h3>Marine Cargo &amp; Digital Certificates</h3><p>Marine cargo cover and digital marine certificates for Kenyan imports, including shipments arriving through Mombasa.</p></a>
+  </div>
+</div></section>
 
 <section class="section partners-section"><div class="wrap">
   <div class="section-head"><p class="eyebrow">Our Insurance Partners</p><h2>Insurance solutions backed by leading providers</h2><p class="lead">We work with leading insurance companies in Kenya including APA Insurance, Britam, CIC, Jubilee, Old Mutual, ICEA Lion, First Assurance, AAR, GA Insurance, Sanlam Allianz and Fidelity, subject to product availability and underwriting.</p></div>
@@ -437,6 +449,14 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
     <a href="/insurance-tender-support/"><strong>Tender and RFQ support</strong><p>Meet the insurance requirements of your next bid or contract.</p></a>
   </div></div></div></section>
 
+<section class="section"><div class="wrap">
+  <div class="section-head"><p class="eyebrow">How it works</p><h2>From first question to cover in four steps</h2></div>
+  <ol class="steps">
+    <li><h3>Tell us what you do</h3><p>Share your business, family or project details. A short form or a call is enough.</p></li>
+    <li><h3>We assess the risks</h3><p>We identify the covers that matter and what insurers will need to know.</p></li>
+    <li><h3>You see your options</h3><p>We approach suitable insurers and explain terms, limits and exclusions plainly.</p></li>
+    <li><h3>You decide, we support</h3><p>You choose. We help with documents, renewals and claims.</p></li>
+  </ol></div></section>
 
 
 

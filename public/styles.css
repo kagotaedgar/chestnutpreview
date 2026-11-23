@@ -301,16 +301,3 @@ p { margin: 0 0 var(--s4); }
 
 /* November 2026 homepage refinement */
 .brand-logo{display:block;width:230px;max-width:34vw;height:auto;max-height:58px;object-fit:contain}.brand-mark{display:none}.hero-photo h1,.hero-photo .lead,.hero-photo .eyebrow,.hero-photo .hero-note{color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.3)}.hero-photo .lead{font-weight:500}.hero-photo .btn-light{color:#006C67;background:#fff;border-color:#fff}.hero-photo .btn-ghost{color:#fff;border-color:#fff}
-
-/* Header/hero/contact refinements based on visual review */
-.brand-logo{width:74px;height:74px;max-width:none;max-height:none;object-fit:contain;background:transparent}
-.nav-bar{gap:1.1rem}
-.nav-list{gap:clamp(1rem,1.45vw,1.65rem)}
-.nav-list li:last-child a{white-space:nowrap}
-.nav-list a{white-space:nowrap}
-.hero-photo h1 em{font-style:normal;color:#fff!important}
-.hero-photo .hero-highlight{display:inline;color:#fff!important;font-style:normal;font-weight:inherit;text-shadow:0 1px 4px rgba(0,0,0,.32)}
-.hero-photo h1{color:#fff!important}
-.contact-icon{width:1.05em;height:1.05em;display:inline-block;vertical-align:-.15em;margin-right:.25em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.contact-icon-wa{stroke-width:1.45}
-@media(max-width:979px){.brand-logo{width:64px;height:64px}}

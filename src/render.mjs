@@ -118,7 +118,7 @@ export function orgSchema() {
     name: site.name,
     slogan: site.tagline,
     url: abs('/'),
-    logo: abs('/images/chestnut-mark.png'),
+    logo: abs('/favicon.svg'),
     address: addr,
     areaServed: { '@type': 'Country', name: 'Kenya' }
   };
@@ -147,7 +147,7 @@ export function layout(page) {
   const footer = `<footer class="site-footer"><div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand"><span class="brand-name">${esc(site.name)}</span><p style="margin-top:.5rem">${esc(site.tagline)}. Practical insurance advice for individuals, businesses and organisations in Kenya.</p>
-        <p><svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-6.4 7-12a7 7 0 0 0-14 0c0 5.6 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg> ${esc(site.addressLine)}${site.phoneDisplay ? `<br><svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2a13 13 0 0 0 6 6l2-3 5 2v4c0 1-1 2-2 2C10 20 4 14 3 5c0-1 1-2 2-2Z"/></svg> <a href="${esc(telLink())}">${esc(site.phoneDisplay)}</a>` : ''}${site.whatsapp ? `<br><svg class="contact-icon contact-icon-wa" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 11.8a8.4 8.4 0 0 1-12.4 7.4L3 20l1-4.8A8.5 8.5 0 1 1 20.5 11.8Z"/><path d="M8 7.5c.4-.5 1-.4 1.3 0l1 1.7-.7 1c.6 1.2 1.4 2 2.6 2.6l1-.7 1.7 1c.5.3.5 1 .1 1.3-.8.7-1.7.8-2.7.4-2.8-1.1-4.8-3.1-5.8-5.8-.4-1-.2-1.8.5-2.5Z"/></svg> <a href="${esc(waLink())}">WhatsApp</a>` : ''}${site.email ? `<br><svg class="contact-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg> <a href="${esc(mailLink())}">${esc(site.email)}</a>` : ''}</p></div>
+        <p><span aria-hidden="true">📍</span> ${esc(site.addressLine)}${site.phoneDisplay ? `<br><span aria-hidden="true">☎</span> <a href="${esc(telLink())}">${esc(site.phoneDisplay)}</a>` : ''}${site.whatsapp ? `<br><span aria-hidden="true">☏</span> <a href="${esc(waLink())}">WhatsApp</a>` : ''}${site.email ? `<br><span aria-hidden="true">✉</span> <a href="${esc(mailLink())}">${esc(site.email)}</a>` : ''}</p></div>
       ${f('Business', [['/business-insurance-kenya/', 'Business insurance'], ['/sme-insurance-kenya/', 'SME insurance'], ['/wiba-insurance-kenya/', 'WIBA'], ['/professional-indemnity-insurance-kenya/', 'Professional indemnity'], ['/public-liability-insurance-kenya/', 'Public liability'], ['/business-property-insurance/fire/', 'Fire and property'], ['/cyber-insurance-kenya/', 'Cyber']])}
       ${f('Personal', [['/motor-insurance-kenya/', 'Motor'], ['/medical-insurance-kenya/', 'Medical'], ['/travel-insurance-kenya/', 'Travel'], ['/home-insurance-kenya/', 'Home'], ['/personal-accident-insurance-kenya/', 'Personal accident'], ['/financial-products/', 'Wealth Management']])}
       ${f('Advisory', [['/insurance-portfolio-review/', 'Insurance review'], ['/claims-assistance/', 'Claims assistance'], ['/business-risk-assessment/', 'Risk assessment'], ['/insurance-tender-support/', 'Tender support'], ['/insurance-guides/', 'Guides']])}
@@ -178,7 +178,7 @@ export function layout(page) {
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Chestnut Insurance Agency. The Insurance Experts.">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/images/chestnut-mark.png" type="image/png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="/styles.css">
@@ -191,14 +191,15 @@ ${ga}
 <header class="site-header"><div class="wrap">
   <div class="nav-bar">
     <a class="brand" href="/" aria-label="${esc(site.name)} home">
-      <img class="brand-logo" src="/images/chestnut-mark.png" alt="Chestnut Insurance Agency">
+      <img class="brand-logo" src="/images/chestnut-logo.png" alt="Chestnut Insurance Agency logo">
+      <span class="brand-text"><span class="brand-name">Chestnut Insurance Agency</span><span class="brand-sub">The Insurance Experts</span></span>
     </a>
     <nav aria-label="Primary"><ul class="nav-list">${navHtml}</ul></nav>
     <a class="btn btn-primary nav-cta" href="/get-a-quote/">Get a quote</a>
     <button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
   </div>
 </div>
-<div class="mobile-menu" id="mobile-menu"><div class="wrap"><ul>${nav.map(([p, n]) => `<li><a href="${p}">${n}</a></li>`).join('')}</ul></div></div>
+<div class="mobile-menu" id="mobile-menu"><div class="wrap"><ul>${nav.map(([p, n]) => `<li><a href="${p}">${n}</a></li>`).join('')}<li><a href="/contact-us/">Contact</a></li></ul></div></div>
 </header>
 <main id="main">
 ${body}
