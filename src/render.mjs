@@ -118,7 +118,7 @@ export function orgSchema() {
     name: site.name,
     slogan: site.tagline,
     url: abs('/'),
-    logo: abs('/images/chestnut-mark-source.png'),
+    logo: abs('/images/chestnut-logo-correct.png'),
     address: addr,
     areaServed: { '@type': 'Country', name: 'Kenya' }
   };
@@ -178,7 +178,7 @@ export function layout(page) {
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Chestnut Insurance Agency. The Insurance Experts.">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/images/chestnut-mark-source.png" type="image/png">
+<link rel="icon" href="/images/chestnut-logo-correct.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="/styles.css">
@@ -191,7 +191,7 @@ ${ga}
 <header class="site-header"><div class="wrap">
   <div class="nav-bar">
     <a class="brand" href="/" aria-label="${esc(site.name)} home">
-      <img class="brand-logo" src="/images/chestnut-mark-source.png" alt="Chestnut Insurance Agency">
+      <img class="brand-logo" src="/images/chestnut-logo-correct.png" alt="Chestnut Insurance Agency">
     </a>
     <nav aria-label="Primary"><ul class="nav-list">${navHtml}</ul></nav>
     <a class="btn btn-primary nav-cta" href="/get-a-quote/">Get a quote</a>

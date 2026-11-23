@@ -426,14 +426,7 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
   </div>
 </div></section>
 
-<section class="section solutions-photo-section"><div class="wrap"><div class="section-head"><p class="eyebrow">Popular solutions</p><h2>Insurance solutions for the risks that matter</h2><p class="lead">Explore practical cover for people, businesses, property and cargo.</p></div>
-  <div class="solution-photo-grid">
-    <a class="solution-photo-card" href="/medical-insurance-kenya/"><img src="/images/website-generated/medical.jpg" alt="Medical insurance solutions for individuals and employers" loading="lazy"><span><strong>Medical Insurance</strong><small>Individual, family and group cover</small></span></a>
-    <a class="solution-photo-card" href="/business-insurance-kenya/"><img src="/images/website-generated/sme.jpg" alt="Business insurance for Kenyan SMEs" loading="lazy"><span><strong>Business Insurance</strong><small>Protect your people, property and operations</small></span></a>
-    <a class="solution-photo-card" href="/marine-insurance-kenya/"><img src="/images/website-generated/cargo.jpg" alt="Marine cargo and goods in transit insurance" loading="lazy"><span><strong>Marine &amp; Cargo</strong><small>Cover for imports and goods in transit</small></span></a>
-    <a class="solution-photo-card" href="/contractors-all-risks-insurance-kenya/"><img src="/images/website-generated/construction.jpg" alt="Construction insurance for projects and contractors" loading="lazy"><span><strong>Project &amp; Construction</strong><small>Contractors all risks and engineering cover</small></span></a>
-  </div>
-</div></section>
+
 
 
 <section class="section section-dark"><div class="wrap"><div class="split">
@@ -456,11 +449,15 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 <section class="section testimonials-section"><div class="wrap">
   <div class="section-head"><p class="eyebrow">Client experience</p><h2>What clients value about working with us</h2><p class="lead">Clear advice, responsive support and insurance options explained in plain language.</p></div>
   <p class="testimonial-disclaimer">The feedback themes below are illustrative placeholders, not verified client testimonials. They will be replaced with genuine feedback published with permission.</p>
-  <div class="testimonial-grid">
-    <article class="testimonial-card"><span class="testimonial-mark" aria-hidden="true">“</span><p>Clear explanations helped us understand what our insurance covered and what needed a closer look.</p><span class="testimonial-source">Illustrative feedback · Business client</span></article>
-    <article class="testimonial-card"><span class="testimonial-mark" aria-hidden="true">“</span><p>We appreciated having someone guide us through the options and make the process easier to navigate.</p><span class="testimonial-source">Illustrative feedback · Individual client</span></article>
-    <article class="testimonial-card"><span class="testimonial-mark" aria-hidden="true">“</span><p>Having support with renewal questions and follow-up gave us more confidence in our decisions.</p><span class="testimonial-source">Illustrative feedback · Organisation</span></article>
+  <div class="testimonial-carousel" aria-roledescription="carousel" aria-label="Illustrative client feedback">
+    <div class="testimonial-slides">
+      <article class="testimonial-card testimonial-slide is-active"><span class="testimonial-mark" aria-hidden="true">“</span><p>Clear explanations helped us understand what our insurance covered and what needed a closer look.</p><span class="testimonial-source">Illustrative feedback · Business client</span></article>
+      <article class="testimonial-card testimonial-slide"><span class="testimonial-mark" aria-hidden="true">“</span><p>We appreciated having someone guide us through the options and make the process easier to navigate.</p><span class="testimonial-source">Illustrative feedback · Individual client</span></article>
+      <article class="testimonial-card testimonial-slide"><span class="testimonial-mark" aria-hidden="true">“</span><p>Having support with renewal questions and follow-up gave us more confidence in our decisions.</p><span class="testimonial-source">Illustrative feedback · Organisation</span></article>
+    </div>
+    <div class="testimonial-controls"><button class="testimonial-prev" type="button" aria-label="Previous testimonial">‹</button><div class="testimonial-dots" role="group" aria-label="Choose testimonial"><button type="button" class="is-active" aria-label="Testimonial 1"></button><button type="button" aria-label="Testimonial 2"></button><button type="button" aria-label="Testimonial 3"></button></div><button class="testimonial-next" type="button" aria-label="Next testimonial">›</button></div>
   </div>
+  <script>document.addEventListener('DOMContentLoaded',()=>{const root=document.querySelector('.testimonial-carousel');if(!root)return;const slides=[...root.querySelectorAll('.testimonial-slide')],dots=[...root.querySelectorAll('.testimonial-dots button')];let i=0;function show(n){i=(n+slides.length)%slides.length;slides.forEach((s,k)=>{s.classList.toggle('is-active',k===i);s.setAttribute('aria-hidden',k===i?'false':'true')});dots.forEach((d,k)=>d.classList.toggle('is-active',k===i))}root.querySelector('.testimonial-prev').addEventListener('click',()=>show(i-1));root.querySelector('.testimonial-next').addEventListener('click',()=>show(i+1));dots.forEach((d,k)=>d.addEventListener('click',()=>show(k)));show(0);});</script>
 </div></section>
 
 <section class="section section-warm"><div class="wrap"><div class="split">
