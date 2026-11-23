@@ -269,7 +269,7 @@ ${ctaBand()}`;
     title: 'Insurance Blog Kenya | Chestnut Insurance Agency',
     desc: 'Insurance blog and guides for Kenya: business cover, WIBA, professional indemnity, motor, medical, marine cargo, claims, costs and risk management.',
     h1: 'Insurance Blog: Guides, Risk Insights & Practical Advice for Kenya', lead: 'Insurance insights for Kenyan businesses, professionals, employers, families, motorists, importers and property owners. Explore practical guides, risk checklists, insurance costs, claims advice and cover requirements.',
-    body: `<section class="section blog-feature"><div class="wrap"><div class="blog-intro"><h2>Latest insurance guides and insights</h2><p>Practical, Kenya-focused articles on insurance cover, claims, risk management, costs and contract requirements.</p></div><div class="blog-feature-grid"><a href="/insurance-guides/"><img src="/images/site/business.jpg" alt="Business insurance and risk insights"><strong>Business insurance & risk</strong></a><a href="/insurance-guides/"><img src="/images/site/marine.jpg" alt="Cargo insurance and import risks"><strong>Marine cargo & imports</strong></a><a href="/insurance-guides/"><img src="/images/site/medical.jpg" alt="Medical insurance guides"><strong>Medical & employee benefits</strong></a></div>${cats.map((c) => `<h2 style="margin-top:var(--s6)">${esc(c)}</h2>${indexList(guides.filter((g) => g.category === c).map((g) => g.path), (p) => guides.find((g) => g.path === p).desc)}`).join('')}</div></section>`
+    body: `<section class="section"><div class="wrap">${cats.map((c) => `<h2 style="margin-top:var(--s6)">${esc(c)}</h2>${indexList(guides.filter((g) => g.category === c).map((g) => g.path), (p) => guides.find((g) => g.path === p).desc)}`).join('')}</div></section>`
   });
 }
 
@@ -378,18 +378,21 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 <section class="hero hero-photo"><div class="wrap hero-grid">
   <div>
     <p class="eyebrow">The Insurance Experts &middot; Nairobi</p>
-    <h1>Insurance advice and protection for <span class="hero-highlight">individuals, businesses and organisations in Kenya</span></h1>
+    <h1>Insurance advice and protection for <span class="hero-highlight">individuals, businesses and organisations</span></h1>
     <p class="lead">Chestnut Insurance Agency is a Kenyan insurance agency helping businesses, professionals, families and organisations arrange motor, medical, business, property, liability, marine cargo and specialist insurance. We work with established insurance companies in Kenya including APA, Britam, CIC, Jubilee, Old Mutual and other providers to source suitable cover, compare terms and support clients through renewals and claims.</p>
     <div class="btn-row"><a class="btn btn-primary" href="${esc(consultationLink())}">Book a Consultation</a><a class="btn btn-light" href="/insurance-portfolio-review/">Free Insurance Review</a><a class="btn btn-ghost" href="/get-a-quote/">Get a Quote</a></div>
   </div>
-  <section class="home-products"><div class="wrap"><div class="section-head"><p class="eyebrow">Products</p><h2>Insurance and financial solutions in Kenya</h2><p class="lead">Explore cover for your vehicle, health, business, profession, property, employees, cargo and projects.</p></div><div class="home-product-grid">
-  <a class="home-product-card" href="/motor-insurance-kenya/"><img src="/images/site/motor.jpg" alt="Motor insurance in Kenya"><span><strong>Motor Insurance</strong><small>Private car, commercial vehicles and fleets</small></span></a>
-  <a class="home-product-card" href="/medical-insurance-kenya/"><img src="/images/site/medical.jpg" alt="Medical insurance in Kenya"><span><strong>Medical Insurance</strong><small>Individual, family and group medical cover</small></span></a>
-  <a class="home-product-card" href="/business-insurance-kenya/"><img src="/images/site/business.jpg" alt="Business insurance advice"><span><strong>Business Insurance</strong><small>Property, liability, employees and operations</small></span></a>
-  <a class="home-product-card" href="/marine-insurance-kenya/"><img src="/images/site/marine.jpg" alt="Marine cargo insurance for imports"><span><strong>Marine & Cargo</strong><small>Imports, cargo and goods in transit</small></span></a>
-  <a class="home-product-card" href="/contractors-all-risks-insurance-kenya/"><img src="/images/site/construction.jpg" alt="Construction project insurance"><span><strong>Projects & Construction</strong><small>CAR, plant, machinery and engineering</small></span></a>
-  <a class="home-product-card" href="/financial-products/"><img src="/images/site/wealth.jpg" alt="Financial planning and wealth management"><span><strong>Wealth Management</strong><small>MMFs, savings, education and retirement</small></span></a>
-</div><div class="btn-row centered"><a class="btn btn-primary" href="/insurance-solutions/">Explore all products</a><a class="btn btn-light" href="/get-a-quote/">Get a quote</a></div></div></section>
+  <div class="paths">
+    <p class="paths-title">Where would you like to start?</p><p class="paths-sub">Choose the path closest to you.</p>
+    <ul>
+      <li><a href="/business-insurance-kenya/"><span class="path-num">01</span><span><span class="path-name">My business</span><span class="path-desc">Property, people, liability, transit and operations</span></span><span class="path-arrow" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="/professional-indemnity-insurance-kenya/"><span class="path-num">02</span><span><span class="path-name">My profession</span><span class="path-desc">Professional indemnity, directors and cyber cover</span></span><span class="path-arrow" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="/personal-insurance/"><span class="path-num">03</span><span><span class="path-name">Myself and my family</span><span class="path-desc">Motor, medical, travel, home and accident</span></span><span class="path-arrow" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="/contractors-all-risks-insurance-kenya/"><span class="path-num">04</span><span><span class="path-name">My project or property</span><span class="path-desc">Construction, plant, buildings and stock</span></span><span class="path-arrow" aria-hidden="true">&rarr;</span></a></li>
+      <li><a href="/financial-products/"><span class="path-num">05</span><span><span class="path-name">My wealth and financial goals</span><span class="path-desc">Money market funds, savings, education and retirement solutions</span></span><span class="path-arrow" aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+  </div>
+</div></section>
 
 
 
@@ -441,8 +444,6 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
   <div><p class="eyebrow">Our Blog</p><h2>Insurance insights for Kenyan businesses, professionals and households</h2><p><a class="textlink" href="/insurance-guides/">Explore the blog</a></p></div>
   <div>${indexList(latest, (p) => guides.find((g) => g.path === p).desc)}</div>
 </div></div></section>
-
-<section class="section testimonials"><div class="wrap"><div class="section-head"><p class="eyebrow">Client experience</p><h2>What clients value about working with us</h2><p class="lead">Clear explanations, responsive service and support when it matters.</p></div><div class="testimonial-grid"><article><div class="quote-mark">“</div><p>Insurance is easier to understand when someone takes the time to explain the options, what is covered and what to look out for.</p><small>Individual client · Personal insurance</small></article><article><div class="quote-mark">“</div><p>Having one point of contact to help review requirements, compare options and follow up made the process more straightforward.</p><small>Business client · Insurance programme</small></article><article><div class="quote-mark">“</div><p>Practical advice and clear communication helped us make decisions with more confidence at renewal.</p><small>Business client · Renewal support</small></article></div><p class="testimonial-note">These are illustrative examples of the experience Chestnut aims to deliver, not published customer testimonials or ratings.</p></div></section>
 
 <section class="section section-warm"><div class="wrap"><div class="split">
   <div><p class="eyebrow">Questions</p><h2>Common questions</h2></div>
