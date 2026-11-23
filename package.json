@@ -1,0 +1,13 @@
+{
+  "name": "chestnut-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Chestnut Insurance Agency website. Zero-dependency static site generator.",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node check.mjs",
+    "test": "node build.mjs && node check.mjs"
+  },
+  "engines": { "node": ">=18" }
+}
