@@ -440,3 +440,16 @@ p { margin: 0 0 var(--s4); }
 .site-footer .contact-icon { stroke: #FFFFFF; }
 .foot-legal { border-top: 1px solid rgba(255,255,255,.25); color: #D8F2EF; }
 @media (min-width: 760px) { .site-footer .foot-grid { grid-template-columns: 1.65fr repeat(4, 1fr); gap: 2rem; } }
+
+/* Harmonise Popular Solutions and Client Experience with the Chestnut site */
+.popular-covers-section .solution-card { background: var(--paper-warm); border: 1px solid rgba(0,108,103,.14); border-top: 1px solid rgba(0,108,103,.14); border-radius: 8px; box-shadow: none; color: var(--ink); transition: background-color .18s ease, border-color .18s ease, transform .18s ease; }
+.popular-covers-section .solution-card h3 { color: var(--teal); }
+.popular-covers-section .solution-card p { color: var(--ink-soft); }
+.popular-covers-section .solution-card:hover { background: var(--teal-tint); border-color: rgba(0,108,103,.28); box-shadow: none; transform: translateY(-2px); }
+.testimonials-section { background: var(--paper); }
+.testimonial-slide { background: var(--paper-warm); border: 1px solid rgba(0,108,103,.14); border-top: 1px solid rgba(0,108,103,.14); border-radius: 8px; box-shadow: none; }
+.testimonial-slide h3 { color: var(--teal); }
+.testimonial-controls { gap: 1rem; }
+.testimonial-prev, .testimonial-next { background: var(--paper); border-color: rgba(0,108,103,.35); }
+.testimonial-dots button { background: rgba(0,108,103,.25); }
+.testimonial-dots button.is-active { background: var(--red); }
