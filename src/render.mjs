@@ -75,7 +75,7 @@ export function indexList(paths, descOf) {
 }
 
 export function ctaBand(title = 'Not sure what you need? Start with a conversation.', text = 'Tell us about your business, your family or your project. An advisor will come back with practical options and plain explanations. No pressure and no jargon.') {
-  return `<section class="cta-band"><div class="wrap">
+  return `<section class="cta-band cta-band-brand"><div class="wrap">
     <h2>${esc(title)}</h2><p>${esc(text)}</p>
     <div class="btn-row"><a class="btn btn-primary" href="/get-a-quote/">Get a quote</a><a class="btn btn-light" href="${esc(consultationLink())}">Speak to an advisor</a>${contactButtons(true)}</div>
   </div></section>`;

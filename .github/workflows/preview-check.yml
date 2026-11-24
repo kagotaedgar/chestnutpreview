@@ -1,0 +1,22 @@
+name: Preview branch validation
+
+on:
+  push:
+    branches:
+      - chestnut-site-improvements
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build
+        run: node build.mjs
+      - name: QA checks
+        run: node check.mjs
