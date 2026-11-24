@@ -428,3 +428,15 @@ p { margin: 0 0 var(--s4); }
   .popular-covers-section .solution-card h3 { font-size: 1.2rem; line-height: 1.18; }
   .popular-covers-section .solution-card p { font-size: 1rem; line-height: 1.45; }
 }
+
+/* Footer refresh: lighter, more approachable brand treatment inspired by competitor layouts */
+.site-footer { background: #F8F6F0; color: #263331; padding: 3.5rem 0 2rem; font-size: .98rem; }
+.site-footer a { color: #263331; }
+.site-footer a:hover { color: #006C67; }
+.site-footer h2 { color: #006C67; }
+.site-footer .foot-brand h2 { margin-bottom: 1rem; }
+.site-footer .foot-brand .brand-name { color: #263331; font-size: 1.35rem; }
+.site-footer .foot-brand p { color: #3E4A48; line-height: 1.65; }
+.site-footer .contact-icon { stroke: #006C67; }
+.foot-legal { border-top: 1px solid rgba(0,108,103,.2); color: #52615E; }
+@media (min-width: 760px) { .site-footer .foot-grid { grid-template-columns: 1.65fr repeat(4, 1fr); gap: 2rem; } }
