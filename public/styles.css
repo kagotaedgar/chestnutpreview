@@ -395,3 +395,18 @@ p { margin: 0 0 var(--s4); }
 
 /* Advisory services band: use Chestnut's standard brand turquoise */
 .advisory-services-band { background: #006C67; }
+
+/* Homepage hero: fit the full hero comfortably within a standard desktop viewport */
+@media (min-width: 900px) {
+  .hero-photo { padding: 2.5rem 0 2.75rem; }
+  .hero-photo .hero-grid { align-items: center; gap: 2.5rem; }
+  .hero-photo h1 { font-size: clamp(2.75rem, 3.05vw, 3.65rem); line-height: 1.08; margin-bottom: 1rem; }
+  .hero-photo .lead { font-size: 1.08rem; line-height: 1.55; margin-bottom: 1.25rem; }
+  .hero-photo .eyebrow { margin-bottom: .8rem; }
+  .hero-photo .paths { padding: 1.4rem 1.6rem 1.15rem; }
+  .hero-photo .paths-title { font-size: 1.3rem; }
+  .hero-photo .paths-sub { margin-bottom: 1rem; }
+  .hero-photo .paths li a { padding: .72rem 0; gap: .8rem; }
+  .hero-photo .path-name { font-size: 1.15rem; }
+  .hero-photo .path-desc { font-size: .92rem; line-height: 1.4; }
+}
