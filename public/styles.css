@@ -375,8 +375,8 @@ p { margin: 0 0 var(--s4); }
 @keyframes chestnut-slide-in { from { opacity: .65; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
 /* Homepage final-flow corrections */
-.cta-band-brand { background: #006C67 !important; }
-.cta-band-brand .btn-primary { background: #fff; color: #006C67; }
+.cta-band-brand { background: var(--red) !important; }
+.cta-band-brand .btn-primary { background: #fff; color: var(--red-deep); }
 .homepage-questions { margin-bottom: clamp(1.5rem, 3vw, 2.5rem); border-bottom: 1px solid var(--line); }
 .homepage-blog { background: var(--paper); border-top: 1px solid var(--line); }
 .home-blog-grid { display:grid; grid-template-columns:1fr; gap:1.25rem; }
