@@ -410,6 +410,10 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
     <a class="solution-card" href="/money-market-funds-kenya/"><h3>Money Market Funds in Kenya</h3><p>Explore money market funds and savings options for short- and medium-term financial goals.</p></a>
     <a class="solution-card" href="/marine-insurance-kenya/"><h3>Marine Cargo Insurance</h3><p>Import cargo insurance for goods transported by sea, air or road, including shipments entering Kenya through Mombasa.</p></a>
     <a class="solution-card" href="/business-insurance-kenya/"><h3>Business Insurance in Kenya</h3><p>Insurance for Kenyan businesses, including property, liability, employees, equipment, stock and business operations.</p></a>
+      <a class="solution-card" href="/contractors-all-risks-insurance-kenya/"><h3>Contractors All Risks Insurance</h3><p>Cover for construction projects against accidental damage, third-party liability and associated project risks.</p></a>
+    <a class="solution-card" href="/wiba-insurance-kenya/"><h3>WIBA Insurance in Kenya</h3><p>Work Injury Benefits Act insurance for employers, protecting employees against work-related injury and occupational illness.</p></a>
+    <a class="solution-card" href="/pension-and-retirement-planning-kenya/"><h3>Pensions and Retirement Planning</h3><p>Retirement planning, pension arrangements and employee retirement benefits solutions for individuals and organisations.</p></a>
+    <a class="solution-card" href="/travel-insurance-kenya/"><h3>Travel Insurance in Kenya</h3><p>Travel cover for medical emergencies, baggage, trip disruption and other unexpected events while travelling abroad.</p></a>
   </div>
 </div></section>
 
