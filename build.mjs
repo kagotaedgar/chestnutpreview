@@ -269,7 +269,12 @@ ${ctaBand()}`;
     title: 'Insurance Blog Kenya | Chestnut Insurance Agency',
     desc: 'Insurance blog and guides for Kenya: business cover, WIBA, professional indemnity, motor, medical, marine cargo, claims, costs and risk management.',
     h1: 'Insurance Blog: Guides, Risk Insights & Practical Advice for Kenya', lead: 'Insurance insights for Kenyan businesses, professionals, employers, families, motorists, importers and property owners. Explore practical guides, risk checklists, insurance costs, claims advice and cover requirements.',
-    body: `<section class="section"><div class="wrap">${cats.map((c) => `<h2 style="margin-top:var(--s6)">${esc(c)}</h2>${indexList(guides.filter((g) => g.category === c).map((g) => g.path), (p) => guides.find((g) => g.path === p).desc)}`).join('')}</div></section>`
+    body: (() => {
+      const imageFor = (category) => category === 'Motor' ? '/images/site/motor.jpg' : category === 'Employers' ? '/images/site/business.jpg' : category === 'Professionals' ? '/images/site/individuals.jpg' : category === 'Marine' ? '/images/site/marine.jpg' : category === 'Medical' ? '/images/site/medical.jpg' : category === 'Travel' ? '/images/site/travel.jpg' : category === 'Claims' ? '/images/site/claims.jpg' : category === 'SMEs' ? '/images/site/business.jpg' : '/images/site/wealth.jpg';
+      const card = (g, featured = false) => `<article class="blog-card${featured ? ' blog-card-featured' : ''}"><a class="blog-card-image" href="${g.path}"><img src="${imageFor(g.category)}" alt="" loading="lazy"><span class="blog-category">${esc(g.category)}</span></a><div class="blog-card-body"><p class="blog-meta">Chestnut Editorial · ${new Date(site.published).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</p><h3><a href="${g.path}">${esc(g.h1)}</a></h3><p>${esc(g.desc)}</p><a class="blog-read" href="${g.path}">Read more <span aria-hidden="true">→</span></a></div></article>`;
+      const featured = guides[0], rest = guides.slice(1);
+      return `<section class="blog-listing"><div class="wrap"><div class="blog-featured">${card(featured,true)}</div><div class="blog-grid">${rest.map(g=>card(g)).join('')}</div></div></section>`;
+    })()
   });
 }
 
