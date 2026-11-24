@@ -104,7 +104,7 @@ function productPage(p) {
   const rel = (p.related || []).filter((x) => registry.has(x));
   const gds = (p.guides || []).filter((x) => registry.has(x));
   const finBox = isFin
-    ? `<div class="callout"><strong>This is not insurance.</strong> Chestnut does not manufacture, manage or guarantee this product. It is provided by a licensed provider under that provider\u2019s terms, and returns or benefits are not guaranteed. ${todo('CONFIRM before launch: Chestnut\u2019s authority and provider arrangements for this product, and add the provider disclosures')}</div>`
+    ? (p.path === '/money-market-funds-kenya/' ? '' : `<div class="callout"><strong>This is not insurance.</strong> Chestnut does not manufacture, manage or guarantee this product. It is provided by a licensed provider under that provider\u2019s terms, and returns or benefits are not guaranteed. ${todo('CONFIRM before launch: Chestnut\u2019s authority and provider arrangements for this product, and add the provider disclosures')}</div>`)
     : disclaimer;
   const body = `
 <section class="page-hero"><div class="wrap">
