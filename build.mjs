@@ -401,6 +401,17 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 
 
 
+<section class="section popular-covers-section"><div class="wrap">
+  <div class="section-head"><p class="eyebrow">Popular solutions</p><h2>Explore insurance and financial solutions</h2><p class="lead">Popular insurance and financial solutions for individuals, families, importers and Kenyan businesses.</p></div>
+  <div class="solution-cards">
+    <a class="solution-card" href="/motor-insurance-kenya/"><h3>Motor Insurance</h3><p>Private cars, commercial vehicles, fleets, PSV and taxi cover.</p></a>
+    <a class="solution-card" href="/medical-insurance-kenya/"><h3>Medical Insurance</h3><p>Individual, family, group and employer medical solutions.</p></a>
+    <a class="solution-card" href="/group-life-insurance-kenya/"><h3>Life Insurance</h3><p>Group life protection for employers and organisations, with options to discuss individual needs.</p></a>
+    <a class="solution-card" href="/money-market-funds-kenya/"><h3>Money Market Funds</h3><p>Explore cash management and savings options for short- and medium-term financial goals.</p></a>
+    <a class="solution-card" href="/marine-insurance-kenya/"><h3>Marine Cargo &amp; Digital Certificates</h3><p>Marine cargo cover and digital marine certificates for Kenyan imports, including shipments arriving through Mombasa.</p></a>
+  </div>
+</div></section>
+
 <section class="section partners-section"><div class="wrap">
   <div class="section-head"><p class="eyebrow">Our Insurance Partners</p><h2>Insurance solutions backed by leading providers</h2><p class="lead">We work with leading insurance companies in Kenya including APA Insurance, Britam, CIC, Jubilee, Old Mutual, ICEA Lion, First Assurance, AAR, GA Insurance, Sanlam Allianz and Fidelity, subject to product availability and underwriting.</p></div>
   <div class="partners-carousel" aria-label="Insurance partner logos">
