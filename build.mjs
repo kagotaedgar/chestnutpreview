@@ -446,10 +446,7 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 
 
 
-<section class="section"><div class="wrap"><div class="split">
-  <div><p class="eyebrow">Our Blog</p><h2>Insurance insights for Kenyan businesses, professionals and households</h2><p><a class="textlink" href="/insurance-guides/">Explore the blog</a></p></div>
-  <div>${indexList(latest, (p) => guides.find((g) => g.path === p).desc)}</div>
-</div></div></section>
+
 
 <section class="section testimonials-section"><div class="wrap">
   <div class="section-head"><p class="eyebrow">Client experience</p><h2>What working with Chestnut should feel like</h2><p class="lead">Insurance advice built around clarity, responsiveness and practical support.</p></div>
@@ -466,10 +463,16 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 </div></section>
 <script>document.addEventListener('DOMContentLoaded',()=>{const root=document.querySelector('.testimonial-carousel');if(!root)return;const slides=[...root.querySelectorAll('.testimonial-slide')],dots=[...root.querySelectorAll('.testimonial-dots button')];let i=0,timer;function restart(){clearInterval(timer);timer=setInterval(()=>show(i+1),7000)}function show(n){i=(n+slides.length)%slides.length;slides.forEach((s,k)=>{s.classList.toggle('is-active',k===i);s.setAttribute('aria-hidden',k===i?'false':'true')});dots.forEach((d,k)=>d.classList.toggle('is-active',k===i));restart()}root.querySelector('.testimonial-prev').addEventListener('click',()=>show(i-1));root.querySelector('.testimonial-next').addEventListener('click',()=>show(i+1));dots.forEach((d,k)=>d.addEventListener('click',()=>show(k)));root.addEventListener('mouseenter',()=>clearInterval(timer));root.addEventListener('mouseleave',restart);show(0);});</script>
 
-<section class="section section-warm"><div class="wrap"><div class="split">
+<section class="section section-warm homepage-questions" id="homepage-questions"><div class="wrap"><div class="split">
   <div><p class="eyebrow">Questions</p><h2>Common questions</h2></div>
   <div>${faqHtml(faqs)}</div>
 </div></div></section>
+<section class="section homepage-blog" id="blog-preview"><div class="wrap">
+  <div class="section-head"><p class="eyebrow">Our Blog</p><h2>Insurance insights for Kenyan businesses, professionals and households</h2><p class="lead">Practical guides to help you understand insurance and make informed decisions.</p><p><a class="textlink" href="/insurance-guides/">Explore all articles</a></p></div>
+  <div class="home-blog-grid">
+    ${latest.slice(0,3).map((p) => { const g=guides.find((g) => g.path === p); const imageFor=(category)=>category === "Motor" ? "/images/site/motor.jpg" : category === "Employers" ? "/images/site/business.jpg" : category === "Professionals" ? "/images/site/individuals.jpg" : category === "Marine" ? "/images/site/marine.jpg" : category === "Medical" ? "/images/site/medical.jpg" : category === "Travel" ? "/images/site/travel.jpg" : category === "Claims" ? "/images/site/claims.jpg" : category === "SMEs" ? "/images/site/business.jpg" : "/images/site/wealth.jpg"; return `<article class="home-blog-card"><a class="home-blog-image" href="${g.path}"><img src="${imageFor(g.category)}" alt="" loading="lazy"><span class="blog-category">${esc(g.category)}</span></a><div class="home-blog-body"><h3><a href="${g.path}">${esc(g.h1)}</a></h3><p>${esc(g.desc)}</p><a class="blog-read" href="${g.path}">Read article <span aria-hidden="true">→</span></a></div></article>`; }).join("")} 
+  </div>
+</div></section>
 ${ctaBand()}`;
   emit('/', layout({
     path: '/', title: 'Chestnut Insurance Agency Kenya | Insurance Advice & Protection',
