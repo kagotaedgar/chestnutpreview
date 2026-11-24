@@ -453,3 +453,19 @@ p { margin: 0 0 var(--s4); }
 .testimonial-prev, .testimonial-next { background: var(--paper); border-color: rgba(0,108,103,.35); }
 .testimonial-dots button { background: rgba(0,108,103,.25); }
 .testimonial-dots button.is-active { background: var(--red); }
+
+/* Bright, distinctive Chestnut cards: restore the brand-red band */
+.popular-covers-section .solution-card { background: #FFFFFF; border: 1px solid #E5DCCF; border-top: 5px solid var(--red); border-radius: 5px; box-shadow: 0 3px 12px rgba(29,35,33,.035); color: var(--ink); }
+.popular-covers-section .solution-card h3 { color: var(--teal); }
+.popular-covers-section .solution-card p { color: var(--ink-soft); }
+.popular-covers-section .solution-card:hover { background: #FFFDF9; border-color: #DCCFC0; border-top-color: var(--red-deep); box-shadow: 0 8px 20px rgba(29,35,33,.07); transform: translateY(-3px); }
+/* Testimonials: light, open and aligned with the site's brighter visual language */
+.testimonials-section { background: #F7F2E8; }
+.testimonial-slide { background: #FFFFFF; border: 1px solid #E5DCCF; border-top: 5px solid var(--red); border-radius: 5px; box-shadow: 0 5px 18px rgba(29,35,33,.045); }
+.testimonial-slide h3 { color: var(--teal); }
+.testimonial-slide p { color: var(--ink); }
+.testimonial-mark { color: var(--red); }
+.testimonial-source { color: var(--teal); }
+.testimonial-prev, .testimonial-next { background: #FFFFFF; border-color: var(--red); color: var(--red); }
+.testimonial-dots button { background: #C8D8D5; }
+.testimonial-dots button.is-active { background: var(--red); }
