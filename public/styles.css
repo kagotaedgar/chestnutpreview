@@ -429,14 +429,14 @@ p { margin: 0 0 var(--s4); }
   .popular-covers-section .solution-card p { font-size: 1rem; line-height: 1.45; }
 }
 
-/* Footer refresh: lighter, more approachable brand treatment inspired by competitor layouts */
-.site-footer { background: #F8F6F0; color: #263331; padding: 3.5rem 0 2rem; font-size: .98rem; }
-.site-footer a { color: #263331; }
-.site-footer a:hover { color: #006C67; }
-.site-footer h2 { color: #006C67; }
+/* Footer: return to Chestnut's standard brand turquoise */
+.site-footer { background: #006C67; color: #FFFFFF; padding: 3.5rem 0 2rem; font-size: .98rem; }
+.site-footer a { color: #FFFFFF; }
+.site-footer a:hover { color: #D8F2EF; }
+.site-footer h2 { color: #FFFFFF; }
 .site-footer .foot-brand h2 { margin-bottom: 1rem; }
-.site-footer .foot-brand .brand-name { color: #263331; font-size: 1.35rem; }
-.site-footer .foot-brand p { color: #3E4A48; line-height: 1.65; }
-.site-footer .contact-icon { stroke: #006C67; }
-.foot-legal { border-top: 1px solid rgba(0,108,103,.2); color: #52615E; }
+.site-footer .foot-brand p { color: #FFFFFF; line-height: 1.65; }
+.site-footer .foot-grid > div > h3, .site-footer .foot-grid > div > .eyebrow { color: #C5E6E3; }
+.site-footer .contact-icon { stroke: #FFFFFF; }
+.foot-legal { border-top: 1px solid rgba(255,255,255,.25); color: #D8F2EF; }
 @media (min-width: 760px) { .site-footer .foot-grid { grid-template-columns: 1.65fr repeat(4, 1fr); gap: 2rem; } }
