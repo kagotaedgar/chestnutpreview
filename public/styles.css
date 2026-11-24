@@ -392,3 +392,6 @@ p { margin: 0 0 var(--s4); }
 
 /* Client experience: keep the carousel visually paired with its introduction */
 @media(min-width:900px){.testimonials-section .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:2rem;align-items:center}.testimonials-section .section-head{margin-bottom:0;text-align:left}.testimonials-section .testimonial-carousel{width:100%;max-width:none}}
+
+/* Advisory services band: use Chestnut's standard brand turquoise */
+.advisory-services-band { background: #006C67; }
