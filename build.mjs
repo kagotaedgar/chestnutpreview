@@ -402,13 +402,14 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 
 
 <section class="section popular-covers-section"><div class="wrap">
-  <div class="section-head"><p class="eyebrow">Popular solutions</p><h2>Explore insurance and financial solutions</h2><p class="lead">Popular insurance and financial solutions for individuals, families, importers and Kenyan businesses.</p></div>
+  <div class="section-head"><p class="eyebrow">Popular solutions</p><h2>Insurance and Financial Solutions in Kenya</h2><p class="lead">Compare insurance and financial solutions in Kenya for individuals, families, professionals, importers and businesses. Get practical advice and support from Chestnut Insurance Agency in Nairobi.</p></div>
   <div class="solution-cards">
-    <a class="solution-card" href="/motor-insurance-kenya/"><h3>Motor Insurance</h3><p>Private cars, commercial vehicles, fleets, PSV and taxi cover.</p></a>
-    <a class="solution-card" href="/medical-insurance-kenya/"><h3>Medical Insurance</h3><p>Individual, family, group and employer medical solutions.</p></a>
-    <a class="solution-card" href="/group-life-insurance-kenya/"><h3>Life Insurance</h3><p>Group life protection for employers and organisations, with options to discuss individual needs.</p></a>
-    <a class="solution-card" href="/money-market-funds-kenya/"><h3>Money Market Funds</h3><p>Explore cash management and savings options for short- and medium-term financial goals.</p></a>
-    <a class="solution-card" href="/marine-insurance-kenya/"><h3>Marine Cargo &amp; Digital Certificates</h3><p>Marine cargo cover and digital marine certificates for Kenyan imports, including shipments arriving through Mombasa.</p></a>
+    <a class="solution-card" href="/motor-insurance-kenya/"><h3>Motor Insurance in Kenya</h3><p>Private car, commercial vehicle, fleet, PSV and taxi insurance with options from leading Kenyan insurers.</p></a>
+    <a class="solution-card" href="/medical-insurance-kenya/"><h3>Medical Insurance in Kenya</h3><p>Individual, family, group and corporate medical insurance solutions for healthcare costs and employee benefits.</p></a>
+    <a class="solution-card" href="/group-life-insurance-kenya/"><h3>Life Insurance</h3><p>Group life insurance for employers and organisations, with options to discuss personal protection needs.</p></a>
+    <a class="solution-card" href="/money-market-funds-kenya/"><h3>Money Market Funds in Kenya</h3><p>Explore money market funds and savings options for short- and medium-term financial goals.</p></a>
+    <a class="solution-card" href="/marine-insurance-kenya/"><h3>Marine Cargo Insurance</h3><p>Import cargo insurance for goods transported by sea, air or road, including shipments entering Kenya through Mombasa.</p></a>
+    <a class="solution-card" href="/business-insurance-kenya/"><h3>Business Insurance in Kenya</h3><p>Insurance for Kenyan businesses, including property, liability, employees, equipment, stock and business operations.</p></a>
   </div>
 </div></section>
 
