@@ -519,7 +519,7 @@ for (const pg of pages) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, pg.html);
 }
-const indexable = pages.filter((p) => !p.noindex).map((p) => p.path).sort();
+const indexable = [...pages.filter((p) => !p.noindex).map((p) => p.path), '/motor-insurance-calculator/'].sort();
 const today = site.published;
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexable.map((p) => `  <url><loc>${abs(p)}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${abs('/sitemap.xml')}\n`);
