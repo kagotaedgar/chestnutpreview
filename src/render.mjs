@@ -6,6 +6,7 @@ export const registry = new Map(); // path -> { label, parent }
 
 const nav = [
   ['/', 'Home'],
+  ['/motor-insurance-calculator/', 'Motor Calculator'],
   ['/insurance-solutions/', 'Products'],
   ['/business-insurance-kenya/', 'Business'],
   ['/insurance-advisory-services/', 'Services'],
