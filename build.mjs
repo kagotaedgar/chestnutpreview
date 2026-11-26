@@ -533,15 +533,17 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
       <a href="/marine-insurance-kenya/"><span class="sg-icon">≋</span><span><strong>Marine Cargo</strong><small>Import cover for sea, air and road.</small></span><b aria-hidden="true">›</b></a>
       <a href="/public-liability-insurance-kenya/"><span class="sg-icon">◇</span><span><strong>Public Liability</strong><small>Injury and damage claims from third parties.</small></span><b aria-hidden="true">›</b></a>
       <a href="/professional-indemnity-insurance-kenya/"><span class="sg-icon">▤</span><span><strong>Professional Indemnity &amp; Cyber</strong><small>Professional errors and digital risks.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/airbnb-insurance-kenya/"><span class="sg-icon">⌂</span><span><strong>AirBnB Package</strong><small>Cover for short-stay rental properties.</small></span><b aria-hidden="true">›</b></a>
     </div></div>
     <div class="solution-group"><h3>For individuals and families</h3><div class="solution-link-grid">
       <a href="/travel-insurance-kenya/"><span class="sg-icon">✈</span><span><strong>Travel Insurance</strong><small>Medical, trip and baggage cover.</small></span><b aria-hidden="true">›</b></a>
       <a href="/home-insurance-kenya/"><span class="sg-icon">⌂</span><span><strong>Home Insurance</strong><small>Your house, contents and valuables.</small></span><b aria-hidden="true">›</b></a>
-      <a href="/personal-accident-insurance-kenya/"><span class="sg-icon">＋</span><span><strong>Personal Accident</strong><small>Protection after an accident.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/medical-insurance-kenya/"><span class="sg-icon">＋</span><span><strong>Medical Insurance</strong><small>Health cover for you and your family.</small></span><b aria-hidden="true">›</b></a>
       <a href="/group-life-insurance-kenya/"><span class="sg-icon">♧</span><span><strong>Life Insurance</strong><small>Financial protection for your family.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/money-market-funds-kenya/"><span class="sg-icon">◉</span><span><strong>Money Market Funds</strong><small>Investment and savings opportunities.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/pension-and-retirement-planning-kenya/"><span class="sg-icon">⌛</span><span><strong>Pensions &amp; Annuities</strong><small>Prepare for retirement and future income.</small></span><b aria-hidden="true">›</b></a>
     </div></div>
   </div>
-  <div class="financial-section"><div class="financial-heading"><h2>Beyond Insurance</h2></div><p class="financial-intro">Planning for your financial future</p><div class="financial-card-grid"><a href="/money-market-funds-kenya/"><span class="sg-icon">◉</span><span><strong>Money Market Funds</strong><small>Explore investment and savings opportunities.</small></span><b aria-hidden="true">›</b></a><a href="/savings-and-education-plans-kenya/"><span class="sg-icon">✦</span><span><strong>Savings &amp; Education Plans</strong><small>Plan for education and long-term goals.</small></span><b aria-hidden="true">›</b></a><a href="/pension-and-retirement-planning-kenya/"><span class="sg-icon">⌛</span><span><strong>Pensions &amp; Annuities</strong><small>Prepare for retirement and future income.</small></span><b aria-hidden="true">›</b></a></div><p class="financial-disclosure">Financial products are separate from insurance and offered through partner providers, subject to eligibility and arrangements.</p></div>
 </div></section>
 
 <section class="section partners-section"><div class="wrap">
