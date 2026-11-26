@@ -162,18 +162,18 @@ const disclaimer = '<p class="callout callout-teal"><strong>General information 
 function businessLandingPage(p) {
   const trail = crumbTrail(p.path, p.label);
   const coverGroups = [
-    { title: 'Property and assets', intro: 'Buildings, stock, equipment and the income your business relies on.', links: ['/business-property-insurance/', '/business-property-insurance/fire/', '/business-property-insurance/burglary/', '/business-property-insurance/business-interruption/'] },
-    { title: 'People and employee benefits', intro: 'Cover for employees and benefits you provide to your team.', links: ['/wiba-insurance-kenya/', '/employers-liability-insurance-kenya/', '/medical-insurance-kenya/group/', '/group-life-insurance-kenya/'] },
-    { title: 'Liability and professional risk', intro: 'Claims involving customers, third parties, professional services or management.', links: ['/public-liability-insurance-kenya/', '/professional-indemnity-insurance-kenya/', '/directors-officers-insurance-kenya/', '/cyber-insurance-kenya/'] },
-    { title: 'Operations, transit and projects', intro: 'Goods in transit, vehicles, equipment and construction projects.', links: ['/marine-insurance-kenya/', '/goods-in-transit-insurance-kenya/', '/motor-insurance-kenya/commercial-fleet/', '/engineering-insurance-kenya/', '/contractors-all-risks-insurance-kenya/', '/contractors-plant-machinery-insurance-kenya/'] }
+    { title: 'Property and assets', intro: 'Buildings, stock, equipment and the income your business relies on.', links: ['/business-property-insurance/', '/business-property-insurance/fire/', '/business-property-insurance/burglary/', '/business-property-insurance/business-interruption/'], art: 'property', tone: 'light' },
+    { title: 'People and employee benefits', intro: 'Cover for employees and benefits you provide to your team.', links: ['/wiba-insurance-kenya/', '/employers-liability-insurance-kenya/', '/medical-insurance-kenya/group/', '/group-life-insurance-kenya/'], art: 'people', tone: 'teal' },
+    { title: 'Liability and professional risk', intro: 'Claims involving customers, third parties, professional services or management.', links: ['/public-liability-insurance-kenya/', '/professional-indemnity-insurance-kenya/', '/directors-officers-insurance-kenya/', '/cyber-insurance-kenya/'], art: 'shield', tone: 'warm' },
+    { title: 'Operations, transit and projects', intro: 'Goods in transit, vehicles, equipment and construction projects.', links: ['/marine-insurance-kenya/', '/goods-in-transit-insurance-kenya/', '/motor-insurance-kenya/commercial-fleet/', '/engineering-insurance-kenya/', '/contractors-all-risks-insurance-kenya/', '/contractors-plant-machinery-insurance-kenya/'], art: 'operations', tone: 'dark' }
   ];
   const businessTypes = [
-    ['Retail, wholesale and distribution', 'Stock, premises, customer liability, money, deliveries and employee risks.'],
-    ['Hospitality, restaurants and accommodation', 'Property, interruption, guest liability, staff and day-to-day operations.'],
-    ['Contractors and project businesses', 'Contract works, plant, third-party liability, WIBA and tender requirements.'],
-    ['Professional and service businesses', 'Professional indemnity, cyber, office assets, employee benefits and liability.'],
-    ['Manufacturing, workshops and logistics', 'Machinery, property, interruption, transit, fleet and workforce risks.'],
-    ['Schools, clinics and organisations', 'Property, liability, employees, specialist equipment and service-related exposures.']
+    ['Retail, wholesale and distribution', 'Stock, premises, customer liability, money, deliveries and employee risks.', '/images/website-generated/sme.jpg', 'retail'],
+    ['Hospitality, restaurants and accommodation', 'Property, interruption, guest liability, staff and day-to-day operations.', '/images/website-generated/home-business.jpg', 'hospitality'],
+    ['Contractors and project businesses', 'Contract works, plant, third-party liability, WIBA and tender requirements.', '/images/website-generated/construction.jpg', 'contractors'],
+    ['Professional and service businesses', 'Professional indemnity, cyber, office assets, employee benefits and liability.', '/images/website-generated/professional.jpg', 'professional'],
+    ['Manufacturing, workshops and logistics', 'Machinery, property, interruption, transit, fleet and workforce risks.', '/images/website-generated/cargo.jpg', 'logistics'],
+    ['Schools, clinics and organisations', 'Property, liability, employees, specialist equipment and service-related exposures.', '/images/website-generated/medical.jpg', 'organisations']
   ];
   const coverLinks = (links) => links.filter(x => registry.has(x)).map(x => `<li><a href="${x}">${esc(registry.get(x).label)} <span aria-hidden="true">↗</span></a></li>`).join('');
   const body = `
