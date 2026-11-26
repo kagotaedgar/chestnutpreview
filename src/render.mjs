@@ -1,4 +1,8 @@
 import { site } from './config.mjs';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+
+const cssVersion = createHash('sha256').update(readFileSync('public/styles.css')).digest('hex').slice(0, 12);
 
 export const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export const abs = (p) => site.url + p;
@@ -182,7 +186,7 @@ export function layout(page) {
 <link rel="shortcut icon" href="/favicon.png?v=5" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles.css?v=${cssVersion}">
 <noscript><style>.conditional[hidden]{display:block}</style></noscript>
 <script type="application/ld+json">${ld}</script>
 ${ga}
