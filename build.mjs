@@ -83,6 +83,68 @@ const services = [
     faqs: [['How early should I contact you?', 'As soon as you see the requirement. Some covers take time to arrange.']]
   }
 ];
+services.push(
+  {
+    path: '/insurance-policy-contract-review/', label: 'Policy and Contract Review', kind: 'generic',
+    title: 'Insurance Policy and Contract Review | Chestnut',
+    h1: 'Insurance Policy and Contract Review',
+    desc: 'Review policy wording, schedules and contractual insurance requirements to identify gaps, conditions and questions before you commit.',
+    lead: 'Insurance documents and contract clauses can be difficult to interpret. We help you review what a policy says, what a contract requires and what questions should be resolved before you sign, renew or rely on the cover.',
+    does: ['Review policy schedules and key wording against your stated needs', 'Identify limits, exclusions, conditions, warranties and reporting obligations to pay attention to', 'Compare contract or tender insurance clauses with existing cover', 'Prepare a clear list of issues and questions for insurers or the contracting party', 'Explain the practical implications in plain language'],
+    need: ['Policy schedule and wording, if available', 'Relevant contract, tender or lease clauses', 'Your business activity and the reason for the review'],
+    steps: [['Share documents','Send the policy, contract clause or documents you want reviewed.'],['Review','We identify key terms, gaps, obligations and points needing clarification.'],['Discussion','We explain the findings and possible next steps.'],['Action','If you instruct us, we can help seek clarification or explore alternative cover.']],
+    limits: ['This is an insurance review, not a legal opinion. Legal interpretation of a contract should be confirmed with your lawyer.', 'Insurer decisions and cover are subject to underwriting and policy terms.'],
+    faqs: [['Can you review a policy I did not arrange?','Yes. Share the documents and tell us what you want to understand. We will confirm the scope of assistance.']]
+  },
+  {
+    path: '/insurance-renewal-management/', label: 'Insurance Renewal Management', kind: 'generic',
+    title: 'Insurance Renewal Management Kenya | Chestnut',
+    h1: 'Insurance Renewal Management',
+    desc: 'Prepare for insurance renewal early, review values and exposures, seek terms and compare options before expiry.',
+    lead: 'Renewal should be a review of the business as it is today—not a repeat of last year’s policy. We help organise the process, update information, identify changes and seek renewal terms in good time.',
+    does: ['Create a renewal timeline and list the information insurers need', 'Review sums insured, payroll, turnover, activities and locations', 'Identify changes in risk, claims or contractual requirements', 'Seek renewal terms and alternatives where you instruct us', 'Compare premiums, limits, exclusions and conditions', 'Help track outstanding documents and decisions'],
+    need: ['Current policy schedules and renewal dates', 'Updated asset, stock, payroll or turnover information as relevant', 'Claims and incident history', 'Changes to business activities, locations or contracts'],
+    steps: [['Plan','Start before expiry and identify the covers due.'],['Update','Refresh the information and confirm changes.'],['Market','We seek terms from insurers where instructed and available.'],['Compare and decide','Review options and choose what to renew or change.']],
+    limits: ['Renewal terms and availability depend on insurers and the information provided.', 'We cannot guarantee lower premiums or uninterrupted cover if instructions or information arrive late.'],
+    faqs: [['When should I start?','Ideally begin several weeks before expiry. Complex risks or tender requirements may need more time.']]
+  },
+  {
+    path: '/insurance-procurement-support/', label: 'Insurance Procurement Support', kind: 'generic',
+    title: 'Insurance Procurement Support Kenya | Chestnut',
+    h1: 'Insurance Procurement Support',
+    desc: 'Support for organisations procuring insurance: prepare requirements, compare insurer quotations and review cover and terms.',
+    lead: 'Insurance procurement is more than collecting prices. We help organisations define the requirement, gather quotations, compare the coverage and conditions, and document the decision-making process.',
+    does: ['Help develop an insurance schedule or request for quotation', 'Clarify the required covers, limits, extensions and information', 'Coordinate quotation requests with insurers, subject to your instruction', 'Compare responses on coverage, limits, exclusions, excesses and price', 'Highlight differences and questions for the procurement team', 'Support the organisation through selection and placement instructions'],
+    need: ['Current programme or draft requirements', 'Procurement timeline and evaluation criteria', 'Asset, payroll, turnover or exposure information relevant to the covers'],
+    steps: [['Define','Clarify the organisation’s risk and insurance requirements.'],['Request','Seek quotations from suitable insurers where instructed.'],['Compare','Prepare a structured comparison of terms and pricing.'],['Decide','Support your team with questions and next steps.']],
+    limits: ['Insurer participation and quotation availability are not guaranteed.', 'Procurement rules and the organisation’s internal approvals remain the client’s responsibility.'],
+    faqs: [['Can you help us compare quotations we already have?','Yes. We can review the quotations and compare the coverage, terms, exclusions, limits and excesses—not just price.']]
+  },
+  {
+    path: '/insurance-programme-management/', label: 'Insurance Programme Management', kind: 'generic',
+    title: 'Insurance Programme Management | Chestnut',
+    h1: 'Insurance Programme Management',
+    desc: 'Help organisations coordinate insurance policies, renewals, documents, changes, reporting and claims support across their programme.',
+    lead: 'For organisations with several policies, locations, assets or departments, insurance administration can become fragmented. We help create a clearer view of the programme and coordinate key insurance tasks.',
+    does: ['Maintain a consolidated view of policies, insurers, limits and expiry dates', 'Coordinate renewal planning and information collection', 'Help track certificates, endorsements and policy documents', 'Support policy changes as operations or assets change', 'Coordinate claims follow-up and outstanding information', 'Provide periodic programme review and issue tracking'],
+    need: ['Policy list and schedules', 'Locations, assets and operating departments', 'Renewal calendar and key contacts', 'Known claims, incidents or outstanding issues'],
+    steps: [['Map','Compile the existing policies and key information.'],['Organise','Create a renewal and document-tracking approach.'],['Coordinate','Help manage information, changes and follow-ups.'],['Review','Identify programme issues and actions for the next cycle.']],
+    limits: ['Scope and frequency of programme-management support will be agreed with the client.', 'Insurers retain responsibility for issuing policies, endorsements and claim decisions.'],
+    faqs: [['Is this only for large organisations?','It can help any organisation with multiple policies or renewals, although the scope should be proportionate to the programme.']]
+  },
+  {
+    path: '/employee-insurance-education/', label: 'Employee Insurance Education', kind: 'generic',
+    title: 'Employee Insurance Education and Benefits Awareness | Chestnut',
+    h1: 'Employee Insurance Education',
+    desc: 'Help employees understand workplace insurance and benefits, what cover provides, how to access it and how claims or notifications work.',
+    lead: 'Employee benefits are more useful when people understand them. We can help organisations provide practical education on the insurance benefits they offer, including what is covered, key limits, exclusions, contacts and how to access support.',
+    does: ['Explain employee insurance benefits in plain language', 'Provide education on WIBA, group medical, group life and other benefits in scope', 'Clarify how to access care, report an incident or notify a claim', 'Prepare FAQs and practical guidance for staff', 'Deliver briefings or sessions for employees and HR teams'],
+    need: ['Current benefit and policy summaries', 'Employee audience and preferred format', 'Questions or recurring issues from staff'],
+    steps: [['Agree the scope','Confirm which benefits and employee groups are covered.'],['Prepare','Develop a practical briefing based on the actual policies.'],['Deliver','Conduct the agreed session or provide materials.'],['Follow up','Answer agreed questions and identify recurring issues.']],
+    limits: ['Education is based on the actual policy documents provided. It does not amend policy terms or replace the insurer’s formal wording.', 'Availability, format and fees, if any, will be agreed before delivery.'],
+    faqs: [['Can this be tailored to our employees?','Yes. The content can be tailored to your workforce, benefit structure and common questions.']]
+  }
+);
 services.forEach((s) => add(s.path, s.label, '/insurance-advisory-services/', blurbOf(s.lead)));
 
 const personalHub = new Set(personal.filter((p) => p.parent === '/personal-insurance/' || p.path.startsWith('/motor') || p.path.startsWith('/medical') || p.path.startsWith('/travel')).map((p) => p.path));
@@ -97,7 +159,61 @@ const heroCtas = (p, who = 'a quote') => `<div class="btn-row"><a class="btn btn
 const disclaimer = '<p class="callout callout-teal"><strong>General information only.</strong> What is covered, the terms and the premium depend on the insurer\u2019s policy wording, your circumstances and the information you disclose. Nothing here is a promise of cover.</p>';
 
 // ---------------------------------------------------------------- product pages
+function businessLandingPage(p) {
+  const trail = crumbTrail(p.path, p.label);
+  const coverGroups = [
+    { title: 'Property and assets', intro: 'Protect the physical assets your business depends on.', links: ['/business-property-insurance/', '/business-property-insurance/fire/', '/business-property-insurance/burglary/', '/business-property-insurance/business-interruption/'] },
+    { title: 'People and employee benefits', intro: 'Address employee obligations and the benefits you provide.', links: ['/wiba-insurance-kenya/', '/employers-liability-insurance-kenya/', '/medical-insurance-kenya/group/', '/group-life-insurance-kenya/'] },
+    { title: 'Liability and professional risk', intro: 'Consider claims from customers, clients, third parties and professional services.', links: ['/public-liability-insurance-kenya/', '/professional-indemnity-insurance-kenya/', '/directors-officers-insurance-kenya/', '/cyber-insurance-kenya/'] },
+    { title: 'Operations, transit and projects', intro: 'Cover risks arising from movement of goods, vehicles, projects and equipment.', links: ['/marine-insurance-kenya/', '/goods-in-transit-insurance-kenya/', '/motor-insurance-kenya/commercial-fleet/', '/engineering-insurance-kenya/', '/contractors-all-risks-insurance-kenya/', '/contractors-plant-machinery-insurance-kenya/'] }
+  ];
+  const businessTypes = [
+    ['Retail, wholesale and distribution', 'Stock, premises, customer liability, money, deliveries and employee risks.'],
+    ['Hospitality, restaurants and accommodation', 'Buildings and contents, interruption, guest liability, employees and specialist operational risks.'],
+    ['Contractors and project businesses', 'Contract works, plant, third-party liability, WIBA and contract insurance requirements.'],
+    ['Professional and service businesses', 'Professional indemnity, cyber, office assets, employee benefits and liability.'],
+    ['Manufacturing, workshops and logistics', 'Machinery, property, interruption, goods in transit, fleet and workforce risks.'],
+    ['Schools, clinics and organisations', 'Property, public liability, employee cover, specialist equipment and service-related exposures.']
+  ];
+  const body = `
+<section class="page-hero"><div class="wrap">
+  ${crumbsHtml(trail)}
+  <p style="margin-top:var(--s5)"><span class="pill">Business insurance</span></p>
+  <h1>${esc(p.h1)}</h1>
+  <p class="lead">${esc(p.lead)}</p>
+  <div class="btn-row"><a class="btn btn-primary" href="/get-a-quote/?cover=%2Fbusiness-insurance-kenya%2F">Request business insurance options</a><a class="btn btn-ghost" href="/business-risk-assessment/">Request a risk assessment</a><a class="btn btn-ghost" href="/insurance-portfolio-review/">Review existing cover</a></div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="section-head"><p class="eyebrow">Built around your operations</p><h2>Insurance for the business you actually run</h2><p class="lead">The right programme depends on your industry, premises, assets, employees, contracts and how your business operates. Start with the exposures that matter most, then select covers that respond to them.</p></div>
+  <div class="solution-cards business-type-cards">${businessTypes.map(([h,t])=>`<article class="solution-card"><h3>${esc(h)}</h3><p>${esc(t)}</p></article>`).join('')}</div>
+</div></section>
+<section class="section section-warm"><div class="wrap">
+  <div class="section-head"><p class="eyebrow">Explore business cover</p><h2>Build your insurance programme</h2><p class="lead">There is no single policy that protects every business against every loss. These are the main areas to consider.</p></div>
+  <div class="solution-cards business-cover-cards">${coverGroups.map(g=>`<article class="solution-card"><h3>${esc(g.title)}</h3><p>${esc(g.intro)}</p><ul>${g.links.map(x=>`<li><a href="${x}">${esc(registry.get(x)?.label || x)}</a></li>`).join('')}</ul></article>`).join('')}</div>
+</div></section>
+<section class="section"><div class="wrap"><div class="split">
+  <div><p class="eyebrow">Common gaps</p><h2>What a business insurance review can uncover</h2></div>
+  <div class="prose"><ul>${p.risks.map(([h,t])=>`<li><strong>${esc(h)}:</strong> ${esc(t)}</li>`).join('')}</ul><p>Business insurance should be reviewed when your assets, workforce, activities, contracts or locations change—not only when a policy is about to expire.</p></div>
+</div></div></section>
+<section class="section section-warm"><div class="wrap"><div class="split">
+  <div><p class="eyebrow">Our approach</p><h2>Practical advice, from assessment to renewal</h2></div>
+  <div class="prose"><ol><li><strong>Understand your business.</strong> We discuss what you do, what you own, your people and your contractual obligations.</li><li><strong>Identify the exposures.</strong> We help separate essential, recommended and optional covers.</li><li><strong>Seek suitable terms.</strong> With your instruction, we approach insurers for options based on the information provided and available markets.</li><li><strong>Explain the differences.</strong> We help you compare cover, limits, exclusions, excesses and premiums—not just price.</li><li><strong>Support you after placement.</strong> We can assist with policy documents, changes, renewals and claims follow-up.</li></ol></div>
+</div></div></section>
+<section class="section"><div class="wrap"><div class="split">
+  <div><p class="eyebrow">Before requesting a quote</p><h2>Information that helps insurers assess your risk</h2></div>
+  <div>${ul(p.info)}<p>Don't worry if you do not have everything ready. Start with a brief description of your business and we will advise what additional information is needed.</p></div>
+</div></div></section>
+<section class="section section-warm"><div class="wrap"><div class="split">
+  <div><p class="eyebrow">Questions</p><h2>Business insurance FAQs</h2></div><div>${faqHtml(p.faqs)}</div>
+</div></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><h2>Start with the areas relevant to you</h2></div>${indexList(p.related)}<div class="btn-row" style="margin-top:var(--s5)"><a class="btn btn-primary" href="/get-a-quote/">Request a business quote</a><a class="btn btn-ghost" href="/insurance-advisory-services/">Explore advisory services</a></div></div></section>
+${ctaBand('Protect your business with a programme that fits.', 'Tell us what you do, what you need to protect and any insurance requirements you have. We will help you identify the next step.')}
+`;
+  emit(p.path, layout({ path:p.path, title:p.title, desc:p.desc, body, schema:[{ '@type':'WebPage', '@id':abs(p.path)+'#page', url:abs(p.path), name:p.title, description:p.desc, isPartOf:{'@id':abs('/#website')} }, crumbsSchema(trail), faqSchema(p.faqs)] }));
+}
+
 function productPage(p) {
+  if (p.path === '/business-insurance-kenya/') { businessLandingPage(p); return; }
   const isFin = Boolean(p.financial);
   const trail = crumbTrail(p.path, p.label);
   const group = isFin ? 'Financial products (not insurance)' : personalHub.has(p.path) || p.path.startsWith('/home') || p.path.startsWith('/personal-acc') || p.path.startsWith('/group-life') ? 'Insurance' : 'Business insurance';
@@ -228,21 +344,22 @@ hubPage({
   title: 'Insurance Advisory Services Kenya | Review, Claims, Risk | Chestnut',
   desc: 'Insurance portfolio reviews, claims assistance, business risk assessments and tender support from Chestnut Insurance Agency in Nairobi.',
   h1: 'Advice that goes beyond buying a policy', lead: 'Insurance is only useful if it fits your risks and responds when you need it. Our advisory services help before you buy, at renewal and when a claim arises.',
-  body: sect('Advisory services', 'Choose the one that matches where you are.', indexList(services.map((s) => s.path)))
+  body: `<section class="section"><div class="wrap"><div class="solution-cards advisory-service-cards">${services.map((s) => `<article class="solution-card"><h3><a href="${s.path}">${esc(s.label)}</a></h3><p>${esc(s.lead)}</p><a class="textlink" href="${s.path}">Explore service</a></article>`).join('')}</div></div></section>`
 });
 
 // ---------------------------------------------------------------- service pages
-function serviceForm(kind) {
+function serviceForm(kind, serviceLabel = 'Advisory service') {
   const base = field({ id: 'name', label: 'Your name', required: true, autocomplete: 'name' }) +
     `<div class="row">${field({ id: 'phone', label: 'Phone', type: 'tel', required: true, autocomplete: 'tel' })}${field({ id: 'email', label: 'Email', type: 'email', required: true, autocomplete: 'email' })}</div>`;
   const extra = {
     review: field({ id: 'company', label: 'Business name', required: true }) + `<div class="row">${field({ id: 'current_covers', label: 'Current covers', hint: 'e.g. fire, WIBA, motor' })}${field({ id: 'renewal', label: 'Renewal date', type: 'date' })}</div>`,
     claims: `<div class="row">${field({ id: 'insurer', label: 'Insurer' })}${field({ id: 'policy_type', label: 'Type of policy', required: true, hint: 'e.g. motor, fire' })}</div>${field({ id: 'incident_date', label: 'Date of incident', type: 'date', required: true })}`,
     risk: field({ id: 'company', label: 'Business name', required: true }) + `<div class="row">${field({ id: 'industry', label: 'Industry', required: true })}${field({ id: 'employees', label: 'Number of employees' })}</div>`,
-    tender: field({ id: 'company', label: 'Organisation', required: true }) + `<div class="row">${field({ id: 'deadline', label: 'Submission deadline', type: 'date', required: true })}${field({ id: 'procuring', label: 'Procuring entity' })}</div>`
+    tender: field({ id: 'company', label: 'Organisation', required: true }) + `<div class="row">${field({ id: 'deadline', label: 'Submission deadline', type: 'date', required: true })}${field({ id: 'procuring', label: 'Procuring entity' })}</div>`,
+    generic: field({ id: 'company', label: 'Business or organisation name' }) + field({ id: 'service_details', label: 'What would you like help with?', type: 'textarea', required: true })
   }[kind];
-  const msg = { review: 'Anything you want us to focus on', claims: 'Brief description of what happened', risk: 'What worries you most about the business', tender: 'Which insurance requirements does the tender set?' }[kind];
-  return formShell(`service-${kind}`, `${kind} enquiry from website`, base + extra + field({ id: 'message', label: msg, type: 'textarea', required: kind === 'claims' || kind === 'tender' }), 'Send request');
+  const msg = { review: 'Anything you want us to focus on', claims: 'Brief description of what happened', risk: 'What worries you most about the business', tender: 'Which insurance requirements does the tender set?', generic: 'Any additional details' }[kind];
+  return formShell(`service-${kind}`, `${serviceLabel} enquiry from website`, base + extra + field({ id: 'message', label: msg, type: 'textarea', required: kind === 'claims' || kind === 'tender' }), 'Send request');
 }
 services.forEach((s) => {
   const trail = crumbTrail(s.path, s.label);
@@ -256,7 +373,7 @@ ${s.kind === 'claims' && (site.phone || site.whatsapp) ? `<div class="btn-row">$
   <h2>Please note</h2>${ul(s.limits)}
   <h2>Questions</h2>${faqHtml(s.faqs)}
 </article>
-<aside class="aside"><div class="aside-box" id="request"><h2>${s.kind === 'claims' ? 'Request claims support' : 'Make a request'}</h2><p>Tell us a little and an advisor will respond.</p>${serviceForm(s.kind)}</div></aside></div>
+<aside class="aside"><div class="aside-box" id="request"><h2>${s.kind === 'claims' ? 'Request claims support' : 'Make a request'}</h2><p>Tell us a little and an advisor will respond.</p>${serviceForm(s.kind, s.label)}</div></aside></div>
 ${ctaBand()}`;
   emit(s.path, layout({ path: s.path, title: s.title, desc: s.desc, body, schema: [{ '@type': 'WebPage', url: abs(s.path), name: s.title, description: s.desc }, crumbsSchema(trail), faqSchema(s.faqs)] }));
 });
