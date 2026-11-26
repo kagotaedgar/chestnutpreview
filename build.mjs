@@ -358,7 +358,7 @@ function serviceForm(kind) {
     tender: field({ id: 'company', label: 'Organisation', required: true }) + `<div class="row">${field({ id: 'deadline', label: 'Submission deadline', type: 'date', required: true })}${field({ id: 'procuring', label: 'Procuring entity' })}</div>`,
     generic: field({ id: 'company', label: 'Business or organisation name' }) + field({ id: 'service_details', label: 'What would you like help with?', type: 'textarea', required: true })
   }[kind];
-  const msg = { review: 'Anything you want us to focus on', claims: 'Brief description of what happened', risk: 'What worries you most about the business', tender: 'Which insurance requirements does the tender set?' }[kind];
+  const msg = { review: 'Anything you want us to focus on', claims: 'Brief description of what happened', risk: 'What worries you most about the business', tender: 'Which insurance requirements does the tender set?', generic: 'Any additional details' }[kind];
   return formShell(`service-${kind}`, `${kind} enquiry from website`, base + extra + field({ id: 'message', label: msg, type: 'textarea', required: kind === 'claims' || kind === 'tender' }), 'Send request');
 }
 services.forEach((s) => {
