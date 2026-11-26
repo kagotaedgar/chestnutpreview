@@ -201,7 +201,7 @@ function businessLandingPage(p) {
 </div></section>
 <section class="section section-warm biz-sectors"><div class="wrap">
   <div class="biz-section-heading"><div><p class="eyebrow">Industry and operations</p><h2>Insurance for different types of businesses</h2></div><p>Two businesses can own similar assets but face different risks. We consider how you work, who you serve and the contracts you need to meet.</p></div>
-  <div class="biz-sector-list">${businessTypes.map(([h,t,img,slug],i)=>`<article class="biz-sector-tile biz-sector-${slug}"><img src="${img}" alt="" loading="lazy"><div class="biz-sector-overlay"><span class="biz-sector-number">0${i+1}</span><h3>${esc(h)}</h3><p>${esc(t)}</p></div></article>`).join('')}>
+  <div class="biz-sector-list">${businessTypes.map(([h,t,img,slug],i)=>`<article class="biz-sector-tile biz-sector-${slug}"><img src="${img}" alt="" loading="lazy"><div class="biz-sector-overlay"><span class="biz-sector-number">0${i+1}</span><h3>${esc(h)}</h3><p>${esc(t)}</p></div></article>`).join('')}</div>
 </div></section>
 <section class="section biz-review"><div class="wrap">
   <div class="biz-review-grid"><div><p class="eyebrow">Insurance review</p><h2>Small gaps can become expensive problems.</h2><p>Insurance is worth reviewing when your business changes—or when the values, terms and requirements in your existing policies may no longer match your operations.</p><a class="btn btn-primary" href="/insurance-portfolio-review/">Review your existing cover</a></div>
