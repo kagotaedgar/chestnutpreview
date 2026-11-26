@@ -348,7 +348,7 @@ hubPage({
 });
 
 // ---------------------------------------------------------------- service pages
-function serviceForm(kind) {
+function serviceForm(kind, serviceLabel = 'Advisory service') {
   const base = field({ id: 'name', label: 'Your name', required: true, autocomplete: 'name' }) +
     `<div class="row">${field({ id: 'phone', label: 'Phone', type: 'tel', required: true, autocomplete: 'tel' })}${field({ id: 'email', label: 'Email', type: 'email', required: true, autocomplete: 'email' })}</div>`;
   const extra = {
@@ -359,7 +359,7 @@ function serviceForm(kind) {
     generic: field({ id: 'company', label: 'Business or organisation name' }) + field({ id: 'service_details', label: 'What would you like help with?', type: 'textarea', required: true })
   }[kind];
   const msg = { review: 'Anything you want us to focus on', claims: 'Brief description of what happened', risk: 'What worries you most about the business', tender: 'Which insurance requirements does the tender set?', generic: 'Any additional details' }[kind];
-  return formShell(`service-${kind}`, `${kind} enquiry from website`, base + extra + field({ id: 'message', label: msg, type: 'textarea', required: kind === 'claims' || kind === 'tender' }), 'Send request');
+  return formShell(`service-${kind}`, `${serviceLabel} enquiry from website`, base + extra + field({ id: 'message', label: msg, type: 'textarea', required: kind === 'claims' || kind === 'tender' }), 'Send request');
 }
 services.forEach((s) => {
   const trail = crumbTrail(s.path, s.label);
@@ -373,7 +373,7 @@ ${s.kind === 'claims' && (site.phone || site.whatsapp) ? `<div class="btn-row">$
   <h2>Please note</h2>${ul(s.limits)}
   <h2>Questions</h2>${faqHtml(s.faqs)}
 </article>
-<aside class="aside"><div class="aside-box" id="request"><h2>${s.kind === 'claims' ? 'Request claims support' : 'Make a request'}</h2><p>Tell us a little and an advisor will respond.</p>${serviceForm(s.kind)}</div></aside></div>
+<aside class="aside"><div class="aside-box" id="request"><h2>${s.kind === 'claims' ? 'Request claims support' : 'Make a request'}</h2><p>Tell us a little and an advisor will respond.</p>${serviceForm(s.kind, s.label)}</div></aside></div>
 ${ctaBand()}`;
   emit(s.path, layout({ path: s.path, title: s.title, desc: s.desc, body, schema: [{ '@type': 'WebPage', url: abs(s.path), name: s.title, description: s.desc }, crumbsSchema(trail), faqSchema(s.faqs)] }));
 });
