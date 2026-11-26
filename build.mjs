@@ -531,7 +531,6 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
       <a href="/medical-insurance-kenya/group/"><span class="sg-icon">♧</span><span><strong>Group Medical &amp; Life</strong><small>Staff benefits for employers.</small></span><b aria-hidden="true">›</b></a>
       <a href="/contractors-all-risks-insurance-kenya/"><span class="sg-icon">⚒</span><span><strong>Contractors All Risks</strong><small>Construction projects and third parties.</small></span><b aria-hidden="true">›</b></a>
       <a href="/marine-insurance-kenya/"><span class="sg-icon">≋</span><span><strong>Marine Cargo</strong><small>Import cover for sea, air and road.</small></span><b aria-hidden="true">›</b></a>
-      <a href="/public-liability-insurance-kenya/"><span class="sg-icon">◇</span><span><strong>Public Liability</strong><small>Injury and damage claims from third parties.</small></span><b aria-hidden="true">›</b></a>
       <a href="/professional-indemnity-insurance-kenya/"><span class="sg-icon">▤</span><span><strong>Professional Indemnity &amp; Cyber</strong><small>Professional errors and digital risks.</small></span><b aria-hidden="true">›</b></a>
       <a href="/airbnb-insurance-kenya/"><span class="sg-icon">⌂</span><span><strong>AirBnB Package</strong><small>Cover for short-stay rental properties.</small></span><b aria-hidden="true">›</b></a>
     </div></div>
