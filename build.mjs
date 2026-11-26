@@ -518,20 +518,30 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 
 
 
-<section class="section popular-covers-section"><div class="wrap">
-  <div class="section-head"><p class="eyebrow">Popular solutions</p><h2>Insurance and Financial Solutions in Kenya</h2><p class="lead">Compare insurance and financial solutions in Kenya for individuals, families, professionals, importers and businesses. Get practical advice and support from Chestnut Insurance Agency in Nairobi.</p></div>
-  <div class="solution-cards">
-    <a class="solution-card" href="/motor-insurance-kenya/"><h3>Motor Insurance in Kenya</h3><p>Private car, commercial vehicle, fleet, PSV and taxi insurance with options from leading Kenyan insurers.</p></a>
-    <a class="solution-card" href="/medical-insurance-kenya/"><h3>Medical Insurance in Kenya</h3><p>Individual, family, group and corporate medical insurance solutions for healthcare costs and employee benefits.</p></a>
-    <a class="solution-card" href="/group-life-insurance-kenya/"><h3>Life Insurance</h3><p>Group life insurance for employers and organisations, with options to discuss personal protection needs.</p></a>
-    <a class="solution-card" href="/money-market-funds-kenya/"><h3>Money Market Funds in Kenya</h3><p>Explore money market funds and savings options for short- and medium-term financial goals.</p></a>
-    <a class="solution-card" href="/marine-insurance-kenya/"><h3>Marine Cargo Insurance</h3><p>Import cargo insurance for goods transported by sea, air or road, including shipments entering Kenya through Mombasa.</p></a>
-    <a class="solution-card" href="/business-insurance-kenya/"><h3>Business Insurance in Kenya</h3><p>Insurance for Kenyan businesses, including property, liability, employees, equipment, stock and business operations.</p></a>
-      <a class="solution-card" href="/contractors-all-risks-insurance-kenya/"><h3>Contractors All Risks Insurance</h3><p>Cover for construction projects against accidental damage, third-party liability and associated project risks.</p></a>
-    <a class="solution-card" href="/wiba-insurance-kenya/"><h3>WIBA Insurance in Kenya</h3><p>Work Injury Benefits Act insurance for employers, protecting employees against work-related injury and occupational illness.</p></a>
-    <a class="solution-card" href="/pension-and-retirement-planning-kenya/"><h3>Pensions and Retirement Planning</h3><p>Retirement planning, pension arrangements and employee retirement benefits solutions for individuals and organisations.</p></a>
-    <a class="solution-card" href="/travel-insurance-kenya/"><h3>Travel Insurance in Kenya</h3><p>Travel cover for medical emergencies, baggage, trip disruption and other unexpected events while travelling abroad.</p></a>
+<section class="section popular-covers-section chestnut-solutions"><div class="wrap">
+  <div class="section-head"><p class="eyebrow">Our insurance solutions</p><h2>Insurance for the way you live and work in Kenya</h2><p class="lead">Compare cover from Kenyan insurers with an advisor who explains the terms and stays with you at claim time.</p></div>
+  <div class="solution-featured">
+    <a class="solution-feature" href="/motor-insurance-kenya/"><img src="/images/site/motor.jpg" alt="" loading="lazy"><div class="solution-feature-content"><span class="solution-icon" aria-hidden="true">🚘</span><div><h3>Motor Insurance</h3><p>Private, commercial, PSV and fleet cover.</p><span class="solution-link">Explore cover <span aria-hidden="true">→</span></span></div></div></a>
+    <a class="solution-feature" href="/medical-insurance-kenya/"><img src="/images/site/medical.jpg" alt="" loading="lazy"><div class="solution-feature-content"><span class="solution-icon" aria-hidden="true">♡</span><div><h3>Medical Insurance</h3><p>Individual, family and group cover for hospital and outpatient care.</p><span class="solution-link">Explore cover <span aria-hidden="true">→</span></span></div></div></a>
+    <a class="solution-feature" href="/business-insurance-kenya/"><img src="/images/site/business.jpg" alt="" loading="lazy"><div class="solution-feature-content"><span class="solution-icon" aria-hidden="true">▦</span><div><h3>Business Insurance</h3><p>Property, liability, equipment, stock and people in one programme.</p><span class="solution-link">Explore cover <span aria-hidden="true">→</span></span></div></div></a>
   </div>
+  <div class="solution-groups">
+    <div class="solution-group"><h3>For employers and businesses</h3><div class="solution-link-grid">
+      <a href="/wiba-insurance-kenya/"><span class="sg-icon">⌂</span><span><strong>WIBA</strong><small>Statutory work injury cover for employees.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/medical-insurance-kenya/group/"><span class="sg-icon">♧</span><span><strong>Group Medical &amp; Life</strong><small>Staff benefits for employers.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/contractors-all-risks-insurance-kenya/"><span class="sg-icon">⚒</span><span><strong>Contractors All Risks</strong><small>Construction projects and third parties.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/marine-insurance-kenya/"><span class="sg-icon">≋</span><span><strong>Marine Cargo</strong><small>Import cover for sea, air and road.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/public-liability-insurance-kenya/"><span class="sg-icon">◇</span><span><strong>Public Liability</strong><small>Injury and damage claims from third parties.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/professional-indemnity-insurance-kenya/"><span class="sg-icon">▤</span><span><strong>Professional Indemnity &amp; Cyber</strong><small>Professional errors and digital risks.</small></span><b aria-hidden="true">›</b></a>
+    </div></div>
+    <div class="solution-group"><h3>For individuals and families</h3><div class="solution-link-grid">
+      <a href="/travel-insurance-kenya/"><span class="sg-icon">✈</span><span><strong>Travel Insurance</strong><small>Medical, trip and baggage cover.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/home-insurance-kenya/"><span class="sg-icon">⌂</span><span><strong>Home Insurance</strong><small>Your house, contents and valuables.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/personal-accident-insurance-kenya/"><span class="sg-icon">＋</span><span><strong>Personal Accident</strong><small>Protection after an accident.</small></span><b aria-hidden="true">›</b></a>
+      <a href="/group-life-insurance-kenya/"><span class="sg-icon">♧</span><span><strong>Life Insurance</strong><small>Financial protection for your family.</small></span><b aria-hidden="true">›</b></a>
+    </div></div>
+  </div>
+  <div class="financial-strip"><div class="financial-title"><span class="eyebrow">Beyond insurance</span><h3>Planning for your financial future</h3></div><div class="financial-links"><a href="/money-market-funds-kenya/">Money Market Funds <span>→</span></a><a href="/savings-and-education-plans-kenya/">Savings &amp; Education Plans <span>→</span></a><a href="/pension-and-retirement-planning-kenya/">Pensions &amp; Annuities <span>→</span></a><p>Financial products are separate from insurance and offered through partner providers, subject to eligibility and arrangements.</p></div></div>
 </div></section>
 
 <section class="section partners-section"><div class="wrap">
