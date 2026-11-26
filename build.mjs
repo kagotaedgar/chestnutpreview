@@ -545,7 +545,7 @@ emit('/404.html', layout({ path: '/404/', title: 'Page not found | Chestnut Insu
 </div></section>
 
 <section class="section partners-section"><div class="wrap">
-  <div class="section-head"><p class="eyebrow">Our Insurance Partners</p><h2>Insurance solutions backed by leading providers</h2><p class="lead">We work with leading insurance companies in Kenya including APA Insurance, Britam, CIC, Jubilee, Old Mutual, ICEA Lion, First Assurance, AAR, GA Insurance, Sanlam Allianz and Fidelity, subject to product availability and underwriting.</p></div>
+  <div class="section-head"><p class="eyebrow">Our Insurance Partners</p><h2>Insurance solutions backed by leading providers</h2><p class="lead">We work with leading insurance companies in Kenya including APA Insurance, Britam, CIC, Jubilee, Old Mutual, ICEA Lion, First Assurance and others.</p></div>
   <div class="partners-carousel" aria-label="Insurance partner logos">
     <div class="partners-track">
       <div class="partner-logo"><img src="/images/partners/apa.png" alt="APA Insurance" loading="lazy"></div>
