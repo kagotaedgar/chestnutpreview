@@ -196,12 +196,12 @@ function businessLandingPage(p) {
 <section class="section biz-cover-section"><div class="wrap">
   <div class="biz-section-heading"><div><p class="eyebrow">Explore business cover</p><h2>What does your business need to protect?</h2></div><p>Start with the assets, people, responsibilities and operations that matter to your business. These are the main areas we can help you review.</p></div>
   <div class="biz-cover-groups">
-    ${coverGroups.map((g,i)=>`<article class="biz-cover-group"><div class="biz-cover-group-heading"><span class="biz-group-number">0${i+1}</span><div><h3>${esc(g.title)}</h3><p>${esc(g.intro)}</p></div></div><ul>${coverLinks(g.links)}</ul></article>`).join('')}
+    ${coverGroups.map((g,i)=>`<article class="biz-cover-group biz-cover-${g.tone}"><div class="biz-cover-art biz-art-${g.art}" aria-hidden="true"><span>0${i+1}</span><svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="46" stroke="currentColor" stroke-width="1.5" opacity=".35"/><path d="${g.art==='property'?'M25 75V48L60 25L95 48V75H25Z M45 75V55H75V75':g.art==='people'?'M36 78V53C36 45 44 39 52 39S68 45 68 53V78 M25 78H95 M80 40C88 40 94 46 94 54V78':'M32 45L60 25L88 45V77H32Z M48 77V52H72V77'}" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="biz-cover-content"><div class="biz-cover-group-heading"><div><h3>${esc(g.title)}</h3><p>${esc(g.intro)}</p></div></div><ul>${coverLinks(g.links)}</ul></div></article>`).join('')}
   </div>
 </div></section>
 <section class="section section-warm biz-sectors"><div class="wrap">
   <div class="biz-section-heading"><div><p class="eyebrow">Industry and operations</p><h2>Insurance for different types of businesses</h2></div><p>Two businesses can own similar assets but face different risks. We consider how you work, who you serve and the contracts you need to meet.</p></div>
-  <div class="biz-sector-list">${businessTypes.map(([h,t],i)=>`<article><span class="biz-sector-number">0${i+1}</span><div><h3>${esc(h)}</h3><p>${esc(t)}</p></div></article>`).join('')}</div>
+  <div class="biz-sector-list">${businessTypes.map(([h,t,img,slug],i)=>`<article class="biz-sector-tile biz-sector-${slug}"><img src="${img}" alt="" loading="lazy"><div class="biz-sector-overlay"><span class="biz-sector-number">0${i+1}</span><h3>${esc(h)}</h3><p>${esc(t)}</p></div></article>`).join('')}>
 </div></section>
 <section class="section biz-review"><div class="wrap">
   <div class="biz-review-grid"><div><p class="eyebrow">Insurance review</p><h2>Small gaps can become expensive problems.</h2><p>Insurance is worth reviewing when your business changes—or when the values, terms and requirements in your existing policies may no longer match your operations.</p><a class="btn btn-primary" href="/insurance-portfolio-review/">Review your existing cover</a></div>
