@@ -162,64 +162,52 @@ const disclaimer = '<p class="callout callout-teal"><strong>General information 
 function businessLandingPage(p) {
   const trail = crumbTrail(p.path, p.label);
   const coverGroups = [
-    { title: 'Property & assets', kicker: '01', intro: 'Protect buildings, stock, equipment and income after an insured loss.', links: ['/business-property-insurance/', '/business-property-insurance/fire/', '/business-property-insurance/business-interruption/'] },
-    { title: 'People & benefits', kicker: '02', intro: 'Address workplace obligations and the benefits you provide to your team.', links: ['/wiba-insurance-kenya/', '/employers-liability-insurance-kenya/', '/medical-insurance-kenya/group/', '/group-life-insurance-kenya/'] },
-    { title: 'Liability & professional risk', kicker: '03', intro: 'Consider claims arising from customers, clients, third parties and professional services.', links: ['/public-liability-insurance-kenya/', '/professional-indemnity-insurance-kenya/', '/directors-officers-insurance-kenya/', '/cyber-insurance-kenya/'] },
-    { title: 'Operations & projects', kicker: '04', intro: 'Cover movement of goods, vehicles, projects, machinery and equipment.', links: ['/marine-insurance-kenya/', '/goods-in-transit-insurance-kenya/', '/motor-insurance-kenya/commercial-fleet/', '/engineering-insurance-kenya/', '/contractors-all-risks-insurance-kenya/'] }
+    { title: 'Property and assets', intro: 'Protect the physical assets your business depends on.', links: ['/business-property-insurance/', '/business-property-insurance/fire/', '/business-property-insurance/burglary/', '/business-property-insurance/business-interruption/'] },
+    { title: 'People and employee benefits', intro: 'Address employee obligations and the benefits you provide.', links: ['/wiba-insurance-kenya/', '/employers-liability-insurance-kenya/', '/medical-insurance-kenya/group/', '/group-life-insurance-kenya/'] },
+    { title: 'Liability and professional risk', intro: 'Consider claims from customers, clients, third parties and professional services.', links: ['/public-liability-insurance-kenya/', '/professional-indemnity-insurance-kenya/', '/directors-officers-insurance-kenya/', '/cyber-insurance-kenya/'] },
+    { title: 'Operations, transit and projects', intro: 'Cover risks arising from movement of goods, vehicles, projects and equipment.', links: ['/marine-insurance-kenya/', '/goods-in-transit-insurance-kenya/', '/motor-insurance-kenya/commercial-fleet/', '/engineering-insurance-kenya/', '/contractors-all-risks-insurance-kenya/', '/contractors-plant-machinery-insurance-kenya/'] }
   ];
   const businessTypes = [
-    ['Retail & distribution', 'Stock, premises, money, deliveries and customer liability.', '01'],
-    ['Hospitality', 'Buildings, contents, guests, interruption and employees.', '02'],
-    ['Contractors & projects', 'Contract works, plant, liability and tender requirements.', '03'],
-    ['Professional services', 'Advice-related liability, cyber, office assets and staff.', '04'],
-    ['Manufacturing & logistics', 'Machinery, interruption, transit, fleet and workforce.', '05'],
-    ['Institutions', 'Schools, clinics, organisations and specialist equipment.', '06']
+    ['Retail, wholesale and distribution', 'Stock, premises, customer liability, money, deliveries and employee risks.'],
+    ['Hospitality, restaurants and accommodation', 'Buildings and contents, interruption, guest liability, employees and specialist operational risks.'],
+    ['Contractors and project businesses', 'Contract works, plant, third-party liability, WIBA and contract insurance requirements.'],
+    ['Professional and service businesses', 'Professional indemnity, cyber, office assets, employee benefits and liability.'],
+    ['Manufacturing, workshops and logistics', 'Machinery, property, interruption, goods in transit, fleet and workforce risks.'],
+    ['Schools, clinics and organisations', 'Property, public liability, employee cover, specialist equipment and service-related exposures.']
   ];
-  const risks = (p.risks || []).map(([h,t],i)=>`<article class="biz-risk"><span class="biz-risk-num">${String(i+1).padStart(2,'0')}</span><div><h3>${esc(h)}</h3><p>${esc(t)}</p></div></article>`).join('');
   const body = `
-<section class="biz-hero"><div class="wrap biz-hero-grid">
-  <div class="biz-hero-copy">
-    ${crumbsHtml(trail)}
-    <p class="eyebrow biz-eyebrow">Business insurance · Kenya</p>
-    <h1>${esc(p.h1)}</h1>
-    <p class="lead">${esc(p.lead)}</p>
-    <div class="btn-row biz-hero-actions"><a class="btn btn-primary" href="/get-a-quote/?cover=%2Fbusiness-insurance-kenya%2F">Request options</a><a class="btn btn-light" href="/business-risk-assessment/">Risk assessment</a></div>
-    <p class="biz-hero-note">Advice shaped around your operations—not a one-size-fits-all package.</p>
-  </div>
-  <div class="biz-hero-visual" aria-label="Business insurance coverage overview">
-    <div class="biz-visual-label">A programme built around</div>
-    <div class="biz-visual-core"><span>YOUR</span><strong>BUSINESS</strong><span>YOUR RISKS · YOUR PRIORITIES</span></div>
-    <div class="biz-orbit biz-orbit-one"><span>Assets</span><span>People</span></div>
-    <div class="biz-orbit biz-orbit-two"><span>Liability</span><span>Operations</span></div>
-    <div class="biz-visual-foot">Risk review <b>→</b> Cover options <b>→</b> Ongoing support</div>
-  </div>
-</div><div class="biz-hero-bottom"><div class="wrap"><span>Built for the way you operate</span><span>Cover · Advice · Renewal · Claims</span></div></div></section>
-
-<section class="section biz-industries"><div class="wrap">
-  <div class="biz-section-intro"><div><p class="eyebrow">Who we work with</p><h2>Different businesses.<br><em>Different exposures.</em></h2></div><p>Start with the kind of business you run. We’ll help identify the risks worth prioritising and the covers to explore.</p></div>
-  <div class="biz-industry-grid">${businessTypes.map(([h,t,n])=>`<article class="biz-industry-card"><span class="biz-card-num">${n}</span><h3>${esc(h)}</h3><p>${esc(t)}</p><span class="biz-card-arrow" aria-hidden="true">↗</span></article>`).join('')}</div>
+<section class="page-hero"><div class="wrap">
+  ${crumbsHtml(trail)}
+  <p style="margin-top:var(--s5)"><span class="pill">Business insurance</span></p>
+  <h1>${esc(p.h1)}</h1>
+  <p class="lead">${esc(p.lead)}</p>
+  <div class="btn-row"><a class="btn btn-primary" href="/get-a-quote/?cover=%2Fbusiness-insurance-kenya%2F">Request business insurance options</a><a class="btn btn-ghost" href="/business-risk-assessment/">Request a risk assessment</a><a class="btn btn-ghost" href="/insurance-portfolio-review/">Review existing cover</a></div>
 </div></section>
-
-<section class="section biz-cover-section"><div class="wrap">
-  <div class="biz-section-intro"><div><p class="eyebrow">Explore the protection areas</p><h2>Four pillars of<br><em>business protection.</em></h2></div><p>No single policy covers every exposure. Build a programme by considering the assets, people, obligations and activities that matter to your business.</p></div>
-  <div class="biz-cover-grid">${coverGroups.map(g=>`<article class="biz-cover-card"><div class="biz-cover-head"><span class="biz-cover-kicker">${g.kicker}</span><span class="biz-cover-mark" aria-hidden="true">↗</span></div><h3>${esc(g.title)}</h3><p>${esc(g.intro)}</p><ul>${g.links.slice(0,3).map(x=>`<li><a href="${x}">${esc(registry.get(x)?.label || x)}</a></li>`).join('')}</ul><a class="biz-cover-more" href="/insurance-solutions/">Explore insurance solutions <span>→</span></a></article>`).join('')}</div>
+<section class="section"><div class="wrap">
+  <div class="section-head"><p class="eyebrow">Built around your operations</p><h2>Insurance for the business you actually run</h2><p class="lead">The right programme depends on your industry, premises, assets, employees, contracts and how your business operates. Start with the exposures that matter most, then select covers that respond to them.</p></div>
+  <div class="solution-cards business-type-cards">${businessTypes.map(([h,t])=>`<article class="solution-card"><h3>${esc(h)}</h3><p>${esc(t)}</p></article>`).join('')}</div>
 </div></section>
-
-<section class="section biz-risk-section"><div class="wrap"><div class="biz-section-intro"><div><p class="eyebrow">Review your exposure</p><h2>Where gaps can<br><em>leave you vulnerable.</em></h2></div><p>A business insurance review can help identify overlooked risks, outdated values or conditions that may affect a claim.</p></div><div class="biz-risk-grid">${risks}</div><div class="biz-risk-foot"><strong>When should you review?</strong><span>When assets, staff, activities, locations, contracts or business structure change—not just at renewal.</span></div></div></section>
-
-<section class="section biz-process-section"><div class="wrap"><div class="biz-section-intro"><div><p class="eyebrow">How we work</p><h2>From risk review<br><em>to ongoing support.</em></h2></div><p>Clear steps. Informed choices. No pressure to buy what you don’t need.</p></div><div class="biz-process-grid">
-  <article><span>01</span><h3>Understand</h3><p>We discuss your business, assets, people and contractual obligations.</p></article>
-  <article><span>02</span><h3>Prioritise</h3><p>Separate essential, recommended and optional protection areas.</p></article>
-  <article><span>03</span><h3>Source</h3><p>With your instruction, seek suitable insurer terms where available.</p></article>
-  <article><span>04</span><h3>Compare</h3><p>Review limits, exclusions, excesses, conditions and premiums.</p></article>
-  <article><span>05</span><h3>Support</h3><p>Assist with documents, changes, renewals and claims follow-up.</p></article>
+<section class="section section-warm"><div class="wrap">
+  <div class="section-head"><p class="eyebrow">Explore business cover</p><h2>Build your insurance programme</h2><p class="lead">There is no single policy that protects every business against every loss. These are the main areas to consider.</p></div>
+  <div class="solution-cards business-cover-cards">${coverGroups.map(g=>`<article class="solution-card"><h3>${esc(g.title)}</h3><p>${esc(g.intro)}</p><ul>${g.links.map(x=>`<li><a href="${x}">${esc(registry.get(x)?.label || x)}</a></li>`).join('')}</ul></article>`).join('')}</div>
+</div></section>
+<section class="section"><div class="wrap"><div class="split">
+  <div><p class="eyebrow">Common gaps</p><h2>What a business insurance review can uncover</h2></div>
+  <div class="prose"><ul>${p.risks.map(([h,t])=>`<li><strong>${esc(h)}:</strong> ${esc(t)}</li>`).join('')}</ul><p>Business insurance should be reviewed when your assets, workforce, activities, contracts or locations change—not only when a policy is about to expire.</p></div>
 </div></div></section>
-
-<section class="section biz-ready-section"><div class="wrap biz-ready-grid"><div><p class="eyebrow">Prepare for a quotation</p><h2>What insurers may<br><em>need to know.</em></h2><p>Don't worry if you don't have everything ready. Start with a brief description and we’ll help identify what else is required.</p></div><div class="biz-ready-list">${(p.info||[]).map((x,i)=>`<div><span>${String(i+1).padStart(2,'0')}</span><p>${esc(x)}</p></div>`).join('')}</div></div></section>
-
-<section class="section biz-faq-section"><div class="wrap biz-faq-grid"><div><p class="eyebrow">Questions</p><h2>Business insurance,<br><em>explained.</em></h2><p>Still unsure where to start? We can help you work through your priorities.</p><a class="textlink" href="/insurance-advisory-services/">See our advisory services →</a></div><div>${faqHtml(p.faqs)}</div></div></section>
-<section class="section biz-related-section"><div class="wrap"><div class="biz-section-intro"><div><p class="eyebrow">Explore specific covers</p><h2>Find the cover<br><em>relevant to you.</em></h2></div><p>Browse the individual insurance pages for more detailed information on specific products and risks.</p></div>${indexList(p.related)}<div class="btn-row"><a class="btn btn-primary" href="/get-a-quote/">Request a business quote</a><a class="btn btn-ghost" href="/insurance-advisory-services/">Explore advisory services</a></div></div></section>
-${ctaBand('Protect the business you have built.', 'Tell us what you do, what you need to protect and any insurance requirements you have. We’ll help you identify the next step.')}
+<section class="section section-warm"><div class="wrap"><div class="split">
+  <div><p class="eyebrow">Our approach</p><h2>Practical advice, from assessment to renewal</h2></div>
+  <div class="prose"><ol><li><strong>Understand your business.</strong> We discuss what you do, what you own, your people and your contractual obligations.</li><li><strong>Identify the exposures.</strong> We help separate essential, recommended and optional covers.</li><li><strong>Seek suitable terms.</strong> With your instruction, we approach insurers for options based on the information provided and available markets.</li><li><strong>Explain the differences.</strong> We help you compare cover, limits, exclusions, excesses and premiums—not just price.</li><li><strong>Support you after placement.</strong> We can assist with policy documents, changes, renewals and claims follow-up.</li></ol></div>
+</div></div></section>
+<section class="section"><div class="wrap"><div class="split">
+  <div><p class="eyebrow">Before requesting a quote</p><h2>Information that helps insurers assess your risk</h2></div>
+  <div>${ul(p.info)}<p>Don't worry if you do not have everything ready. Start with a brief description of your business and we will advise what additional information is needed.</p></div>
+</div></div></section>
+<section class="section section-warm"><div class="wrap"><div class="split">
+  <div><p class="eyebrow">Questions</p><h2>Business insurance FAQs</h2></div><div>${faqHtml(p.faqs)}</div>
+</div></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><h2>Start with the areas relevant to you</h2></div>${indexList(p.related)}<div class="btn-row" style="margin-top:var(--s5)"><a class="btn btn-primary" href="/get-a-quote/">Request a business quote</a><a class="btn btn-ghost" href="/insurance-advisory-services/">Explore advisory services</a></div></div></section>
+${ctaBand('Protect your business with a programme that fits.', 'Tell us what you do, what you need to protect and any insurance requirements you have. We will help you identify the next step.')}
 `;
   emit(p.path, layout({ path:p.path, title:p.title, desc:p.desc, body, schema:[{ '@type':'WebPage', '@id':abs(p.path)+'#page', url:abs(p.path), name:p.title, description:p.desc, isPartOf:{'@id':abs('/#website')} }, crumbsSchema(trail), faqSchema(p.faqs)] }));
 }
@@ -356,7 +344,7 @@ hubPage({
   title: 'Insurance Advisory Services Kenya | Review, Claims, Risk | Chestnut',
   desc: 'Insurance portfolio reviews, claims assistance, business risk assessments and tender support from Chestnut Insurance Agency in Nairobi.',
   h1: 'Advice that goes beyond buying a policy', lead: 'Insurance is only useful if it fits your risks and responds when you need it. Our advisory services help before you buy, at renewal and when a claim arises.',
-  body: `<section class="advisory-hero-panel"><div class="wrap advisory-hero-inner"><div class="advisory-hero-copy"><p class="eyebrow">Insurance advisory · beyond placement</p><h2>Support at every<br><em>stage of the journey.</em></h2><p>From reviewing your existing cover to claims, procurement and employee education—practical support for the people managing insurance.</p><a class="btn btn-primary" href="/contact-us/">Discuss your needs</a></div><div class="advisory-hero-stamp"><span>CHESTNUT</span><strong>ADVISORY</strong><span>Clarity · Practicality · Support</span></div></div></section><section class="section advisory-hub-section"><div class="wrap"><div class="advisory-hub-intro"><div><p class="eyebrow">Our services</p><h2>What do you need<br><em>help with?</em></h2></div><p>Choose a service to explore the scope, process and information needed to get started.</p></div><div class="advisory-grid">${services.map((s,i)=>`<article class="advisory-card ${i<3?'advisory-featured':''}"><span class="advisory-card-num">${String(i+1).padStart(2,'0')}</span><div class="advisory-card-body"><h3><a href="${s.path}">${esc(s.label)}</a></h3><p>${esc(s.lead)}</p><a class="advisory-card-link" href="${s.path}">Explore service <span>↗</span></a></div></article>`).join('')}</div></div></section><section class="advisory-bottom-band"><div class="wrap"><div><p class="eyebrow">Not sure where to begin?</p><h2>Tell us what you’re trying to solve.</h2></div><a class="btn btn-primary" href="/contact-us/">Start a conversation</a></div></section>`
+  body: `<section class="section"><div class="wrap"><div class="solution-cards advisory-service-cards">${services.map((s) => `<article class="solution-card"><h3><a href="${s.path}">${esc(s.label)}</a></h3><p>${esc(s.lead)}</p><a class="textlink" href="${s.path}">Explore service</a></article>`).join('')}</div></div></section>`
 });
 
 // ---------------------------------------------------------------- service pages
