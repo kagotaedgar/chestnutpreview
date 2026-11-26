@@ -493,3 +493,91 @@ p { margin: 0 0 var(--s4); }
 .solution-link-grid>b{font-size:1.4rem;color:var(--teal);font-weight:500}
 .financial-section{margin-top:2.8rem}.financial-heading{display:flex;align-items:center;gap:.8rem;margin-bottom:.5rem}.financial-heading h2{font-family:var(--font-display);font-size:1.55rem;font-weight:600;color:var(--teal-deep);margin:0;white-space:nowrap}.financial-heading:after{content:"";height:1px;background:#d9d1c6;flex:1}.financial-intro{margin:0 0 1rem;color:var(--ink-soft);font-size:.95rem;line-height:1.4}.financial-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}.financial-card-grid>a{display:grid;grid-template-columns:42px 1fr 14px;align-items:center;gap:.65rem;padding:.9rem;background:#fff;border:1px solid #e9e2d9;border-radius:9px;text-decoration:none;color:var(--ink);min-height:76px;box-shadow:0 2px 8px rgba(29,35,33,.035);transition:background .18s,border-color .18s,transform .18s}.financial-card-grid>a:hover{background:#f0f8f6;border-color:#b9d5d1;transform:translateY(-1px)}.financial-card-grid strong{display:block;color:var(--teal-deep);font-size:1rem;line-height:1.2}.financial-card-grid small{display:block;font-size:.85rem;line-height:1.3;color:var(--ink-soft);margin-top:.2rem}.financial-card-grid>b{font-size:1.4rem;color:var(--teal);font-weight:500}.financial-disclosure{margin:.85rem 0 0;font-size:.85rem;font-style:italic;color:var(--ink-soft)}
 @media(max-width:900px){.solution-featured{grid-template-columns:1fr 1fr}.solution-featured .solution-feature:last-child{grid-column:1/-1}.solution-groups{grid-template-columns:1fr}.financial-card-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.financial-card-grid{grid-template-columns:1fr}.solution-featured{grid-template-columns:1fr}.solution-featured .solution-feature:last-child{grid-column:auto}.solution-feature>img{height:155px}.solution-groups{gap:1.5rem}.solution-group h3{font-size:1.3rem}.solution-link-grid{grid-template-columns:1fr}.financial-strip{padding:1.2rem}.financial-links{grid-template-columns:1fr}}
+
+
+/* Business insurance landing page — editorial, grouped layout */
+.biz-hero { background:var(--paper-warm); padding:var(--s5) 0 var(--s8); border-bottom:1px solid var(--line); }
+.biz-hero-grid { display:grid; gap:var(--s6); align-items:center; padding-top:var(--s5); }
+.biz-hero-copy { max-width:680px; }
+.biz-hero-copy h1 { max-width:14ch; margin-bottom:var(--s5); }
+.biz-hero-lead { font-size:clamp(1.15rem,1rem + .45vw,1.35rem); color:var(--ink-soft); max-width:48ch; line-height:1.6; }
+.biz-hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:1rem 1.5rem; margin:var(--s5) 0 var(--s4); }
+.biz-hero-secondary,.biz-text-link { font-weight:650; text-decoration:none; color:var(--teal-deep); }
+.biz-hero-secondary span,.biz-text-link span { display:inline-block; transition:transform .15s; }
+.biz-hero-secondary:hover span,.biz-text-link:hover span { transform:translateX(4px); }
+.biz-hero-note { font-size:.9rem; color:var(--ink-soft); margin:0; }
+.biz-hero-image { position:relative; min-height:320px; border-radius:8px; overflow:hidden; background:#d7ded7; }
+.biz-hero-image img { width:100%; height:100%; min-height:320px; object-fit:cover; }
+.biz-image-caption { position:absolute; inset:auto 0 0; padding:1.25rem 1.5rem; background:linear-gradient(transparent,rgba(0,40,37,.88)); color:#fff; display:flex; flex-direction:column; gap:.15rem; }
+.biz-image-caption span { font-size:.92rem; }
+.biz-image-caption strong { font-family:var(--font-display); font-size:1.35rem; font-weight:600; }
+.biz-cover-section { padding-block:var(--s8); }
+.biz-section-heading { display:grid; gap:var(--s4); align-items:end; margin-bottom:var(--s6); }
+.biz-section-heading h2 { max-width:20ch; margin:0; }
+.biz-section-heading>p { color:var(--ink-soft); max-width:54ch; margin:0; }
+.biz-cover-groups { display:grid; gap:1.25rem; }
+.biz-cover-group { border:1px solid var(--line); border-radius:8px; background:var(--white); padding:1.35rem; }
+.biz-cover-group-heading { display:flex; gap:1rem; align-items:flex-start; margin-bottom:1rem; }
+.biz-group-number { color:var(--teal); font-weight:700; font-size:.85rem; letter-spacing:.08em; padding-top:.25rem; }
+.biz-cover-group h3 { font-size:1.25rem; margin:0 0 .35rem; color:#12302E; }
+.biz-cover-group p { color:var(--ink-soft); margin:0; font-size:.98rem; }
+.biz-cover-group ul { list-style:none; padding:0; margin:0; border-top:1px solid var(--line); display:grid; grid-template-columns:1fr; }
+.biz-cover-group li { border-bottom:1px solid var(--line); }
+.biz-cover-group li:last-child { border-bottom:0; }
+.biz-cover-group li a { display:flex; align-items:center; justify-content:space-between; gap:.75rem; padding:.75rem 0; color:var(--teal-deep); text-decoration:none; font-weight:550; }
+.biz-cover-group li a span { color:var(--red); font-size:1.1rem; transition:transform .15s; }
+.biz-cover-group li a:hover span { transform:translateX(3px); }
+.biz-sectors { padding-block:var(--s8); }
+.biz-sector-list { display:grid; grid-template-columns:1fr; border-top:1px solid var(--line); }
+.biz-sector-list article { display:grid; grid-template-columns:3rem 1fr; gap:1rem; padding:1.25rem 0; border-bottom:1px solid var(--line); }
+.biz-sector-number { font-size:.82rem; letter-spacing:.08em; font-weight:700; color:var(--teal); padding-top:.15rem; }
+.biz-sector-list h3 { font-size:1.15rem; margin:0 0 .35rem; }
+.biz-sector-list p { color:var(--ink-soft); margin:0; max-width:52ch; font-size:.98rem; }
+.biz-review { background:var(--teal-deep); color:#fff; padding-block:var(--s8); }
+.biz-review h2,.biz-review h3 { color:#fff; }
+.biz-review .eyebrow { color:#9CD6D1; }
+.biz-review-grid { display:grid; gap:var(--s6); }
+.biz-review-grid>div:first-child p { color:rgba(255,255,255,.82); max-width:52ch; }
+.biz-review-grid .btn { margin-top:var(--s3); }
+.biz-review-points { display:grid; gap:1rem; }
+.biz-review-points article { border-top:1px solid rgba(255,255,255,.24); padding-top:1rem; }
+.biz-review-points h3 { font-size:1.15rem; margin:0 0 .4rem; }
+.biz-review-points p { margin:0; color:rgba(255,255,255,.82); }
+.biz-process { padding-block:var(--s8); }
+.biz-process-steps { display:grid; grid-template-columns:1fr; gap:1.5rem; }
+.biz-process-steps article { border-top:2px solid var(--teal); padding-top:1.2rem; }
+.biz-process-steps article>span { color:var(--red); font-size:1.05rem; font-weight:700; letter-spacing:.08em; display:block; margin-bottom:.8rem; }
+.biz-process-steps h3 { font-size:1.2rem; margin-bottom:.5rem; }
+.biz-process-steps p { color:var(--ink-soft); margin:0; }
+.biz-quote-info { padding-block:var(--s8); }
+.biz-quote-grid { display:grid; gap:var(--s6); align-items:start; }
+.biz-quote-grid h2 { max-width:18ch; }
+.biz-quote-grid>div:first-child p { color:var(--ink-soft); }
+.biz-quote-list { background:var(--white); border:1px solid var(--line); border-radius:8px; padding:1.5rem; }
+.biz-quote-list ul { margin-top:0; padding-left:1.25rem; }
+.biz-quote-list li { margin-bottom:.55rem; }
+.biz-quote-list .biz-text-link { display:inline-block; margin-top:.4rem; }
+.biz-faq { padding-block:var(--s8); }
+.biz-faq-content { max-width:900px; }
+.biz-related { padding-block:var(--s8); }
+.biz-related .index { margin-top:0; }
+.biz-related-cta { display:flex; flex-wrap:wrap; gap:1.2rem; align-items:center; margin-top:var(--s5); }
+@media(min-width:760px) {
+ .biz-hero-grid { grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr); gap:var(--s7); }
+ .biz-hero-image,.biz-hero-image img { min-height:440px; }
+ .biz-section-heading { grid-template-columns:1.1fr .9fr; gap:var(--s7); }
+ .biz-cover-groups { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .biz-sector-list { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:var(--s7); }
+ .biz-sector-list article:nth-child(odd) { padding-right:1rem; }
+ .biz-sector-list article:nth-child(even) { padding-left:1rem; }
+ .biz-review-grid { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--s8); }
+ .biz-process-steps { grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--s7); }
+ .biz-quote-grid { grid-template-columns:1fr 1fr; gap:var(--s8); }
+}
+@media(max-width:640px) {
+ .biz-hero { padding-bottom:var(--s6); }
+ .biz-hero-actions { align-items:flex-start; flex-direction:column; gap:.9rem; }
+ .biz-cover-group { padding:1rem; }
+ .biz-hero-image,.biz-hero-image img { min-height:260px; }
+ .biz-related-cta { align-items:flex-start; flex-direction:column; }
+}
