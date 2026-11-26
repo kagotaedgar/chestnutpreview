@@ -581,3 +581,36 @@ p { margin: 0 0 var(--s4); }
  .biz-hero-image,.biz-hero-image img { min-height:260px; }
  .biz-related-cta { align-items:flex-start; flex-direction:column; }
 }
+
+
+/* Refinement: replace boxed business landing grids with editorial directories */
+.biz-cover-groups { gap:0; border-top:1px solid var(--line); }
+.biz-cover-group { background:transparent; border:0; border-radius:0; padding:1.75rem 0; border-bottom:1px solid var(--line); }
+.biz-cover-group-heading { gap:1.1rem; margin-bottom:1rem; }
+.biz-group-number { min-width:2.2rem; font-size:.95rem; }
+.biz-cover-group h3 { font-size:clamp(1.3rem,1.1rem + .5vw,1.6rem); }
+.biz-cover-group ul { border-top:0; grid-template-columns:1fr; }
+.biz-cover-group li { border:0; }
+.biz-cover-group li a { padding:.45rem 0; text-decoration:underline; text-decoration-color:rgba(0,108,103,.28); text-underline-offset:.2em; }
+.biz-cover-group li a span { margin-left:.5rem; }
+.biz-sector-list { border-top:0; gap:0; }
+.biz-sector-list article { border-top:1px solid var(--line); border-bottom:0; padding:1.35rem 0; grid-template-columns:2.5rem 1fr; }
+.biz-sector-list article:nth-child(odd),.biz-sector-list article:nth-child(even) { padding-inline:0; }
+.biz-sector-list h3 { font-size:clamp(1.2rem,1rem + .35vw,1.4rem); color:var(--teal-deep); }
+.biz-sector-number { opacity:.85; }
+@media(min-width:760px) {
+ .biz-cover-groups { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:var(--s7); }
+ .biz-cover-group { padding:1.6rem 0 1.8rem; }
+ .biz-cover-group:nth-child(odd) { padding-right:1rem; }
+ .biz-cover-group:nth-child(even) { padding-left:1rem; }
+ .biz-cover-group-heading { min-height:7.5rem; }
+ .biz-cover-group ul { grid-template-columns:1fr 1fr; column-gap:1.25rem; }
+ .biz-sector-list { grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:var(--s6); }
+ .biz-sector-list article { grid-template-columns:2.2rem 1fr; gap:.8rem; padding:1.2rem 0; }
+}
+@media(min-width:1100px) {
+ .biz-cover-groups { column-gap:var(--s8); }
+ .biz-cover-group:nth-child(odd) { padding-right:0; }
+ .biz-cover-group:nth-child(even) { padding-left:0; }
+ .biz-cover-group-heading { min-height:6.4rem; }
+}
