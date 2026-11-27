@@ -68,12 +68,12 @@
 (function(){
 const f=document.getElementById('motor-calc'),si=document.getElementById('si'),results=document.getElementById('results'),error=document.getElementById('error'),modal=document.getElementById('quote-modal'),quoteBody=document.getElementById('quote-body'),quoteLogo=document.getElementById('quote-logo');
 const data={
-'Fidelity':{logo:'/images/partners/fidelity.webp',tp:15000,bands:[[600000,999999,.065,42500],[1000000,1499999,.0525,0],[1500000,2499999,.0425,0],[2500000,3000000,.035,0],[3000001,Infinity,.03,0]]},
-'CIC':{logo:'/images/partners/cic.png',tp:12000,bands:[[600000,1000000,.065,42500],[1000001,1499999,.055,0],[1500000,2999999,.045,0],[3000000,3499999,.04,0],[3500000,Infinity,.0375,0]]},
-'Old Mutual':{logo:'/images/partners/old-mutual.png',tp:12000,bands:[[600000,1000000,.065,42500],[1000001,1500000,.055,0],[1500001,2999999,.05,0],[3000000,4999999,.0325,0],[5000000,Infinity,.03,0]]},
-'APA':{logo:'/images/partners/apa.png',tp:15000,bands:[[600000,1000000,.0725,55000],[1000001,1500000,.06,0],[1500001,2499999,.055,0],[2500000,Infinity,.0425,0]]},
-'Britam':{logo:'/images/partners/britam.png',tp:15000,bands:[[1000000,1499999,.075,0],[1500000,1999999,.055,0],[2000000,2999999,.05,0],[3000000,4999999,.045,0],[5000000,Infinity,.03,0]]},
-'First Assurance':{logo:'/images/partners/first-assurance.png',tp:15000,bands:[[600000,1500000,.09,75000],[1500001,1999999,.05,0],[2000000,2999999,.0375,0],[3000000,4999999,.0325,0],[5000000,Infinity,.03,0]]}};
+'Fidelity':{logo:'../images/partners/fidelity.webp',tp:15000,bands:[[600000,999999,.065,42500],[1000000,1499999,.0525,0],[1500000,2499999,.0425,0],[2500000,3000000,.035,0],[3000001,Infinity,.03,0]]},
+'CIC':{logo:'../images/partners/cic.png',tp:12000,bands:[[600000,1000000,.065,42500],[1000001,1499999,.055,0],[1500000,2999999,.045,0],[3000000,3499999,.04,0],[3500000,Infinity,.0375,0]]},
+'Old Mutual':{logo:'../images/partners/old-mutual.png',tp:12000,bands:[[600000,1000000,.065,42500],[1000001,1500000,.055,0],[1500001,2999999,.05,0],[3000000,4999999,.0325,0],[5000000,Infinity,.03,0]]},
+'APA':{logo:'../images/partners/apa.png',tp:15000,bands:[[600000,1000000,.0725,55000],[1000001,1500000,.06,0],[1500001,2499999,.055,0],[2500000,Infinity,.0425,0]]},
+'Britam':{logo:'../images/partners/britam.png',tp:15000,bands:[[1000000,1499999,.075,0],[1500000,1999999,.055,0],[2000000,2999999,.05,0],[3000000,4999999,.045,0],[5000000,Infinity,.03,0]]},
+'First Assurance':{logo:'../images/partners/first-assurance.png',tp:15000,bands:[[600000,1500000,.09,75000],[1500001,1999999,.05,0],[2000000,2999999,.0375,0],[3000000,4999999,.0325,0],[5000000,Infinity,.03,0]]}};
 const order=['Fidelity','CIC','Old Mutual','APA','Britam','First Assurance'],fmt=n=>'KES '+Number(n).toLocaleString('en-KE',{minimumFractionDigits:2,maximumFractionDigits:2}),rnd=n=>Math.round(n*100)/100;
 function calcBasic(n,v,cover){if(cover==='tp')return data[n].tp;let b=data[n].bands.find(x=>v>=x[0]&&v<=x[1]);return b?Math.max(rnd(v*b[2]),b[3]):null}
 function charges(b){return {phcf:rnd(b*.0025),training:rnd(b*.002),stamp:40,total:rnd(b+b*.0025+b*.002+40)}}
