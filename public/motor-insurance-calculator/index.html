@@ -190,6 +190,25 @@ fieldset.mc-fs{border:0;margin:0 0 .7rem;padding:0;min-width:0}
  .mc-error{min-height:.9rem;margin:.35rem 0 0;font-size:.8rem}
 }
 @media (min-width:1001px) and (max-height:820px){.mc-hero h1{font-size:1.75rem}.mc-grid{gap:.6rem}.mc-card{padding:.65rem}.mc-b-grid{gap:.25rem}.mc-b{padding:.4rem .25rem}.mc-b .ico{margin-top:.8rem}.mc-submit{min-height:38px}}
+
+/* Screen-fit refinements: compact the form and align all vehicle inputs in one row. */
+@media (min-width:1001px){
+ .mc-hero .wrap{padding-top:.2rem;padding-bottom:.25rem}.mc-hero .crumbs{padding-top:.45rem}.mc-hero h1{font-size:1.8rem;margin-bottom:.25rem}.mc-hero .lede{font-size:.9rem}
+ .mc-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.65rem;padding-bottom:.4rem;align-items:stretch}
+ #mc-form>.mc-row:first-of-type{grid-template-columns:1.2fr .7fr 1fr;gap:.45rem}
+ #mc-form>.mc-row:first-of-type .mc-field{min-width:0}
+ #mc-form>.mc-row:nth-of-type(2){margin-bottom:.35rem}
+ .mc-card{padding:.65rem;border-radius:18px}.mc-card-head{margin-bottom:.45rem;gap:.5rem}.mc-card-head .i{width:1.8rem;height:1.8rem}.mc-card h2{font-size:1.25rem}
+ .mc-label,.mc legend{font-size:.78rem;margin-bottom:.2rem}.mc-sub{font-size:.78rem}
+ .mc-control{min-height:35px}.mc-control input,.mc-control select{font-size:.85rem;padding:.4rem .55rem}
+ fieldset.mc-fs{margin-bottom:.4rem}.mc-tile{min-height:46px;padding:.4rem .55rem;gap:.4rem}.mc-tile strong{font-size:.82rem}.mc-tile small{font-size:.7rem}
+ .mc-row{gap:.45rem;margin-bottom:.4rem}.mc-hint{font-size:.7rem;margin-top:.2rem}
+ .mc-benefits{margin-top:.4rem;padding-top:.4rem}.mc-b-head{margin-bottom:.35rem;gap:.4rem}.mc-b-head .i{width:1.35rem;height:1.35rem}.mc-b-head h3{font-size:.88rem}.mc-b-head .mc-sub{display:none}
+ .mc-b-grid{gap:.3rem}.mc-b{padding:.35rem .3rem;gap:.2rem;border-radius:9px}.mc-b .tick{top:.3rem;left:.35rem;width:15px;height:15px}.mc-b .ico{margin-top:.8rem;width:1.15rem;height:1.15rem}.mc-b .name{font-size:.68rem;line-height:1.15}.mc-b .tag{font-size:.58rem;padding:.08rem .3rem}
+ .mc-b-extra{gap:.4rem;margin-top:.35rem}.mc-pvt{margin:.35rem 0 0;font-size:.68rem}.mc-submit{min-height:36px;margin-top:.4rem;font-size:.9rem}.mc-error{min-height:.7rem;margin:.25rem 0 0;font-size:.72rem}
+ .mc-res-top{margin-bottom:.5rem}.mc-res-top .eyebrow{font-size:.72rem}.mc-badge{font-size:.75rem;padding:.4rem .7rem}.mc-results{gap:.45rem}.mc-q{padding:.6rem .7rem;gap:.5rem;border-radius:12px}.mc-q-who{gap:.5rem}.mc-q-logo{width:72px;height:40px}.mc-q h3{font-size:.92rem}.mc-q .meta{font-size:.7rem}.mc-q-price{padding-left:.6rem}.mc-q-price small{font-size:.68rem}.mc-q-price strong{font-size:1.25rem}.mc-q-price .link{font-size:.72rem;margin-top:.05rem}
+}
+@media (min-width:1001px) and (max-height:850px){.mc-hero h1{font-size:1.65rem}.mc-hero .wrap{padding-bottom:0}.mc-grid{padding-top:0}.mc-card{padding:.55rem}.mc-b{padding:.3rem .25rem}.mc-submit{min-height:34px}}
 /* Responsive */
 @media (max-width:1000px){.mc-grid{grid-template-columns:1fr}.mc-b-grid{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:760px){
@@ -348,12 +367,12 @@ fieldset.mc-fs{border:0;margin:0 0 .7rem;padding:0;min-width:0}
           </div>
         </div>
         <div class="mc-b-grid" role="group" aria-labelledby="b-title">
-          <label class="mc-b locked" data-own="1">
-            <input type="checkbox" id="b-wind" checked disabled>
+          <label class="mc-b">
+            <input type="checkbox" id="b-wind">
             <span class="tick"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
             <svg class="i ico" aria-hidden="true"><use href="#i-wind"/></svg>
-            <span class="name">Windscreen cover</span>
-            <span class="tag">Included</span>
+            <span class="name">Higher windscreen limit</span>
+            <span class="tag">Optional</span>
           </label>
           <label class="mc-b locked" data-own="1">
             <input type="checkbox" id="b-excess" checked disabled>
@@ -366,8 +385,8 @@ fieldset.mc-fs{border:0;margin:0 0 .7rem;padding:0;min-width:0}
             <input type="checkbox" id="b-tow">
             <span class="tick"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
             <svg class="i ico" aria-hidden="true"><use href="#i-tow"/></svg>
-            <span class="name">Towing &amp; Recovery</span>
-            <span class="tag tbc">Price on request</span>
+            <span class="name">AA Rescue</span>
+            <span class="tag tbc">Optional</span>
           </label>
           <label class="mc-b" data-own="1">
             <input type="checkbox" id="b-lou">
@@ -379,11 +398,11 @@ fieldset.mc-fs{border:0;margin:0 0 .7rem;padding:0;min-width:0}
         </div>
 
         <div class="mc-b-extra" id="b-extra">
-          <div class="mc-field" id="wind-field">
-            <label class="mc-label" for="wind">Windscreen limit</label>
+          <div class="mc-field" id="wind-field" hidden>
+            <label class="mc-label" for="wind">Windscreen cover limit</label>
             <div class="mc-control">
               <select id="wind">
-                <option value="50000">KES 50,000 (included)</option>
+                <option value="50000">KES 50,000</option>
                 <option value="75000">KES 75,000 (+KES 2,500)</option>
                 <option value="100000">KES 100,000 (+KES 5,000)</option>
                 <option value="150000">KES 150,000 (+KES 10,000)</option>
@@ -531,7 +550,7 @@ var POPULAR = ['TOYOTA','NISSAN','MAZDA','SUBARU','HONDA','MITSUBISHI','SUZUKI',
 var $ = function (id) { return document.getElementById(id); };
 var form = $('mc-form'), errEl = $('mc-error'), resultsEl = $('mc-results'), skelEl = $('mc-skel'), selEl = $('mc-select');
 var makeEl = $('make'), yearEl = $('year'), siEl = $('si'), regEl = $('reg');
-var windEl = $('wind'), louEl = $('lou'), towEl = $('b-tow'), louChk = $('b-lou');
+var windEl = $('wind'), windChk = $('b-wind'), louEl = $('lou'), towEl = $('b-tow'), louChk = $('b-lou');
 var modal = $('quote-modal'), quoteBody = $('quote-body'), quoteLogo = $('quote-logo');
 var lastFocus = null, calculated = false, showAll = false, timer = null, makeCatalogue = [];
 
@@ -623,13 +642,13 @@ function syncCover() {
     l.querySelector('input').disabled = tp || l.classList.contains('locked');
     l.style.opacity = tp ? '.45' : ''; l.style.cursor = tp ? 'not-allowed' : '';
   });
-  $('wind-field').hidden = tp; $('pvt-note').hidden = tp;
+  $('wind-field').hidden = tp || !windChk.checked; $('pvt-note').hidden = tp;
   $('lou-field').hidden = tp || !louChk.checked;
   $('b-extra').hidden = $('wind-field').hidden && $('lou-field').hidden;
 }
 function syncLou() { $('lou-field').hidden = coverVal() === 'tp' || !louChk.checked; $('b-extra').hidden = $('wind-field').hidden && $('lou-field').hidden; }
 form.querySelectorAll('input[name=cover]').forEach(function (r) { r.addEventListener('change', function () { syncCover(); clearErr(); }); });
-louChk.addEventListener('change', syncLou);
+louChk.addEventListener('change', syncLou); windChk.addEventListener('change', syncCover);
 syncCover();
 
 /* ---------- pricing ---------- */
@@ -645,7 +664,7 @@ function read() {
   return {
     cover: cover, tp: tp, type: tp ? 'Third Party' : 'Comprehensive',
     make: makeEl.value.trim(), model: '', year: yearEl.value, reg: regEl.value.trim().toUpperCase(),
-    value: tp ? 0 : siNum(), wind: tp ? FREE_WIND : Number(windEl.value),
+    value: tp ? 0 : siNum(), wind: (!tp && windChk.checked) ? Number(windEl.value) : 0,
     lou: (!tp && louChk.checked) ? Number(louEl.value) : 0, tow: towEl.checked
   };
 }
@@ -662,14 +681,14 @@ function benefitList(s) {
   var l = [];
   if (!s.tp) {
     l.push('Excess Protector (included)', 'Political Violence & Terrorism (included)');
-    l.push('Windscreen cover, KES ' + s.wind.toLocaleString('en-KE') + ' limit' + (s.wind > FREE_WIND ? ' (additional premium ' + fmt((s.wind - FREE_WIND) * WIND_RATE) + ')' : ' (included)'));
+    if (s.wind) l.push('Windscreen cover, KES ' + s.wind.toLocaleString('en-KE') + ' limit' + (s.wind > FREE_WIND ? ' (additional premium ' + fmt((s.wind - FREE_WIND) * WIND_RATE) + ')' : ''));
     if (s.lou) l.push('Loss of Use / Courtesy Car, ' + (s.lou === 3000 ? '10' : '20') + ' days (KES ' + s.lou.toLocaleString('en-KE') + ')');
   }
   if (s.tow) l.push('Towing & Recovery (AA Membership): premium to be confirmed, not included in the total');
   return l;
 }
 function quotesFor(s) {
-  var add = s.tp ? 0 : s.lou + Math.max(0, s.wind - FREE_WIND) * WIND_RATE;
+  var add = s.tp ? 0 : s.lou + (s.wind ? Math.max(0, s.wind - FREE_WIND) * WIND_RATE : 0);
   return ORDER.map(function (n) {
     var b = basic(n, s.value, s.cover); if (b === null) return null;
     var bp = b + add; return {n: n, base: b, add: add, basic: bp, ch: levies(bp)};
@@ -690,7 +709,7 @@ function render(s, quotes) {
   if (quotes.length > SHOW_DEFAULT) resultsEl.insertAdjacentHTML('beforeend', '<button type="button" class="mc-more" id="mc-more">' + (showAll ? 'Show fewer options' : 'Show all ' + quotes.length + ' options') + '</button>');
   skelEl.hidden = true;
   var names = [];
-  if (!s.tp) names.push('Windscreen', 'Excess Protector'); if (s.lou) names.push('Loss of Use'); if (s.tow) names.push('Towing & Recovery');
+  if (!s.tp) names.push('Excess Protector', 'PVT'); if (s.wind) names.push('Windscreen'); if (s.lou) names.push('Loss of Use'); if (s.tow) names.push('AA Rescue');
   $('sel-line1').textContent = s.make + '  |  ' + s.year + (s.tp ? '' : '  |  ' + fmt0(s.value).replace('KES ', 'KES '));
   $('sel-line2').textContent = s.type + ' cover' + (names.length ? '  |  Benefits: ' + names.join(', ') : '');
   selEl.hidden = false;
