@@ -1,74 +1,745 @@
 <!doctype html>
 <html lang="en-KE">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Motor Insurance Calculator | Chestnut Insurance Agency</title>
 <meta name="description" content="Compare indicative motor insurance premiums from leading insurers in Kenya.">
 <link rel="canonical" href="https://www.chestnut.co.ke/motor-insurance-calculator/">
-<meta name="robots" content="index,follow"><meta name="theme-color" content="#006C67">
-<link rel="icon" href="../images/chestnut-logo-correct.png"><link rel="stylesheet" href="../styles.css">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#006C67">
+<link rel="icon" href="../images/chestnut-logo-correct.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../styles.css">
 <style>
-:root{--calc-red:#d23c3c;--calc-teal:#006c67;--ink:#202b32;--muted:#66717a;--line:#dfe5e5}
-.calc-hero{padding:.1rem 0 .65rem}.calc-hero .crumbs{margin-bottom:.15rem}.calc-hero .eyebrow{margin:.15rem 0}.calc-title{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem}.calc-title h1{font-size:clamp(1.45rem,2.2vw,2rem);line-height:1.12;margin:.15rem 0 .25rem}.calc-title-car{display:block;width:min(240px,25vw);height:96px;object-fit:cover;object-position:center;border-radius:14px}.calc-title .calc-muted{margin:.15rem 0}
-.calc-grid{display:grid;grid-template-columns:minmax(340px,.9fr) minmax(0,1.15fr);gap:1rem;align-items:start;padding:.3rem 0 1.1rem}.calc-panel{border:1px solid var(--line);border-radius:20px;background:#fff;padding:clamp(1rem,1.5vw,1.35rem);box-shadow:0 8px 28px rgba(25,42,50,.04)}.calc-panel h2{font-size:clamp(1.35rem,2vw,1.8rem);margin:0 0 .15rem}.calc-muted{color:var(--muted);margin:.2rem 0 .6rem}.calc-cover-row{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}.calc-cover{display:flex;gap:.55rem;align-items:flex-start;border:1px solid var(--line);padding:.7rem .75rem;border-radius:13px;margin:.3rem 0;cursor:pointer;min-height:68px;transition:.15s}.calc-cover:has(input:checked){border-color:var(--calc-red);background:#fff8f7;box-shadow:0 0 0 1px var(--calc-red)}.calc-cover input{margin-top:.2rem;accent-color:var(--calc-red)}.calc-cover small{display:block;color:var(--muted);margin-top:.12rem;font-size:.82rem}.field{margin:.55rem 0}.field label{display:block;font-weight:600;margin-bottom:.22rem}.field input,.field select{width:100%;min-height:43px;border:1px solid var(--line);border-radius:9px;padding:.5rem .65rem;font:inherit;background:white}.field .calc-money{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}.calc-money span{background:#f3f5f5;padding:.55rem .75rem;font-weight:600;display:flex;align-items:center}.calc-money input{border:0;border-radius:0;min-width:0;outline:none}.field .hint{margin:.16rem 0;color:var(--muted);font-size:.82rem}.calc-field-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
-.benefit-block{border-top:1px solid #edf0f0;margin-top:.65rem;padding-top:.65rem}.benefit-title{display:flex;gap:.45rem;align-items:center;font-weight:700;margin-bottom:.15rem}.benefit-included{display:flex;flex-wrap:wrap;gap:.4rem;margin:.45rem 0 .6rem}.included-pill{background:#eaf5f2;color:var(--calc-teal);border-radius:99px;padding:.4rem .65rem;font-size:.82rem;font-weight:700}.benefit-options{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.benefit-option{border:1px solid var(--line);border-radius:12px;padding:.55rem .65rem;background:#fff;min-width:0}.benefit-option label{display:flex;align-items:center;gap:.45rem;font-weight:600;cursor:pointer}.benefit-option input{accent-color:var(--calc-red)}.benefit-option small{display:block;color:var(--muted);margin:.18rem 0 0;font-size:.78rem}.benefit-option select,.benefit-option input[type=number]{border:1px solid var(--line);border-radius:8px;padding:.42rem;font:inherit;margin:.35rem 0 0;width:100%;font-size:.86rem}.calc-submit{width:100%;margin-top:.65rem;padding:.85rem 1rem;font-size:1rem;border-radius:11px}.calc-error{color:#b42318;min-height:1rem;margin:.15rem 0}
-.calc-results-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.6rem}.calc-results-top h2{margin:0}.calc-badge{background:#e8f5f2;color:var(--calc-teal);padding:.4rem .65rem;border-radius:99px;font-size:.78rem;font-weight:700;white-space:nowrap}.calc-results{display:grid;grid-template-columns:1fr;gap:.6rem}.calc-note{padding:.35rem 0}.calc-note p{margin:.25rem 0;color:var(--muted)}.calc-result-card{border:1px solid var(--line);border-radius:14px;padding:.85rem;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.8rem;cursor:pointer;transition:.15s}.calc-result-card:first-child{border-color:#ef7777;background:#fff8f7}.calc-result-card:hover{transform:translateY(-1px);box-shadow:0 5px 14px #00000010}.calc-insurer{display:flex;align-items:center;gap:12px;min-width:0}.calc-logo{width:108px;height:54px;object-fit:contain;border-radius:6px;padding:2px;background:#fff;flex:0 0 auto}.calc-insurer-info{min-width:0}.calc-insurer-info h3{margin:0;font-size:1rem}.calc-insurer-info p{margin:.2rem 0 0;color:var(--muted);font-size:.84rem}.calc-price{text-align:right;white-space:nowrap;padding-left:.8rem;border-left:1px solid var(--line)}.calc-price small{display:block;color:var(--muted)}.calc-price strong{font-size:clamp(1.1rem,1.8vw,1.5rem)}.calc-result-label{font-size:.72rem;color:var(--calc-teal);font-weight:700;display:inline-block;margin-bottom:.15rem}.calc-result-link{color:var(--calc-red);font-size:.84rem;margin-top:.2rem}.calc-cta{background:#f5f7f7;border-radius:16px;padding:1.1rem;display:flex;justify-content:space-between;align-items:center;gap:1.2rem;margin-bottom:2rem}.calc-cta h2{margin:0 0 .4rem}.calc-cta p{margin:0;color:var(--muted)}
-.quote-modal{display:none;position:fixed;inset:0;background:#0008;z-index:9999;align-items:center;justify-content:center;padding:16px}.quote-modal.open{display:flex}.quote-sheet{background:white;border-radius:18px;max-width:720px;width:100%;max-height:90vh;overflow:auto;padding:24px}.quote-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ddd;padding-bottom:12px}.quote-head img{max-width:140px;max-height:60px;object-fit:contain}.quote-close{border:0;border-radius:50%;width:36px;height:36px;font-size:22px;cursor:pointer}.quote-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}.quote-meta div{background:#f7f8f8;padding:10px;border-radius:8px}.quote-table{width:100%;border-collapse:collapse}.quote-table td{padding:10px;border-bottom:1px solid #ddd}.quote-table td:last-child{text-align:right}.quote-total{font-weight:bold}.quote-benefits{background:#f3f8f6;padding:12px;border-radius:10px;margin:14px 0}.quote-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-@media(max-width:900px){.calc-grid{grid-template-columns:1fr}.calc-title-car{width:190px;height:82px}.calc-cta{align-items:flex-start;flex-direction:column}}
-@media(max-width:560px){.calc-title{grid-template-columns:1fr}.calc-title-car{display:none}.calc-title h1{font-size:1.4rem}.calc-grid{padding-top:.15rem}.calc-panel{padding:.95rem}.calc-cover-row{gap:.4rem}.calc-cover{padding:.55rem;min-height:64px}.calc-field-grid{grid-template-columns:1fr 1fr;gap:.4rem}.benefit-options{grid-template-columns:1fr 1fr;gap:.4rem}.benefit-option{padding:.5rem}.calc-result-card{padding:.6rem;gap:.55rem}.calc-logo{width:76px;height:40px}.calc-price{padding-left:.55rem}.calc-results-top{align-items:flex-start}.quote-meta{grid-template-columns:1fr}.calc-submit{position:sticky;bottom:8px;z-index:5;box-shadow:0 5px 20px #0002}.calc-cta .btn-row{display:flex;flex-direction:column;width:100%}}
+/* ===== Chestnut Motor Calculator (redesign) =====
+   Uses site tokens from styles.css (--red, --teal, --ink, --paper, --line). Everything is scoped to .mc-* */
+.mc{--mc-red:var(--red,#D23C3C);--mc-red-deep:var(--red-deep,#B02E2E);--mc-teal:var(--teal,#006C67);--mc-ink:var(--ink,#1D2321);--mc-soft:var(--ink-soft,#4A5552);--mc-line:#E6DFD2;--mc-tint:#E8F3F1;--mc-card:#fff;
+  background:linear-gradient(180deg,#FCEFE9 0,#FBF4EC 220px,var(--paper,#FAF7F1) 520px);color:var(--mc-ink);font-family:var(--font-body,"Montserrat",system-ui,sans-serif)}
+.mc *{box-sizing:border-box}
+.mc svg.i{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.mc :focus-visible{outline:3px solid #0a8a83;outline-offset:2px}
 
-/* Approved calculator redesign: closer to the mock-up, compact, and preview-path safe. */
-.calc-hero{padding:.15rem 0 .5rem}.calc-title{min-height:150px;gap:1.25rem}.calc-title-car{width:min(340px,30vw);height:145px;object-fit:cover;object-position:center;border-radius:0 0 0 18px}.calc-title h1{font-size:clamp(1.65rem,2.4vw,2.65rem);line-height:1.12}.calc-grid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:1rem;padding:.25rem 0 1rem;align-items:stretch}.calc-panel{padding:clamp(1rem,1.3vw,1.25rem);border-radius:18px}.calc-panel h2{font-size:clamp(1.5rem,2vw,2rem)}.calc-cover{padding:.58rem .65rem;min-height:60px}.field{margin:.42rem 0}.field input,.field select{min-height:40px;padding:.42rem .58rem}.benefit-block{margin-top:.45rem;padding-top:.45rem}.benefit-included{margin:.35rem 0}.benefit-options{gap:.4rem}.benefit-option{padding:.48rem .55rem}.calc-submit{margin-top:.5rem;padding:.72rem .8rem}.calc-result-card{grid-template-columns:minmax(0,1fr) auto;padding:.75rem}.calc-logo{width:116px;height:54px}.calc-insurer{gap:10px}.calc-price strong{font-size:clamp(1.1rem,1.55vw,1.45rem)}.calc-results-top{margin-bottom:.5rem}.calc-note p{margin:.25rem 0}.calc-title-car{background:transparent}
-@media(max-width:900px){.calc-grid{grid-template-columns:1fr}.calc-title-car{width:230px;height:110px}.calc-panel{padding:1rem}}
-@media(max-width:560px){.calc-title{grid-template-columns:1fr;min-height:auto}.calc-title-car{display:none}.calc-title h1{font-size:1.45rem}.calc-grid{gap:.65rem}.calc-panel{padding:.8rem;border-radius:14px}.calc-panel h2{font-size:1.35rem}.calc-cover{min-height:56px;padding:.5rem}.calc-cover small{font-size:.75rem}.calc-field-grid{grid-template-columns:1fr 1fr;gap:.35rem}.field{margin:.35rem 0}.field label{font-size:.9rem}.field input,.field select{min-height:39px;font-size:.9rem}.benefit-options{grid-template-columns:1fr 1fr}.benefit-option{padding:.4rem}.benefit-option small{font-size:.72rem}.calc-submit{position:static;box-shadow:none;padding:.8rem}.calc-result-card{grid-template-columns:minmax(0,1fr) auto}.calc-logo{width:72px;height:38px}.calc-price strong{font-size:1.05rem}.calc-price{padding-left:.45rem}.calc-insurer-info p{font-size:.75rem}.calc-results-top{align-items:flex-start}.calc-badge{font-size:.7rem;padding:.3rem .5rem}}
+/* Hero */
+.mc-hero{position:relative;overflow:hidden}
+.mc-hero .wrap{position:relative;z-index:1;padding-bottom:1.1rem}
+.mc-hero .crumbs{padding-top:1rem}
+.mc-hero .eyebrow{margin:.55rem 0 .35rem;font-size:.82rem;letter-spacing:.14em}
+.mc-hero h1{font-size:clamp(1.9rem,3.6vw,3rem);font-weight:700;line-height:1.1;margin:0 0 .5rem}
+.mc-hero .lede{margin:0;color:var(--mc-soft);font-size:clamp(1rem,1.2vw,1.15rem)}
+.mc-hero-img{position:absolute;top:0;right:0;height:100%;width:min(50vw,620px);object-fit:cover;object-position:right center;z-index:0;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%);mask-image:linear-gradient(to right,transparent 0,#000 38%)}
+
+/* Layout */
+.mc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:1.25rem;align-items:start;padding:.25rem 0 1.5rem}
+.mc-card{background:var(--mc-card);border:1px solid var(--mc-line);border-radius:22px;padding:clamp(1.1rem,1.8vw,1.75rem);box-shadow:0 10px 34px rgba(60,40,20,.06)}
+.mc-card-head{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.1rem}
+.mc-card-head .i{width:2.4rem;height:2.4rem;color:var(--mc-teal);margin-top:.15rem}
+.mc-card h2{font-size:clamp(1.45rem,2vw,1.95rem);font-weight:700;margin:0 0 .15rem}
+.mc-sub{margin:0;color:var(--mc-soft);font-size:.95rem}
+
+/* Form */
+.mc-label,.mc legend{display:block;font-weight:600;font-size:.95rem;margin:0 0 .4rem;padding:0}
+.mc-label .req{color:var(--mc-red)}.mc-label .opt{font-weight:400;color:var(--mc-soft)}
+fieldset.mc-fs{border:0;margin:0 0 1rem;padding:0;min-width:0}
+.mc-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1rem}
+.mc-field{min-width:0}
+.mc-control{position:relative;display:flex;align-items:center;background:#fff;border:1.5px solid var(--mc-line);border-radius:12px;min-height:50px;transition:border-color .15s,box-shadow .15s}
+.mc-control:focus-within{border-color:var(--mc-teal);box-shadow:0 0 0 3px rgba(0,108,103,.14)}
+.mc-control.invalid{border-color:#C43030;box-shadow:0 0 0 3px rgba(196,48,48,.12)}
+.mc-control>.i{margin-left:.85rem;color:#7b8581}
+.mc-control input,.mc-control select{flex:1;min-width:0;width:100%;border:0;background:transparent;font:inherit;font-size:1rem;color:var(--mc-ink);padding:.7rem .85rem;outline:0;appearance:none;-webkit-appearance:none;border-radius:12px}
+.mc-control .chev{position:absolute;right:.85rem;pointer-events:none;color:#5c6763;width:1.1em;height:1.1em}
+.mc-control select{padding-right:2.4rem;cursor:pointer}
+.mc-control .cur{align-self:stretch;display:flex;align-items:center;padding:0 .95rem;background:#F4F1EA;border-right:1.5px solid var(--mc-line);border-radius:10px 0 0 10px;font-weight:700}
+.mc-hint{margin:.4rem 0 0;font-size:.84rem;color:var(--mc-soft)}
+
+/* Cover type tiles */
+.mc-cover-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.mc-tile{position:relative;display:flex;gap:.7rem;align-items:flex-start;padding:.95rem 1rem;border:1.5px solid var(--mc-line);border-radius:14px;background:#fff;cursor:pointer;transition:.15s;min-height:74px}
+.mc-tile:hover{border-color:#cfc6b4}
+.mc-tile input{position:absolute;opacity:0;pointer-events:none}
+.mc-tile .dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid #9aa39f;margin-top:.1rem;display:grid;place-items:center;background:#fff}
+.mc-tile .dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--mc-red);transform:scale(0);transition:transform .15s}
+.mc-tile strong{display:block;font-size:1rem;line-height:1.25}
+.mc-tile small{display:block;margin-top:.15rem;color:var(--mc-soft);font-size:.84rem;line-height:1.35}
+.mc-tile:has(input:checked){border-color:var(--mc-red);background:#FFF3F1;box-shadow:0 0 0 1px var(--mc-red)}
+.mc-tile:has(input:checked) .dot{border-color:var(--mc-red)}
+.mc-tile:has(input:checked) .dot::after{transform:scale(1)}
+.mc-tile:has(input:focus-visible){outline:3px solid #0a8a83;outline-offset:2px}
+
+/* Combobox */
+.cb{position:relative}
+.cb-list{position:absolute;z-index:30;left:0;right:0;top:calc(100% + 6px);max-height:260px;overflow:auto;margin:0;padding:.35rem;list-style:none;background:#fff;border:1.5px solid var(--mc-line);border-radius:12px;box-shadow:0 14px 34px rgba(30,30,30,.16)}
+.cb-list li{padding:.55rem .7rem;border-radius:8px;cursor:pointer;font-size:.97rem}
+.cb-list li[aria-selected=true],.cb-list li:hover{background:var(--mc-tint)}
+.cb-list li.cb-head{cursor:default;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mc-soft);padding:.4rem .7rem .2rem}
+.cb-list li.cb-head:hover{background:none}
+.cb-empty{padding:.7rem;color:var(--mc-soft);font-size:.9rem}
+
+/* Benefits */
+.mc-benefits{border-top:1px solid #EFE9DD;margin-top:1.15rem;padding-top:1.15rem}
+.mc-b-head{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.85rem}
+.mc-b-head .i{width:2rem;height:2rem;color:var(--mc-teal)}
+.mc-b-head h3{font-size:1.1rem;margin:0;font-weight:700}
+.mc-b-head h3 span{font-weight:400;color:var(--mc-soft)}
+.mc-b-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem}
+.mc-b{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:.45rem;padding:.8rem .75rem;border:1.5px solid var(--mc-line);border-radius:14px;background:#fff;cursor:pointer;min-width:0;transition:.15s}
+.mc-b:hover{border-color:#cfc6b4}
+.mc-b input{position:absolute;opacity:0;pointer-events:none}
+.mc-b .tick{position:absolute;top:.6rem;left:.65rem;width:18px;height:18px;border-radius:5px;border:2px solid #9aa39f;background:#fff;display:grid;place-items:center}
+.mc-b .tick svg{width:12px;height:12px;stroke:#fff;stroke-width:3.2;fill:none;opacity:0}
+.mc-b .ico{align-self:center;margin-top:1.4rem;width:1.7rem;height:1.7rem;color:var(--mc-red)}
+.mc-b .name{align-self:center;text-align:center;font-weight:600;font-size:.88rem;line-height:1.25}
+.mc-b .tag{align-self:center;font-size:.7rem;font-weight:700;color:var(--mc-teal);background:var(--mc-tint);border-radius:99px;padding:.15rem .5rem;white-space:nowrap}
+.mc-b .tag.tbc{color:#7a5a12;background:#FBF1D9}
+.mc-b:has(input:checked){border-color:var(--mc-red);background:#FFF8F6}
+.mc-b:has(input:checked) .tick{background:var(--mc-red);border-color:var(--mc-red)}
+.mc-b:has(input:checked) .tick svg{opacity:1}
+.mc-b:has(input:focus-visible){outline:3px solid #0a8a83;outline-offset:2px}
+.mc-b.locked{cursor:default}
+.mc-b:has(input:disabled):not(.locked){opacity:.45;cursor:not-allowed}
+.mc-b-extra{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:.9rem}
+.mc-b-extra[hidden]{display:none}
+.mc-pvt{margin:.8rem 0 0;font-size:.84rem;color:var(--mc-soft);display:flex;gap:.45rem;align-items:center}
+.mc-pvt .i{color:var(--mc-teal);width:1.1em;height:1.1em}
+
+.mc-submit{display:flex;align-items:center;justify-content:center;gap:.7rem;width:100%;margin-top:1.3rem;min-height:56px;border:0;border-radius:12px;background:var(--mc-red);color:#fff;font:inherit;font-size:1.1rem;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(210,60,60,.28);transition:background .15s,transform .15s}
+.mc-submit:hover{background:var(--mc-red-deep)}.mc-submit:active{transform:translateY(1px)}
+.mc-submit .i{width:1.4em;height:1.4em}
+.mc-error{min-height:1.3rem;margin:.7rem 0 0;color:#B42318;font-size:.92rem;font-weight:500}
+
+/* Results */
+.mc-res-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1rem}
+.mc-res-top .eyebrow{margin:0 0 .25rem;font-size:.85rem}
+.mc-res-top h2{margin:0}
+.mc-badge{background:var(--mc-tint);color:var(--mc-teal);font-weight:700;font-size:.9rem;padding:.55rem 1rem;border-radius:99px;white-space:nowrap}
+.mc-results{display:grid;gap:.85rem}
+.mc-q{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:1rem;padding:1rem 1.1rem;border:1.5px solid var(--mc-line);border-radius:16px;background:#fff;cursor:pointer;transition:.15s;text-align:left;font:inherit;color:inherit;width:100%}
+.mc-q:hover{box-shadow:0 8px 22px rgba(60,40,20,.1);transform:translateY(-1px)}
+.mc-q.best{border-color:#E8837F;background:#FFF5F3}
+.mc-q-who{display:flex;align-items:center;gap:1rem;min-width:0}
+.mc-q-logo{width:104px;height:54px;object-fit:contain;flex:none}
+.mc-q-logo.fallback{display:grid;place-items:center;font-weight:700;color:var(--mc-teal);font-size:.9rem;text-align:center;background:var(--mc-tint);border-radius:10px}
+.mc-q h3{font-size:1.15rem;margin:0 0 .15rem;font-weight:700}
+.mc-q .meta{margin:0;font-size:.86rem;color:var(--mc-soft)}
+.mc-q .flag{display:inline-block;margin-bottom:.2rem;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mc-teal)}
+.mc-q-price{text-align:right;border-left:1px solid var(--mc-line);padding-left:1.1rem}
+.mc-q-price small{display:block;color:var(--mc-soft);font-size:.82rem}
+.mc-q-price strong{display:block;font-size:clamp(1.3rem,2vw,1.75rem);font-weight:800;line-height:1.2;white-space:nowrap}
+.mc-q-price .link{display:inline-flex;align-items:center;gap:.3rem;margin-top:.2rem;color:var(--mc-red);font-weight:600;font-size:.88rem}
+.mc-q-price .link .i{width:1em;height:1em}
+.mc-more{align-self:center;justify-self:center;border:0;background:none;color:var(--mc-teal);font:inherit;font-weight:700;cursor:pointer;padding:.5rem 1rem;text-decoration:underline;text-underline-offset:3px}
+.mc-skel{display:grid;gap:.85rem;margin-top:1.1rem;opacity:.6}
+.mc-skel i{display:block;height:84px;border:1.5px dashed var(--mc-line);border-radius:16px;background:linear-gradient(90deg,#faf8f3,#f3efe6,#faf8f3);background-size:200% 100%;animation:mcsh 2.4s linear infinite}
+@keyframes mcsh{to{background-position:-200% 0}}
+.mc-empty strong{font-size:1.15rem}.mc-empty p{margin:.3rem 0 0;color:var(--mc-soft)}
+.mc-select{margin-top:1.1rem;display:flex;align-items:center;gap:1rem;justify-content:space-between;background:#EAF5EF;border:1px solid #CFE6DA;border-radius:16px;padding:1rem 1.1rem}
+.mc-select[hidden]{display:none}
+.mc-select-main{display:flex;gap:.8rem;align-items:flex-start;min-width:0}
+.mc-select-main>.i{width:2rem;height:2rem;color:#1d8a4f;fill:#1d8a4f;stroke:#fff;margin-top:.1rem}
+.mc-select h3{margin:0 0 .25rem;font-size:1.1rem;color:#136b3c}
+.mc-select p{margin:.1rem 0;font-size:.9rem;color:var(--mc-ink)}
+.mc-select p.dim{color:var(--mc-soft)}
+.mc-edit{display:inline-flex;align-items:center;gap:.45rem;border:0;background:none;font:inherit;font-weight:600;color:var(--mc-teal);cursor:pointer;padding:.6rem .4rem;white-space:nowrap;border-left:1px solid #CFE6DA;padding-left:1.1rem}
+
+/* CTA */
+.mc-cta{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;background:#fff;border:1px solid var(--mc-line);border-radius:20px;padding:1.4rem 1.6rem;margin:0 0 2.5rem}
+.mc-cta h2{font-size:1.4rem;margin:0 0 .3rem}.mc-cta p{margin:0;color:var(--mc-soft)}
+.mc-cta .btn-row{display:flex;gap:.7rem;flex-wrap:wrap}
+.mc-cta .btn{border-radius:10px}
+.mc-disc{margin:-1.5rem 0 2.5rem;font-size:.82rem;color:var(--mc-soft)}
+
+/* Modal */
+.quote-modal{display:none;position:fixed;inset:0;background:rgba(20,25,24,.6);z-index:9999;align-items:center;justify-content:center;padding:16px}
+.quote-modal.open{display:flex}
+.quote-sheet{background:#fff;border-radius:20px;max-width:680px;width:100%;max-height:90vh;overflow:auto;padding:1.6rem;font-family:var(--font-body,"Montserrat",system-ui,sans-serif);color:var(--ink,#1D2321)}
+.quote-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid #E6DFD2;padding-bottom:1rem}
+.quote-head img{width:96px;height:48px;object-fit:contain}
+.quote-head .eyebrow{margin:0 0 .15rem;font-size:.75rem}
+.quote-close{border:0;background:#F4F1EA;border-radius:50%;width:38px;height:38px;font-size:22px;cursor:pointer;line-height:1}
+.quote-meta{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:1.1rem 0}
+.quote-meta div{background:#F8F5EE;padding:.7rem .85rem;border-radius:10px;font-size:.92rem}
+.quote-meta strong{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#4A5552;margin-bottom:.15rem}
+.quote-benefits{background:#EAF5F2;padding:.9rem 1rem;border-radius:12px;margin:1rem 0;font-size:.92rem}
+.quote-benefits ul{margin:.4rem 0 0;padding-left:1.1rem}
+.quote-sheet h3{font-size:1.1rem;margin:1.1rem 0 .4rem}
+.quote-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.quote-table td{padding:.6rem .2rem;border-bottom:1px solid #EFE9DD}
+.quote-table td:last-child{text-align:right;white-space:nowrap}
+.quote-table tr.quote-total td{font-weight:800;font-size:1.1rem;border-bottom:0;padding-top:.8rem}
+.quote-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem}
+.quote-actions .btn{border-radius:10px}
+.quote-note{font-size:.8rem;color:#4A5552;margin:.9rem 0 0}
+
+/* Responsive */
+@media (max-width:1000px){.mc-grid{grid-template-columns:1fr}.mc-b-grid{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:760px){
+  .mc-hero-img{width:100%;opacity:.28;-webkit-mask-image:linear-gradient(to left,#000 0,transparent 85%);mask-image:linear-gradient(to left,#000 0,transparent 85%)}
+  .mc-b-grid{grid-template-columns:1fr 1fr}
+  .mc-cta{flex-direction:column;align-items:flex-start}
+  .mc-cta .btn-row{width:100%;flex-direction:column}
+}
+@media (max-width:560px){
+  .mc-row,.mc-b-extra{grid-template-columns:1fr}
+  .mc-cover-row{grid-template-columns:1fr}
+  .mc-card{padding:1rem;border-radius:18px}
+  .mc-q{grid-template-columns:1fr;gap:.7rem}
+  .mc-q-price{border-left:0;border-top:1px solid var(--mc-line);padding:.7rem 0 0;text-align:left;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.3rem}
+  .mc-q-logo{width:84px;height:44px}
+  .mc-select{flex-direction:column;align-items:flex-start}
+  .mc-edit{border-left:0;padding-left:0}
+  .mc-res-top{flex-direction:column}
+  .quote-meta{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.mc *{animation:none!important;transition:none!important}}
 </style>
-</head><body>
-<header class="site-header"><div class="wrap"><div class="nav-bar"><a class="brand" href="../" aria-label="Chestnut home"><img class="brand-logo" src="../images/chestnut-logo-correct.png" alt="Chestnut Insurance Agency"></a><nav aria-label="Primary"><ul class="nav-list"><li><a href="/">Home</a></li><li><a href="../insurance-solutions/">Products</a></li><li><a href="../insurance-guides/">Our Blog</a></li><li><a href="../contact-us/">Contact</a></li></ul></nav><a class="btn btn-primary nav-cta" href="../get-a-quote/">Get a quote</a><button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu">Menu</button></div></div><div class="mobile-menu" id="mobile-menu"><div class="wrap"><ul><li><a href="/">Home</a></li><li><a href="/insurance-solutions/">Products</a></li><li><a href="/insurance-guides/">Our Blog</a></li><li><a href="/contact-us/">Contact</a></li></ul></div></header>
-<main id="main">
-<section class="calc-hero"><div class="wrap calc-title"><div><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="../motor-insurance-kenya/">Motor Insurance</a></li><li><span aria-current="page">Motor Insurance Calculator</span></li></ol></nav><p class="eyebrow">Motor insurance • Instant estimate</p><h1>Motor Insurance Premium Calculator</h1><p class="calc-muted">Compare indicative premiums from leading insurers in Kenya.</p></div><img class="calc-title-car" src="../images/motor-hero.webp" alt="Vehicle on the road" loading="eager" decoding="async" width="340" height="145"></div></section>
-<section class="wrap calc-grid" id="calculator">
-<div class="calc-panel"><h2>Your vehicle details</h2><p class="calc-muted">Tell us about your vehicle to get an instant estimate.</p>
-<form id="motor-calc">
-<fieldset style="border:0;padding:0;margin:.3rem 0"><legend style="font-weight:700;margin-bottom:.25rem">Cover type</legend><div class="calc-cover-row"><label class="calc-cover"><input type="radio" name="cover" value="comp" checked><span><strong>Comprehensive</strong><small>Own damage, theft and third-party</small></span></label><label class="calc-cover"><input type="radio" name="cover" value="tp"><span><strong>Third Party</strong><small>Third-party liability only</small></span></label></div></fieldset>
-<div class="calc-field-grid">
-<div class="field"><label for="make">Vehicle make *</label><input id="make" type="text" list="make-list" placeholder="Search make" autocomplete="off" required><datalist id="make-list"></datalist></div>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16.5H3.5v-4l1.7-4.6A2 2 0 0 1 7.1 6.6h9.8a2 2 0 0 1 1.9 1.3l1.7 4.6v4H19"/><path d="M5 16.5h14"/><circle cx="7.5" cy="16.5" r="1.7"/><circle cx="16.5" cy="16.5" r="1.7"/><path d="M4 12.5h16"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.4 3 7.7 7 9.5 4-1.8 7-5.1 7-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+  <symbol id="i-wind" viewBox="0 0 24 24"><path d="M3.5 17 6 8.5C9.5 6.8 14.5 6.8 18 8.5l2.5 8.5z"/><path d="M7 14.5 16 11"/></symbol>
+  <symbol id="i-tow" viewBox="0 0 24 24"><path d="M2.5 16.5V9h8.5v7.5M11 11.5h5l3 3v2h-8"/><circle cx="6" cy="17" r="1.7"/><circle cx="16" cy="17" r="1.7"/><path d="m5 9 5-4.5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.5 7.5h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></symbol>
+  <symbol id="i-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m7.8 12.3 3 3 5.6-6" stroke="#fff"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.1 2.1 0 0 0-3-3L5 17z"/><path d="m14.5 7.5 3 3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+</svg>
 
-<div class="field"><label for="year">Year of manufacture *</label><select id="year" required><option value="">Select year</option></select></div>
-<div class="field" id="value-field"><label for="si">Vehicle value (Sum Insured) *</label><div class="calc-money"><span>KES</span><input id="si" type="number" min="600000" step="1" inputmode="numeric" placeholder="e.g. 2,500,000"></div><p class="hint">Minimum KES 600,000 for Comprehensive.</p></div>
+<header class="site-header">
+<div class="wrap">
+<div class="nav-bar">
+<a class="brand" href="../" aria-label="Chestnut home"><img class="brand-logo" src="../images/chestnut-logo-correct.png" alt="Chestnut Insurance Agency"></a>
+<nav aria-label="Primary">
+<ul class="nav-list">
+<li><a href="/">Home</a></li>
+<li><a href="../insurance-solutions/">Products</a></li>
+<li><a href="../insurance-guides/">Our Blog</a></li>
+<li><a href="../contact-us/">Contact</a></li>
+</ul>
+</nav>
+<a class="btn btn-primary nav-cta" href="../get-a-quote/">Get a quote</a>
+<button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
 </div>
-<div class="field"><label for="reg">Registration number <span style="font-weight:400">(optional)</span></label><input id="reg" type="text" placeholder="e.g. KDB 123A" autocomplete="off"></div>
-<div class="benefit-block"><div class="benefit-title">Included with every Comprehensive quote</div><div class="benefit-included"><div class="included-pill">✓ Excess Protector</div><div class="included-pill">✓ Political Violence & Terrorism</div></div>
-<div class="benefit-title" style="margin-top:.7rem">Additional benefits <span style="font-weight:400">(optional)</span></div>
-<div class="benefit-options"><div class="benefit-option"><label for="loss-use">Loss of Use / Courtesy Car</label><select id="loss-use"><option value="0">No courtesy car</option><option value="3000">10 days — KES 3,000</option><option value="6000">20 days — KES 6,000</option></select><small>Courtesy car benefit of KES 3,000 per day.</small></div>
-<div class="benefit-option"><label for="windscreen-limit">Enhanced Windscreen</label><select id="windscreen-limit"><option value="50000">KES 50,000 — included</option><option value="75000">KES 75,000 limit (+KES 2,500)</option><option value="100000">KES 100,000 limit (+KES 5,000)</option><option value="150000">KES 150,000 limit (+KES 10,000)</option><option value="200000">KES 200,000 limit (+KES 15,000)</option><option value="250000">KES 250,000 limit (+KES 20,000)</option></select><small>First KES 50,000 is free. Higher limits charged at 10% of the additional limit.</small></div>
-<div class="benefit-option"><label for="aa"><input id="aa" type="checkbox"> AA Membership</label><small>Premium to be confirmed.</small></div></div>
 </div>
-<button class="btn btn-primary calc-submit" type="submit">Calculate Premium</button><p class="calc-error" id="error" aria-live="polite"></p></form></div>
-<div class="calc-panel"><div class="calc-results-top"><div><p class="eyebrow">Your estimate</p><h2>Available options</h2></div><span class="calc-badge">Indicative pricing</span></div><div class="calc-results" id="results" aria-live="polite"><div class="calc-note"><strong>Your estimate will appear here.</strong><p>Choose your cover and vehicle details, then calculate your premium.</p></div></div></div>
+<div class="mobile-menu" id="mobile-menu">
+<div class="wrap">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/insurance-solutions/">Products</a></li>
+<li><a href="/insurance-guides/">Our Blog</a></li>
+<li><a href="/contact-us/">Contact</a></li>
+</ul>
+</div>
+</div>
+</header>
+
+<main id="main" class="mc">
+<section class="mc-hero" aria-labelledby="mc-h1">
+  <img class="mc-hero-img" src="../images/motor-hero.webp" alt="" width="1272" height="354" fetchpriority="high" decoding="async">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="../motor-insurance-kenya/">Motor Insurance</a></li>
+        <li><span aria-current="page">Motor Insurance Calculator</span></li>
+      </ol>
+    </nav>
+    <p class="eyebrow">Motor insurance &bull; Instant estimate</p>
+    <h1 id="mc-h1">Motor Insurance Premium Calculator</h1>
+    <p class="lede">Compare motor insurance premiums from leading insurers in Kenya.</p>
+  </div>
 </section>
-<section class="wrap"><div class="calc-cta"><div><h2>Ready for a formal quotation?</h2><p>Tell Chestnut what you need and we'll help confirm available terms.</p></div><div class="btn-row"><a class="btn btn-primary" href="../get-a-quote/?cover=%2Fmotor-insurance-kenya%2F">Request a formal quote</a><a class="btn btn-ghost" href="https://wa.me/254721233951?text=Hello%20Chestnut%2C%20I%20used%20the%20motor%20insurance%20calculator%20and%20would%20like%20a%20formal%20quotation." rel="noopener">WhatsApp Chestnut</a></div></div></section>
+
+<section class="wrap mc-grid" id="calculator">
+  <!-- FORM -->
+  <div class="mc-card">
+    <div class="mc-card-head">
+      <svg class="i" aria-hidden="true"><use href="#i-car"/></svg>
+      <div>
+        <h2>Your vehicle details</h2>
+        <p class="mc-sub">Tell us about your vehicle to get an instant estimate.</p>
+      </div>
+    </div>
+
+    <form id="mc-form" novalidate>
+      <fieldset class="mc mc-fs">
+        <legend>Cover type</legend>
+        <div class="mc-cover-row">
+          <label class="mc-tile">
+            <input type="radio" name="cover" value="comp" checked>
+            <span class="dot" aria-hidden="true"></span>
+            <span><strong>Comprehensive</strong><small>Own damage, theft and third-party</small></span>
+          </label>
+          <label class="mc-tile">
+            <input type="radio" name="cover" value="tp">
+            <span class="dot" aria-hidden="true"></span>
+            <span><strong>Third Party</strong><small>Third-party liability only</small></span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="mc-row">
+        <div class="mc-field">
+          <label class="mc-label" for="make">Vehicle make <span class="req" aria-hidden="true">*</span></label>
+          <div class="cb">
+            <div class="mc-control">
+              <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+              <input id="make" type="text" placeholder="Search make" autocomplete="off" aria-required="true">
+              <svg class="i chev" aria-hidden="true"><use href="#i-chev"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="mc-field">
+          <label class="mc-label" for="model">Vehicle model <span class="req" aria-hidden="true">*</span></label>
+          <div class="cb">
+            <div class="mc-control">
+              <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+              <input id="model" type="text" placeholder="Search or type model" autocomplete="off" aria-required="true">
+              <svg class="i chev" aria-hidden="true"><use href="#i-chev"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mc-row">
+        <div class="mc-field">
+          <label class="mc-label" for="year">Year of manufacture <span class="req" aria-hidden="true">*</span></label>
+          <div class="mc-control">
+            <select id="year" aria-required="true"><option value="">Select year</option></select>
+            <svg class="i chev" aria-hidden="true"><use href="#i-chev"/></svg>
+          </div>
+        </div>
+        <div class="mc-field" id="value-field">
+          <label class="mc-label" for="si">Vehicle value (Sum Insured) <span class="req" aria-hidden="true">*</span></label>
+          <div class="mc-control">
+            <span class="cur">KES</span>
+            <input id="si" type="text" inputmode="numeric" placeholder="e.g. 2,500,000" autocomplete="off" aria-describedby="si-hint" aria-required="true">
+          </div>
+          <p class="mc-hint" id="si-hint">Minimum KES 600,000 for Comprehensive.</p>
+        </div>
+      </div>
+
+      <div class="mc-field" style="margin-bottom:.25rem">
+        <label class="mc-label" for="reg">Registration number <span class="opt">(optional)</span></label>
+        <div class="mc-control">
+          <svg class="i" aria-hidden="true"><use href="#i-car"/></svg>
+          <input id="reg" type="text" placeholder="e.g. KDB 123A" autocomplete="off" autocapitalize="characters">
+        </div>
+      </div>
+
+      <div class="mc-benefits">
+        <div class="mc-b-head">
+          <svg class="i" aria-hidden="true"><use href="#i-shield"/></svg>
+          <div>
+            <h3 id="b-title">Additional benefits <span>(optional)</span></h3>
+            <p class="mc-sub">Enhance your cover with additional protection.</p>
+          </div>
+        </div>
+        <div class="mc-b-grid" role="group" aria-labelledby="b-title">
+          <label class="mc-b locked" data-own="1">
+            <input type="checkbox" id="b-wind" checked disabled>
+            <span class="tick"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
+            <svg class="i ico" aria-hidden="true"><use href="#i-wind"/></svg>
+            <span class="name">Windscreen cover</span>
+            <span class="tag">Included</span>
+          </label>
+          <label class="mc-b locked" data-own="1">
+            <input type="checkbox" id="b-excess" checked disabled>
+            <span class="tick"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
+            <svg class="i ico" aria-hidden="true"><use href="#i-shield"/></svg>
+            <span class="name">Excess Protector</span>
+            <span class="tag">Included</span>
+          </label>
+          <label class="mc-b">
+            <input type="checkbox" id="b-tow">
+            <span class="tick"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
+            <svg class="i ico" aria-hidden="true"><use href="#i-tow"/></svg>
+            <span class="name">Towing &amp; Recovery</span>
+            <span class="tag tbc">Price on request</span>
+          </label>
+          <label class="mc-b" data-own="1">
+            <input type="checkbox" id="b-lou">
+            <span class="tick"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
+            <svg class="i ico" aria-hidden="true"><use href="#i-car"/></svg>
+            <span class="name">Loss of Use</span>
+            <span class="tag">From KES 3,000</span>
+          </label>
+        </div>
+
+        <div class="mc-b-extra" id="b-extra">
+          <div class="mc-field" id="wind-field">
+            <label class="mc-label" for="wind">Windscreen limit</label>
+            <div class="mc-control">
+              <select id="wind">
+                <option value="50000">KES 50,000 (included)</option>
+                <option value="75000">KES 75,000 (+KES 2,500)</option>
+                <option value="100000">KES 100,000 (+KES 5,000)</option>
+                <option value="150000">KES 150,000 (+KES 10,000)</option>
+                <option value="200000">KES 200,000 (+KES 15,000)</option>
+                <option value="250000">KES 250,000 (+KES 20,000)</option>
+              </select>
+              <svg class="i chev" aria-hidden="true"><use href="#i-chev"/></svg>
+            </div>
+          </div>
+          <div class="mc-field" id="lou-field" hidden>
+            <label class="mc-label" for="lou">Courtesy car (KES 3,000 per day)</label>
+            <div class="mc-control">
+              <select id="lou">
+                <option value="3000">10 days (KES 3,000)</option>
+                <option value="6000">20 days (KES 6,000)</option>
+              </select>
+              <svg class="i chev" aria-hidden="true"><use href="#i-chev"/></svg>
+            </div>
+          </div>
+        </div>
+        <p class="mc-pvt" id="pvt-note"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Political Violence &amp; Terrorism is also included with every Comprehensive quote.</p>
+      </div>
+
+      <button class="mc-submit" type="submit"><svg class="i" aria-hidden="true"><use href="#i-calc"/></svg>Calculate Premium</button>
+      <p class="mc-error" id="mc-error" role="alert" aria-live="assertive"></p>
+    </form>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="mc-card" id="mc-results-card">
+    <div class="mc-res-top">
+      <div>
+        <p class="eyebrow">Your estimate</p>
+        <h2>Available options</h2>
+      </div>
+      <span class="mc-badge">Indicative pricing</span>
+    </div>
+    <div class="mc-results" id="mc-results" aria-live="polite">
+      <div class="mc-empty">
+        <strong>Your estimate will appear here.</strong>
+        <p>Choose your cover and vehicle details, then calculate your premium.</p>
+      </div>
+    </div>
+    <div class="mc-skel" id="mc-skel" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="mc-select" id="mc-select" hidden>
+      <div class="mc-select-main">
+        <svg class="i" aria-hidden="true"><use href="#i-ok"/></svg>
+        <div>
+          <h3>Your selection</h3>
+          <p id="sel-line1"></p>
+          <p class="dim" id="sel-line2"></p>
+        </div>
+      </div>
+      <button type="button" class="mc-edit" id="mc-edit"><svg class="i" aria-hidden="true"><use href="#i-edit"/></svg>Edit details</button>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="mc-cta">
+    <div>
+      <h2>Ready for a formal quotation?</h2>
+      <p>Tell Chestnut what you need and we'll help confirm available terms.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="../get-a-quote/?cover=%2Fmotor-insurance-kenya%2F">Request a formal quote</a>
+      <a class="btn btn-ghost" href="https://wa.me/254721233951?text=Hello%20Chestnut%2C%20I%20used%20the%20motor%20insurance%20calculator%20and%20would%20like%20a%20formal%20quotation." rel="noopener">WhatsApp Chestnut</a>
+    </div>
+  </div>
+  <p class="mc-disc">Figures are indicative only and exclude any optional benefit marked &ldquo;price on request&rdquo;. Final terms, premiums and availability are confirmed by the insurer in a formal quotation.</p>
+</section>
 </main>
-<div class="quote-modal" id="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quote-title"><div class="quote-sheet"><div class="quote-head"><div style="display:flex;align-items:center;gap:12px"><img id="quote-logo" src="" alt=""><div><p class="eyebrow">Chestnut Insurance Agency</p><h2 id="quote-title" style="margin:0">Quotation details</h2></div></div><button class="quote-close" id="quote-close" aria-label="Close">×</button></div><div id="quote-body"></div></div></div>
-<footer class="site-footer"><div class="wrap"><div class="foot-legal"><span>Chestnut Insurance Agency is an insurance agency licensed by the Insurance Regulatory Authority (IRA). Licence no. IRA/05/44335/2026.</span><span>© 2026 Chestnut Insurance Agency</span></div></div></footer><script src="../app.js" defer></script>
+
+<div class="quote-modal" id="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quote-title">
+  <div class="quote-sheet">
+    <div class="quote-head">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img id="quote-logo" src="" alt="">
+        <div>
+          <p class="eyebrow">Chestnut Insurance Agency</p>
+          <h2 id="quote-title" style="margin:0;font-size:1.35rem">Quotation details</h2>
+        </div>
+      </div>
+      <button class="quote-close" id="quote-close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div id="quote-body"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="foot-legal">
+<span>Chestnut Insurance Agency is an insurance agency licensed by the Insurance Regulatory Authority (IRA). Licence no. IRA/05/44335/2026.</span>
+<span>&copy; 2026 Chestnut Insurance Agency</span>
+</div>
+</div>
+</footer>
+
+<script src="../app.js" defer></script>
 <script>
-(function(){
-const f=document.getElementById('motor-calc'),si=document.getElementById('si'),results=document.getElementById('results'),error=document.getElementById('error'),modal=document.getElementById('quote-modal'),quoteBody=document.getElementById('quote-body'),quoteLogo=document.getElementById('quote-logo'),make=document.getElementById('make'),year=document.getElementById('year'),reg=document.getElementById('reg'),loss=document.getElementById('loss-use'),wind=document.getElementById('windscreen-limit'),aa=document.getElementById('aa');
-const data={
-'Fidelity':{logo:'..../images/partners/fidelity.webp',tp:15000,bands:[[600000,999999,.065,42500],[1000000,1499999,.0525,0],[1500000,2499999,.0425,0],[2500000,3000000,.035,0],[3000001,Infinity,.03,0]]},
-'CIC':{logo:'../images/partners/cic.png',tp:12000,bands:[[600000,1000000,.065,42500],[1000001,1499999,.055,0],[1500000,2999999,.045,0],[3000000,3499999,.04,0],[3500000,Infinity,.0375,0]]},
-'Old Mutual':{logo:'../images/partners/old-mutual.png',tp:12000,bands:[[600000,1000000,.065,42500],[1000001,1500000,.055,0],[1500001,2999999,.05,0],[3000000,4999999,.0325,0],[5000000,Infinity,.03,0]]},
-'APA':{logo:'../images/partners/apa.png',tp:15000,bands:[[600000,1000000,.0725,55000],[1000001,1500000,.06,0],[1500001,2499999,.055,0],[2500000,Infinity,.0425,0]]},
-'Britam':{logo:'../images/partners/britam.png',tp:15000,bands:[[1000000,1499999,.075,0],[1500000,1999999,.055,0],[2000000,2999999,.05,0],[3000000,4999999,.045,0],[5000000,Infinity,.03,0]]},
-'First Assurance':{logo:'../images/partners/first-assurance.png',tp:15000,bands:[[600000,1500000,.09,75000],[1500001,1999999,.05,0],[2000000,2999999,.0375,0],[3000000,4999999,.0325,0],[5000000,Infinity,.03,0]]}};
-const order=['Fidelity','CIC','Old Mutual','APA','Britam','First Assurance'],fmt=n=>'KES '+Number(n).toLocaleString('en-KE',{minimumFractionDigits:2,maximumFractionDigits:2}),rnd=n=>Math.round(n*100)/100;
-for(let y=new Date().getFullYear();y>=1980;y--){let o=document.createElement('option');o.value=y;o.textContent=y;year.appendChild(o)}
-// Searchable make dropdown populated from the scraped CIC catalogue.
-fetch('../vehicle-makes.json').then(r=>r.json()).then(list=>{const dl=document.getElementById('make-list');list.forEach(name=>{const o=document.createElement('option');o.value=name;dl.appendChild(o)})}).catch(()=>{});
-function calcBasic(n,v,cover){if(cover==='tp')return data[n].tp;let b=data[n].bands.find(x=>v>=x[0]&&v<=x[1]);return b?Math.max(rnd(v*b[2]),b[3]):null}
-function charges(b){return {phcf:rnd(b*.0025),training:rnd(b*.002),stamp:40,total:rnd(b+b*.0025+b*.002+40)}}
-function reset(){results.innerHTML='<div class="calc-note"><strong>Your estimate will appear here.</strong><p>Choose your cover and vehicle details, then calculate your premium.</p></div>'}
-function detail(q,vehicle,cover,benefits){quoteLogo.src=data[q.n].logo;quoteLogo.alt=q.n+' logo';let benefitRows=benefits.map(x=>'<div>'+x+'</div>').join('');quoteBody.innerHTML='<div class="quote-meta"><div><strong>Insurer</strong><br>'+q.n+'</div><div><strong>Cover</strong><br>'+cover+'</div><div><strong>Vehicle</strong><br>'+vehicle.make+' ('+vehicle.year+')</div><div><strong>Vehicle value</strong><br>'+(cover==='Comprehensive'?fmt(vehicle.value):'Not required for Third Party')+'</div>'+(vehicle.reg?'<div><strong>Registration</strong><br>'+vehicle.reg+'</div>':'')+'</div><div class="quote-benefits"><strong>Selected / included benefits</strong>'+benefitRows+'</div><h3>Premium summary</h3><table class="quote-table"><tr><td>Basic Premium (including selected priced benefits)</td><td>'+fmt(q.basic)+'</td></tr><tr><td>PHCF (0.25%)</td><td>'+fmt(q.ch.phcf)+'</td></tr><tr><td>Training Levy (0.20%)</td><td>'+fmt(q.ch.training)+'</td></tr><tr><td>Stamp Duty</td><td>'+fmt(q.ch.stamp)+'</td></tr><tr class="quote-total"><td>Total Payable</td><td>'+fmt(q.ch.total)+'</td></tr></table><div class="quote-actions"><a class="btn btn-primary" href="/get-a-quote/?cover=%2Fmotor-insurance-kenya%2F">Request formal quote</a><a class="btn btn-ghost" href="https://wa.me/254721233951?text='+encodeURIComponent('Hello Chestnut, please provide a formal '+cover+' quotation from '+q.n+' for '+vehicle.make+' '+vehicle.year+(vehicle.value?' valued at KES '+vehicle.value.toLocaleString('en-KE'):'')+' with benefits: '+benefits.join(', '))+'">WhatsApp</a></div>';modal.classList.add('open');document.body.style.overflow='hidden'}
-function run(){let cover=f.querySelector('input[name=cover]:checked').value,v=cover==='tp'?0:Number(si.value);if(!make.value.trim()||!year.value){error.textContent='Please select or enter the vehicle make and year.';return}if(cover==='comp'&&(!v||v<600000||!Number.isInteger(v))){error.textContent='Enter a whole-number vehicle value of KES 600,000 or more.';return}error.textContent='';let type=cover==='tp'?'Third Party':'Comprehensive',vehicle={make:make.value.trim(),year:year.value,reg:reg.value.trim(),value:v},selectedBenefits=['Excess Protector (included)','Political Violence & Terrorism (included)'];let addons=Number(loss.value)+Math.max(0,Number(wind.value)-50000)*.1;if(Number(loss.value)===3000)selectedBenefits.push('Loss of Use / Courtesy Car — 10 days (KES 3,000)');if(Number(loss.value)===6000)selectedBenefits.push('Loss of Use / Courtesy Car — 20 days (KES 6,000)');selectedBenefits.push('Windscreen cover — KES '+Number(wind.value).toLocaleString('en-KE')+' limit'+(Number(wind.value)>50000?' (additional premium '+fmt((Number(wind.value)-50000)*.1)+')':' (included)'));if(aa.checked)selectedBenefits.push('AA Membership — premium to be confirmed (not included in calculated total)');let quotes=order.map(n=>{let b=calcBasic(n,v,cover);if(b===null)return null;let basic=b+addons,ch=charges(basic);return {n,b,addons,basic,ch}}).filter(Boolean).sort((a,b)=>a.ch.total-b.ch.total||order.indexOf(a.n)-order.indexOf(b.n)).slice(0,3);results.innerHTML=quotes.map((q,i)=>'<article class="calc-result-card" tabindex="0" role="button" data-name="'+q.n+'"><div class="calc-insurer"><img class="calc-logo" src="'+data[q.n].logo+'" alt="'+q.n+' logo" onerror="this.style.display=\'none\'"><div>'+(i===0?'<span class="calc-result-label">Lowest estimate</span>':'')+'<h3>'+q.n+'</h3><p>'+type+' · Levies included</p><p>'+selectedBenefits.length+' benefits</p></div></div><div class="calc-price"><small>Total payable</small><strong>'+fmt(q.ch.total)+'</strong><div class="calc-result-link">View quotation details ↗</div></div></article>').join('');results.querySelectorAll('.calc-result-card').forEach(card=>{const open=()=>{let q=quotes.find(x=>x.n===card.dataset.name);detail(q,vehicle,type,selectedBenefits)};card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});if(window.matchMedia('(max-width:850px)').matches)results.scrollIntoView({behavior:'smooth',block:'start'})}
-f.addEventListener('submit',e=>{e.preventDefault();run()});f.querySelectorAll('input[name=cover]').forEach(x=>x.addEventListener('change',()=>{error.textContent='';const tp=f.querySelector('input[name=cover]:checked').value==='tp';document.getElementById('value-field').style.display=tp?'none':'';si.required=!tp;if(tp)si.value='';reset()}));si.addEventListener('input',()=>{error.textContent='';reset()});[make,year,reg,loss,wind,aa].forEach(x=>x.addEventListener('change',reset));document.getElementById('quote-close').addEventListener('click',()=>{modal.classList.remove('open');document.body.style.overflow=''});modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('open');document.body.style.overflow=''}});document.addEventListener('keydown',e=>{if(e.key==='Escape'){modal.classList.remove('open');document.body.style.overflow=''}})
+(function () {
+'use strict';
+
+/* ---------- RATING DATA (unchanged from the previous version, logo path for Fidelity fixed) ---------- */
+var RATES = {
+  'Fidelity Shield': {logo:'../images/partners/fidelity.webp', tp:15000, bands:[[600000,999999,.065,42500],[1000000,1499999,.0525,0],[1500000,2499999,.0425,0],[2500000,3000000,.035,0],[3000001,Infinity,.03,0]]},
+  'CIC':             {logo:'../images/partners/cic.png', tp:12000, bands:[[600000,1000000,.065,42500],[1000001,1499999,.055,0],[1500000,2999999,.045,0],[3000000,3499999,.04,0],[3500000,Infinity,.0375,0]]},
+  'Old Mutual':      {logo:'../images/partners/old-mutual.png', tp:12000, bands:[[600000,1000000,.065,42500],[1000001,1500000,.055,0],[1500001,2999999,.05,0],[3000000,4999999,.0325,0],[5000000,Infinity,.03,0]]},
+  'APA':             {logo:'../images/partners/apa.png', tp:15000, bands:[[600000,1000000,.0725,55000],[1000001,1500000,.06,0],[1500001,2499999,.055,0],[2500000,Infinity,.0425,0]]},
+  'Britam':          {logo:'../images/partners/britam.png', tp:15000, bands:[[1000000,1499999,.075,0],[1500000,1999999,.055,0],[2000000,2999999,.05,0],[3000000,4999999,.045,0],[5000000,Infinity,.03,0]]},
+  'First Assurance': {logo:'../images/partners/first-assurance.png', tp:15000, bands:[[600000,1500000,.09,75000],[1500001,1999999,.05,0],[2000000,2999999,.0375,0],[3000000,4999999,.0325,0],[5000000,Infinity,.03,0]]}
+};
+var ORDER = ['Fidelity Shield','CIC','Old Mutual','APA','Britam','First Assurance'];
+var MIN_SI = 600000, FREE_WIND = 50000, WIND_RATE = .1, SHOW_DEFAULT = 3;
+
+/* Common models offered as suggestions only; any model can be typed. Not used in pricing. */
+var MODELS = {
+ 'TOYOTA':['Allion','Auris','Axio','Corolla','Crown','Fielder','Harrier','Hilux','Land Cruiser','Land Cruiser Prado','Mark X','Noah','Premio','Probox','Prado','Passo','Rav4','Rush','Sienta','Succeed','Vitz','Vanguard','Voxy','Wish','Belta','Camry','Fortuner','Hiace','Raum','Ractis'],
+ 'NISSAN':['AD Van','Dualis','Juke','Latio','March','Note','NP300','Navara','Patrol','Qashqai','Serena','Sylphy','Tiida','Wingroad','X-Trail','Xtrail','Murano','Sunny'],
+ 'MAZDA':['Atenza','Axela','Bongo','CX-3','CX-5','CX-8','Demio','Premacy','Mazda 3','Mazda 6','BT-50','Verisa'],
+ 'SUBARU':['Forester','Impreza','Legacy','Levorg','Outback','XV','WRX','Exiga'],
+ 'HONDA':['Accord','CR-V','Civic','Fit','Freed','Grace','Insight','Jazz','Shuttle','Vezel','HR-V','Stream'],
+ 'MITSUBISHI':['ASX','Colt','Delica','Fuso','L200','Lancer','Outlander','Pajero','Pajero IO','RVR','Canter','Eclipse Cross'],
+ 'SUZUKI':['Alto','Escudo','Ertiga','Jimny','Spacia','Swift','Vitara','Wagon R','Every','Baleno','Ignis'],
+ 'ISUZU':['D-Max','MU-X','Elf','NQR','FRR','FVR','Forward','Bighorn'],
+ 'VOLKSWAGEN':['Golf','Passat','Polo','Tiguan','Touareg','Amarok','Jetta'],
+ 'MERCEDES':['A-Class','C-Class','E-Class','S-Class','GLA','GLC','GLE','ML','Sprinter','Vito'],
+ 'B.M.W.':['1 Series','3 Series','5 Series','7 Series','X1','X3','X5','X6'],
+ 'FORD':['EcoSport','Everest','Fiesta','Focus','Ranger','Kuga','Escape','Transit'],
+ 'HYUNDAI':['Accent','Creta','Elantra','i10','i20','Santa Fe','Tucson','Venue'],
+ 'KIA':['Picanto','Rio','Seltos','Sorento','Sportage','Cerato','Carens'],
+ 'LANDROVER':['Defender','Discovery','Discovery Sport','Freelander','Range Rover','Range Rover Sport','Range Rover Evoque','Range Rover Velar'],
+ 'AUDI':['A3','A4','A6','Q3','Q5','Q7'],
+ 'LEXUS':['ES','GX','IS','LX','NX','RX'],
+ 'PEUGEOT':['206','207','208','307','308','3008','5008'],
+ 'JEEP':['Cherokee','Compass','Grand Cherokee','Renegade','Wrangler'],
+ 'VOLVO':['S60','S90','V40','XC60','XC90'],
+ 'DAIHATSU':['Terios','Mira','Hijet','Move'],
+ 'MAHINDRA':['Scorpio','XUV500','Bolero','Pik Up'],
+ 'RENAULT':['Duster','Kwid','Clio','Captur']
+};
+var POPULAR = ['TOYOTA','NISSAN','MAZDA','SUBARU','HONDA','MITSUBISHI','SUZUKI','ISUZU','VOLKSWAGEN','MERCEDES','B.M.W.','FORD','HYUNDAI','KIA','LANDROVER'];
+
+/* ---------- helpers ---------- */
+var $ = function (id) { return document.getElementById(id); };
+var form = $('mc-form'), errEl = $('mc-error'), resultsEl = $('mc-results'), skelEl = $('mc-skel'), selEl = $('mc-select');
+var makeEl = $('make'), modelEl = $('model'), yearEl = $('year'), siEl = $('si'), regEl = $('reg');
+var windEl = $('wind'), louEl = $('lou'), towEl = $('b-tow'), louChk = $('b-lou');
+var modal = $('quote-modal'), quoteBody = $('quote-body'), quoteLogo = $('quote-logo');
+var lastFocus = null, calculated = false, showAll = false, timer = null, makeCatalogue = [];
+
+var rnd = function (n) { return Math.round(n * 100) / 100; };
+var fmt = function (n) { return 'KES ' + Number(n).toLocaleString('en-KE', {minimumFractionDigits:2, maximumFractionDigits:2}); };
+var fmt0 = function (n) { return 'KES ' + Math.round(n).toLocaleString('en-KE'); };
+var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); };
+var coverVal = function () { return form.querySelector('input[name=cover]:checked').value; };
+function pretty(name) {
+  if (/^[A-Z]{1,3}$/.test(name) || /[.&\/]/.test(name) || /\d/.test(name) && name.length < 4) return name;
+  return name.toLowerCase().replace(/(^|[\s-])([a-z])/g, function (m, a, b) { return a + b.toUpperCase(); });
+}
+
+/* years */
+for (var y = new Date().getFullYear(); y >= 1980; y--) { var o = document.createElement('option'); o.value = y; o.textContent = y; yearEl.appendChild(o); }
+
+/* ---------- accessible combobox (free text allowed) ---------- */
+function combobox(input, getItems) {
+  var wrap = input.closest('.cb'), list = document.createElement('ul'), shown = [], active = -1, open = false;
+  list.className = 'cb-list'; list.id = input.id + '-list'; list.setAttribute('role', 'listbox'); list.hidden = true;
+  wrap.appendChild(list);
+  input.setAttribute('role', 'combobox'); input.setAttribute('aria-autocomplete', 'list'); input.setAttribute('aria-expanded', 'false'); input.setAttribute('aria-controls', list.id);
+
+  function setOpen(v) { open = v; list.hidden = !v; input.setAttribute('aria-expanded', String(v)); if (!v) { active = -1; input.removeAttribute('aria-activedescendant'); } }
+  function render() {
+    var q = input.value.trim().toLowerCase(), data = getItems(), items = data.items, head = data.head;
+    var starts = [], has = [];
+    if (q) { items.forEach(function (i) { var l = i.toLowerCase(); if (l.indexOf(q) === 0) starts.push(i); else if (l.indexOf(q) > -1) has.push(i); }); shown = starts.concat(has).slice(0, 60); head = null; }
+    else shown = items.slice(0, 60);
+    list.innerHTML = '';
+    if (!shown.length) { var e = document.createElement('li'); e.className = 'cb-empty'; e.setAttribute('role', 'presentation'); e.textContent = 'No match. You can type it in manually.'; list.appendChild(e); }
+    if (head && shown.length) { var h = document.createElement('li'); h.className = 'cb-head'; h.setAttribute('role', 'presentation'); h.textContent = head; list.appendChild(h); }
+    shown.forEach(function (name, idx) {
+      var li = document.createElement('li'); li.setAttribute('role', 'option'); li.id = input.id + '-o' + idx; li.textContent = name; li.setAttribute('aria-selected', 'false');
+      li.addEventListener('mousedown', function (ev) { ev.preventDefault(); choose(idx); });
+      list.appendChild(li);
+    });
+    active = -1;
+  }
+  function highlight(i) {
+    var opts = list.querySelectorAll('[role=option]'); if (!opts.length) return;
+    active = (i + opts.length) % opts.length;
+    opts.forEach(function (o, k) { o.setAttribute('aria-selected', String(k === active)); });
+    input.setAttribute('aria-activedescendant', opts[active].id); opts[active].scrollIntoView({block:'nearest'});
+  }
+  function choose(i) { input.value = shown[i]; setOpen(false); input.dispatchEvent(new Event('change', {bubbles:true})); }
+  input.addEventListener('focus', function () { render(); setOpen(true); });
+  input.addEventListener('input', function () { render(); setOpen(true); });
+  input.addEventListener('blur', function () { setTimeout(function () { setOpen(false); }, 120); });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown') { e.preventDefault(); if (!open) { render(); setOpen(true); } highlight(active + 1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); if (open) highlight(active - 1); }
+    else if (e.key === 'Enter' && open && active > -1) { e.preventDefault(); choose(active); }
+    else if (e.key === 'Escape' && open) { e.stopPropagation(); setOpen(false); }
+  });
+  wrap.querySelector('.chev').style.pointerEvents = 'none';
+  return {refresh: function () { if (open) render(); }};
+}
+function makeKey() { var v = makeEl.value.trim().toUpperCase(); return v; }
+function makeItems() {
+  if (makeEl.value.trim()) return {items: makeCatalogue.map(pretty)};
+  var pop = POPULAR.map(pretty), rest = makeCatalogue.map(pretty).filter(function (m) { return pop.indexOf(m) === -1; });
+  return {items: pop.concat(rest), head: 'Popular makes'};
+}
+function modelItems() {
+  var k = makeKey().replace(/\s+/g, ''), list = [];
+  Object.keys(MODELS).forEach(function (m) { if (m.replace(/\s+/g, '') === k) list = MODELS[m]; });
+  return {items: list, head: list.length ? 'Common models' : null};
+}
+var makeCb = combobox(makeEl, makeItems), modelCb = combobox(modelEl, modelItems);
+fetch('../vehicle-makes.json').then(function (r) { return r.json(); }).then(function (l) {
+  makeCatalogue = l.filter(function (n) { return !/^\d+$/.test(n) && !/^(TO BE ADVISED|NOT|NEW|BLACK|HIGH|ROAD|WORLD|POWER|POLE|STAR|TRAIN|TRUCK|TRAILER|TRACTOR|TANKER|TIPPER|DUMP|SHOVEL)$/.test(n); });
+  makeCb.refresh();
+}).catch(function () { makeCatalogue = POPULAR.slice(); });
+makeEl.addEventListener('change', function () { modelCb.refresh(); });
+
+/* thousands formatting on sum insured */
+siEl.addEventListener('input', function () {
+  var digits = siEl.value.replace(/\D/g, '').slice(0, 10);
+  siEl.value = digits ? Number(digits).toLocaleString('en-KE') : '';
+});
+var siNum = function () { return Number(siEl.value.replace(/\D/g, '')) || 0; };
+
+/* ---------- cover-type and benefit UI ---------- */
+function syncCover() {
+  var tp = coverVal() === 'tp';
+  $('value-field').hidden = tp;
+  document.querySelectorAll('.mc-b[data-own]').forEach(function (l) {
+    l.querySelector('input').disabled = tp || l.classList.contains('locked');
+    l.style.opacity = tp ? '.45' : ''; l.style.cursor = tp ? 'not-allowed' : '';
+  });
+  $('wind-field').hidden = tp; $('pvt-note').hidden = tp;
+  $('lou-field').hidden = tp || !louChk.checked;
+  $('b-extra').hidden = $('wind-field').hidden && $('lou-field').hidden;
+}
+function syncLou() { $('lou-field').hidden = coverVal() === 'tp' || !louChk.checked; $('b-extra').hidden = $('wind-field').hidden && $('lou-field').hidden; }
+form.querySelectorAll('input[name=cover]').forEach(function (r) { r.addEventListener('change', function () { syncCover(); clearErr(); }); });
+louChk.addEventListener('change', syncLou);
+syncCover();
+
+/* ---------- pricing ---------- */
+function basic(name, v, cover) {
+  var r = RATES[name]; if (cover === 'tp') return r.tp;
+  var b = r.bands.find(function (x) { return v >= x[0] && v <= x[1]; });
+  return b ? Math.max(rnd(v * b[2]), b[3]) : null;
+}
+function levies(b) { var phcf = rnd(b * .0025), tr = rnd(b * .002); return {phcf: phcf, training: tr, stamp: 40, total: rnd(b + phcf + tr + 40)}; }
+
+function read() {
+  var cover = coverVal(), tp = cover === 'tp';
+  return {
+    cover: cover, tp: tp, type: tp ? 'Third Party' : 'Comprehensive',
+    make: makeEl.value.trim(), model: modelEl.value.trim(), year: yearEl.value, reg: regEl.value.trim().toUpperCase(),
+    value: tp ? 0 : siNum(), wind: tp ? FREE_WIND : Number(windEl.value),
+    lou: (!tp && louChk.checked) ? Number(louEl.value) : 0, tow: towEl.checked
+  };
+}
+function validate(s) {
+  var bad = [], msg = '';
+  [makeEl, modelEl, yearEl, siEl].forEach(function (el) { el.closest('.mc-control').classList.remove('invalid'); el.removeAttribute('aria-invalid'); });
+  function flag(el) { el.closest('.mc-control').classList.add('invalid'); el.setAttribute('aria-invalid', 'true'); bad.push(el); }
+  if (!s.make) flag(makeEl); if (!s.model) flag(modelEl); if (!s.year) flag(yearEl);
+  if (bad.length) msg = 'Please enter the vehicle make, model and year.';
+  if (!s.tp && (!s.value || s.value < MIN_SI)) { flag(siEl); msg = msg || 'Enter a vehicle value of KES 600,000 or more.'; }
+  return {ok: !bad.length, msg: msg, first: bad[0]};
+}
+function benefitList(s) {
+  var l = [];
+  if (!s.tp) {
+    l.push('Excess Protector (included)', 'Political Violence & Terrorism (included)');
+    l.push('Windscreen cover, KES ' + s.wind.toLocaleString('en-KE') + ' limit' + (s.wind > FREE_WIND ? ' (additional premium ' + fmt((s.wind - FREE_WIND) * WIND_RATE) + ')' : ' (included)'));
+    if (s.lou) l.push('Loss of Use / Courtesy Car, ' + (s.lou === 3000 ? '10' : '20') + ' days (KES ' + s.lou.toLocaleString('en-KE') + ')');
+  }
+  if (s.tow) l.push('Towing & Recovery (AA Membership): premium to be confirmed, not included in the total');
+  return l;
+}
+function quotesFor(s) {
+  var add = s.tp ? 0 : s.lou + Math.max(0, s.wind - FREE_WIND) * WIND_RATE;
+  return ORDER.map(function (n) {
+    var b = basic(n, s.value, s.cover); if (b === null) return null;
+    var bp = b + add; return {n: n, base: b, add: add, basic: bp, ch: levies(bp)};
+  }).filter(Boolean).sort(function (a, b) { return a.ch.total - b.ch.total || ORDER.indexOf(a.n) - ORDER.indexOf(b.n); });
+}
+
+/* ---------- render ---------- */
+function logoHtml(n) { return '<img class="mc-q-logo" src="' + RATES[n].logo + '" alt="' + esc(n) + ' logo" loading="lazy" onerror="this.outerHTML=\'<span class=&quot;mc-q-logo fallback&quot;>' + esc(n) + '</span>\'">'; }
+function render(s, quotes) {
+  var benefits = benefitList(s), count = benefits.length;
+  var list = showAll ? quotes : quotes.slice(0, SHOW_DEFAULT);
+  resultsEl.innerHTML = list.map(function (q, i) {
+    return '<button type="button" class="mc-q' + (i === 0 ? ' best' : '') + '" data-n="' + esc(q.n) + '">' +
+      '<span class="mc-q-who">' + logoHtml(q.n) + '<span>' + (i === 0 ? '<span class="flag">Lowest estimate</span>' : '') + '<h3>' + esc(q.n) + '</h3><p class="meta">' + s.type + ' &nbsp;|&nbsp; ' + count + ' selected benefit' + (count === 1 ? '' : 's') + '</p></span></span>' +
+      '<span class="mc-q-price"><small>Total payable</small><strong>' + fmt0(q.ch.total) + '</strong><span class="link">View quotation details <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></button>';
+  }).join('');
+  if (quotes.length > SHOW_DEFAULT) resultsEl.insertAdjacentHTML('beforeend', '<button type="button" class="mc-more" id="mc-more">' + (showAll ? 'Show fewer options' : 'Show all ' + quotes.length + ' options') + '</button>');
+  skelEl.hidden = true;
+  var names = [];
+  if (!s.tp) names.push('Windscreen', 'Excess Protector'); if (s.lou) names.push('Loss of Use'); if (s.tow) names.push('Towing & Recovery');
+  $('sel-line1').textContent = [s.make, s.model].filter(Boolean).map(function (x) { return x; }).join(' ') + '  |  ' + s.year + (s.tp ? '' : '  |  ' + fmt0(s.value).replace('KES ', 'KES '));
+  $('sel-line2').textContent = s.type + ' cover' + (names.length ? '  |  Benefits: ' + names.join(', ') : '');
+  selEl.hidden = false;
+  resultsEl.querySelectorAll('.mc-q').forEach(function (b) { b.addEventListener('click', function () { openQuote(quotes.find(function (x) { return x.n === b.dataset.n; }), s); }); });
+  var more = $('mc-more'); if (more) more.addEventListener('click', function () { showAll = !showAll; render(s, quotes); $('mc-more').focus(); });
+}
+function run(auto) {
+  var s = read(), v = validate(s);
+  if (!v.ok) { if (!auto) { errEl.textContent = v.msg; v.first && v.first.focus(); } return; }
+  errEl.textContent = '';
+  var quotes = quotesFor(s);
+  if (!quotes.length) { errEl.textContent = 'No insurer in our comparison covers that vehicle value. Please request a formal quote.'; return; }
+  calculated = true; render(s, quotes);
+  if (!auto && window.matchMedia('(max-width:1000px)').matches) $('mc-results-card').scrollIntoView({behavior:'smooth', block:'start'});
+}
+function clearErr() { errEl.textContent = ''; }
+form.addEventListener('submit', function (e) { e.preventDefault(); run(false); });
+/* After the first calculation, keep results live as inputs change */
+function live() { if (!calculated) return; clearTimeout(timer); timer = setTimeout(function () { run(true); }, 250); }
+form.addEventListener('change', live); form.addEventListener('input', function (e) { if (e.target === siEl || e.target === makeEl || e.target === modelEl) live(); });
+$('mc-edit').addEventListener('click', function () { form.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(function () { makeEl.focus({preventScroll:true}); }, 350); });
+
+/* ---------- quotation modal ---------- */
+function openQuote(q, s) {
+  lastFocus = document.activeElement;
+  quoteLogo.src = RATES[q.n].logo; quoteLogo.alt = q.n + ' logo';
+  var benefits = benefitList(s);
+  var wa = 'Hello Chestnut, please provide a formal ' + s.type + ' quotation from ' + q.n + ' for ' + s.make + ' ' + s.model + ' ' + s.year + (s.value ? ' valued at KES ' + s.value.toLocaleString('en-KE') : '') + (s.reg ? ' (' + s.reg + ')' : '') + (benefits.length ? ' with benefits: ' + benefits.join(', ') : '') + '.';
+  quoteBody.innerHTML =
+    '<div class="quote-meta">' +
+      '<div><strong>Insurer</strong>' + esc(q.n) + '</div><div><strong>Cover</strong>' + s.type + '</div>' +
+      '<div><strong>Vehicle</strong>' + esc(s.make + ' ' + s.model) + ' (' + esc(s.year) + ')</div>' +
+      '<div><strong>Vehicle value</strong>' + (s.tp ? 'Not required for Third Party' : fmt(s.value)) + '</div>' +
+      (s.reg ? '<div><strong>Registration</strong>' + esc(s.reg) + '</div>' : '') +
+    '</div>' +
+    (benefits.length ? '<div class="quote-benefits"><strong>Selected and included benefits</strong><ul>' + benefits.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul></div>' : '') +
+    '<h3>Premium summary</h3><table class="quote-table">' +
+      '<tr><td>Basic premium' + (q.add ? ' (including selected priced benefits)' : '') + '</td><td>' + fmt(q.basic) + '</td></tr>' +
+      '<tr><td>PHCF (0.25%)</td><td>' + fmt(q.ch.phcf) + '</td></tr>' +
+      '<tr><td>Training Levy (0.20%)</td><td>' + fmt(q.ch.training) + '</td></tr>' +
+      '<tr><td>Stamp Duty</td><td>' + fmt(q.ch.stamp) + '</td></tr>' +
+      '<tr class="quote-total"><td>Total payable</td><td>' + fmt(q.ch.total) + '</td></tr></table>' +
+    '<div class="quote-actions"><a class="btn btn-primary" href="../get-a-quote/?cover=%2Fmotor-insurance-kenya%2F">Request formal quote</a>' +
+    '<a class="btn btn-ghost" rel="noopener" href="https://wa.me/254721233951?text=' + encodeURIComponent(wa) + '">WhatsApp</a></div>' +
+    '<p class="quote-note">Indicative pricing only. A formal quotation from the insurer confirms final terms.</p>';
+  modal.classList.add('open'); document.body.style.overflow = 'hidden'; $('quote-close').focus();
+}
+function closeQuote() { modal.classList.remove('open'); document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
+$('quote-close').addEventListener('click', closeQuote);
+modal.addEventListener('click', function (e) { if (e.target === modal) closeQuote(); });
+document.addEventListener('keydown', function (e) {
+  if (!modal.classList.contains('open')) return;
+  if (e.key === 'Escape') closeQuote();
+  if (e.key === 'Tab') { var f = modal.querySelectorAll('a[href],button'); if (!f.length) return; var a = f[0], z = f[f.length - 1]; if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
+});
 })();
-</script></body></html>
+</script>
+</body>
+</html>
