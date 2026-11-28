@@ -182,10 +182,7 @@ export function layout(page) {
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Chestnut Insurance Agency. The Insurance Experts.">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/favicon.svg?v=6" type="image/svg+xml">
-<link rel="icon" href="/favicon.png?v=6" type="image/png" sizes="64x64">
-<link rel="shortcut icon" href="/favicon.png?v=6" type="image/png">
-<link rel="apple-touch-icon" href="/favicon.png?v=6">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="/styles.css?v=${cssVersion}">
