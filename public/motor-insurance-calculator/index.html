@@ -719,9 +719,10 @@ function logoHtml(n) { return '<img class="mc-q-logo" src="' + RATES[n].logo + '
 function render(s, quotes) {
   var benefits = benefitList(s), count = benefits.length;
   var list = showAll ? quotes : quotes.slice(0, SHOW_DEFAULT);
+  var topLabel = quotes.length > 1 && quotes[0].ch.total === quotes[1].ch.total ? 'Recommended' : 'Lowest estimate';
   resultsEl.innerHTML = list.map(function (q, i) {
     return '<button type="button" class="mc-q' + (i === 0 ? ' best' : '') + '" data-n="' + esc(q.n) + '">' +
-      '<span class="mc-q-who">' + logoHtml(q.n) + '<span>' + (i === 0 ? '<span class="flag">Recommended</span>' : '') + '<h3>' + esc(q.n) + '</h3><p class="meta">' + s.type + ' &nbsp;|&nbsp; ' + count + ' selected benefit' + (count === 1 ? '' : 's') + '</p></span>' +
+      '<span class="mc-q-who">' + logoHtml(q.n) + '<span>' + (i === 0 ? '<span class="flag">' + topLabel + '</span>' : '') + '<h3>' + esc(q.n) + '</h3><p class="meta">' + s.type + ' &nbsp;|&nbsp; ' + count + ' selected benefit' + (count === 1 ? '' : 's') + '</p></span>' +
       '<span class="mc-q-price"><small>Total payable</small><strong>' + fmt0(q.ch.total) + '</strong><span class="link">View quotation details <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></span></button>';
   }).join('');
   resultsEl.querySelectorAll('.mc-q-logo').forEach(function (img) { img.addEventListener('error', function () { var fallback = document.createElement('span'); fallback.className = 'mc-q-logo fallback'; fallback.textContent = img.alt.replace(/ logo$/, ''); img.replaceWith(fallback); }, {once:true}); });
