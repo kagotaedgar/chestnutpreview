@@ -690,7 +690,8 @@ syncCover();
 /* Click-to-toggle benefit explainers; hover and keyboard focus also reveal them. */
 document.querySelectorAll('.mc-info').forEach(function(btn){btn.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var tip=btn.nextElementSibling;var open=tip.classList.toggle('open');btn.setAttribute('aria-expanded',String(open));document.querySelectorAll('.mc-info-tip.open').forEach(function(other){if(other!==tip){other.classList.remove('open');var b=other.previousElementSibling;if(b)b.setAttribute('aria-expanded','false');}});});});
 document.addEventListener('click',function(e){if(!e.target.closest('.mc-info')&&!e.target.closest('.mc-info-tip'))document.querySelectorAll('.mc-info-tip.open').forEach(function(t){t.classList.remove('open');var b=t.previousElementSibling;if(b)b.setAttribute('aria-expanded','false');});});
-\n/* ---------- pricing ---------- */
+
+/* ---------- pricing ---------- */
 function basic(name, v, cover) {
   var r = RATES[name]; if (cover === 'tp') return r.tp;
   var b = r.bands.find(function (x) { return v >= x[0] && v <= x[1]; });
