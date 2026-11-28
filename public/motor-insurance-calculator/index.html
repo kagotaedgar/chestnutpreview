@@ -79,6 +79,16 @@ fieldset.mc-fs{border:0;margin:0 0 .7rem;padding:0;min-width:0}
 .cb-empty{padding:.7rem;color:var(--mc-soft);font-size:.9rem}
 
 /* Benefits */
+/* Benefit information buttons and explainer popups */
+.mc-b{overflow:visible;position:relative}
+.mc-info{position:absolute;top:.45rem;right:.45rem;z-index:4;width:22px;height:22px;border:1px solid #D7DED9;border-radius:50%;display:grid;place-items:center;background:#F7FAF8;color:var(--mc-teal);font:700 12px/1 inherit;cursor:pointer;padding:0}
+.mc-info:hover,.mc-info:focus-visible{background:var(--mc-teal);color:#fff;border-color:var(--mc-teal)}
+.mc-info-tip{display:none;position:absolute;z-index:20;top:calc(100% + 7px);right:0;width:min(280px,85vw);padding:.8rem .9rem;background:#24302D;color:#fff;border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,.2);font-size:.78rem;line-height:1.5;text-align:left;font-weight:400;cursor:auto}
+.mc-info-tip:before{content:"";position:absolute;top:-6px;right:12px;width:12px;height:12px;background:#24302D;transform:rotate(45deg)}
+.mc-info:hover+.mc-info-tip,.mc-info:focus+.mc-info-tip,.mc-info-tip.open{display:block}
+.mc-b:has(.mc-info-tip.open){z-index:10}
+@media(max-width:760px){.mc-info-tip{width:min(260px,80vw)}}
+
  .mc-benefits{border-top:1px solid #EFE9DD;margin-top:.7rem;padding-top:.7rem}
 .mc-b-head{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.85rem}
 .mc-b-head .i{width:2rem;height:2rem;color:var(--mc-teal)}
@@ -375,28 +385,28 @@ fieldset.mc-fs{border:0;margin:0 0 .7rem;padding:0;min-width:0}
             <input type="checkbox" id="b-excess" checked disabled>
             <span class="tick"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
             <svg class="i ico" aria-hidden="true"><use href="#i-shield"/></svg>
-            <span class="name">Excess Protector</span>
+            <span class="name">Excess Protector</span><button type="button" class="mc-info" aria-label="Information about Excess Protector" aria-expanded="false">i</button><span class="mc-info-tip" role="tooltip">In the event of damage to your vehicle, you are normally required to contribute an excess equivalent to 2.5% of your vehicle’s value, subject to a minimum excess determined by the insurer and a maximum of KES 100,000. With Excess Protector, this contribution is waived, provided the repair cost exceeds the applicable excess amount.</span>
             <span class="tag">Included</span>
           </label>
           <label class="mc-b locked" data-own="1">
             <input type="checkbox" id="b-pvt" checked disabled>
             <span class="tick"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
             <svg class="i ico" aria-hidden="true"><use href="#i-shield"/></svg>
-            <span class="name">Political Violence &amp; Terrorism</span>
+            <span class="name">Political Violence &amp; Terrorism</span><button type="button" class="mc-info" aria-label="Information about Political Violence &amp; Terrorism" aria-expanded="false">i</button><span class="mc-info-tip" role="tooltip">Covers damage to your vehicle caused by riots, strikes, civil commotion, political violence and terrorism, subject to the policy terms and conditions.</span>
             <span class="tag">Included</span>
           </label>
           <label class="mc-b">
             <input type="checkbox" id="b-wind">
             <span class="tick"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
             <svg class="i ico" aria-hidden="true"><use href="#i-wind"/></svg>
-            <span class="name">Higher Windscreen Limit</span>
+            <span class="name">Higher Windscreen Limit</span><button type="button" class="mc-info" aria-label="Information about Higher Windscreen Limit" aria-expanded="false">i</button><span class="mc-info-tip" role="tooltip">Your comprehensive policy includes windscreen cover up to KES 50,000 at no additional cost. If your vehicle has a more expensive windscreen, you can opt to increase this limit to better match its replacement cost.</span>
             <span class="tag">Optional</span>
           </label>
           <label class="mc-b" data-own="1">
             <input type="checkbox" id="b-lou">
             <span class="tick"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span>
             <svg class="i ico" aria-hidden="true"><use href="#i-car"/></svg>
-            <span class="name">Loss of Use</span>
+            <span class="name">Loss of Use</span><button type="button" class="mc-info" aria-label="Information about Loss of Use" aria-expanded="false">i</button><span class="mc-info-tip" role="tooltip">If your vehicle is undergoing repairs following an insured accident, Loss of Use allows you to hire a courtesy car while your vehicle is being repaired. The benefit provides up to KES 3,000 per day, for the selected period of 10 or 20 days.</span>
             <span class="tag">From KES 3,000</span>
           </label>
         </div>
@@ -676,7 +686,11 @@ form.querySelectorAll('input[name=cover]').forEach(function (r) { r.addEventList
 louChk.addEventListener('change', syncLou); windChk.addEventListener('change', syncCover);
 syncCover();
 
-/* ---------- pricing ---------- */
+
+/* Click-to-toggle benefit explainers; hover and keyboard focus also reveal them. */
+document.querySelectorAll('.mc-info').forEach(function(btn){btn.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var tip=btn.nextElementSibling;var open=tip.classList.toggle('open');btn.setAttribute('aria-expanded',String(open));document.querySelectorAll('.mc-info-tip.open').forEach(function(other){if(other!==tip){other.classList.remove('open');var b=other.previousElementSibling;if(b)b.setAttribute('aria-expanded','false');}});});});
+document.addEventListener('click',function(e){if(!e.target.closest('.mc-info')&&!e.target.closest('.mc-info-tip'))document.querySelectorAll('.mc-info-tip.open').forEach(function(t){t.classList.remove('open');var b=t.previousElementSibling;if(b)b.setAttribute('aria-expanded','false');});});
+\n/* ---------- pricing ---------- */
 function basic(name, v, cover) {
   var r = RATES[name]; if (cover === 'tp') return r.tp;
   var b = r.bands.find(function (x) { return v >= x[0] && v <= x[1]; });
