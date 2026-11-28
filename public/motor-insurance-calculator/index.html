@@ -32,8 +32,8 @@
   -webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%);mask-image:linear-gradient(to right,transparent 0,#000 38%)}
 
 /* Layout */
-.mc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:1.25rem;align-items:start;padding:.25rem 0 1.5rem}
-.mc-card{background:var(--mc-card);border:1px solid var(--mc-line);border-radius:22px;padding:clamp(1.1rem,1.8vw,1.75rem);box-shadow:0 10px 34px rgba(60,40,20,.06)}
+ .mc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:1rem;align-items:start;padding:.1rem 0 1rem}
+.mc-card{background:var(--mc-card);border:1px solid var(--mc-line);border-radius:22px;padding:clamp(.85rem,1.2vw,1.2rem);box-shadow:0 10px 34px rgba(60,40,20,.06)}
 .mc-card-head{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.1rem}
 .mc-card-head .i{width:2.4rem;height:2.4rem;color:var(--mc-teal);margin-top:.15rem}
 .mc-card h2{font-size:clamp(1.45rem,2vw,1.95rem);font-weight:700;margin:0 0 .15rem}
@@ -42,10 +42,10 @@
 /* Form */
 .mc-label,.mc legend{display:block;font-weight:600;font-size:.95rem;margin:0 0 .4rem;padding:0}
 .mc-label .req{color:var(--mc-red)}.mc-label .opt{font-weight:400;color:var(--mc-soft)}
-fieldset.mc-fs{border:0;margin:0 0 1rem;padding:0;min-width:0}
-.mc-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1rem}
+fieldset.mc-fs{border:0;margin:0 0 .7rem;padding:0;min-width:0}
+ .mc-row{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:.65rem}
 .mc-field{min-width:0}
-.mc-control{position:relative;display:flex;align-items:center;background:#fff;border:1.5px solid var(--mc-line);border-radius:12px;min-height:50px;transition:border-color .15s,box-shadow .15s}
+ .mc-control{position:relative;display:flex;align-items:center;background:#fff;border:1.5px solid var(--mc-line);border-radius:12px;min-height:44px;transition:border-color .15s,box-shadow .15s}
 .mc-control:focus-within{border-color:var(--mc-teal);box-shadow:0 0 0 3px rgba(0,108,103,.14)}
 .mc-control.invalid{border-color:#C43030;box-shadow:0 0 0 3px rgba(196,48,48,.12)}
 .mc-control>.i{margin-left:.85rem;color:#7b8581}
@@ -56,8 +56,8 @@ fieldset.mc-fs{border:0;margin:0 0 1rem;padding:0;min-width:0}
 .mc-hint{margin:.4rem 0 0;font-size:.84rem;color:var(--mc-soft)}
 
 /* Cover type tiles */
-.mc-cover-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
-.mc-tile{position:relative;display:flex;gap:.7rem;align-items:flex-start;padding:.95rem 1rem;border:1.5px solid var(--mc-line);border-radius:14px;background:#fff;cursor:pointer;transition:.15s;min-height:74px}
+ .mc-cover-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+ .mc-tile{position:relative;display:flex;gap:.6rem;align-items:flex-start;padding:.65rem .8rem;border:1.5px solid var(--mc-line);border-radius:14px;background:#fff;cursor:pointer;transition:.15s;min-height:62px}
 .mc-tile:hover{border-color:#cfc6b4}
 .mc-tile input{position:absolute;opacity:0;pointer-events:none}
 .mc-tile .dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid #9aa39f;margin-top:.1rem;display:grid;place-items:center;background:#fff}
@@ -79,12 +79,12 @@ fieldset.mc-fs{border:0;margin:0 0 1rem;padding:0;min-width:0}
 .cb-empty{padding:.7rem;color:var(--mc-soft);font-size:.9rem}
 
 /* Benefits */
-.mc-benefits{border-top:1px solid #EFE9DD;margin-top:1.15rem;padding-top:1.15rem}
+ .mc-benefits{border-top:1px solid #EFE9DD;margin-top:.7rem;padding-top:.7rem}
 .mc-b-head{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.85rem}
 .mc-b-head .i{width:2rem;height:2rem;color:var(--mc-teal)}
 .mc-b-head h3{font-size:1.1rem;margin:0;font-weight:700}
 .mc-b-head h3 span{font-weight:400;color:var(--mc-soft)}
-.mc-b-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem}
+ .mc-b-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.45rem}
 .mc-b{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:.45rem;padding:.8rem .75rem;border:1.5px solid var(--mc-line);border-radius:14px;background:#fff;cursor:pointer;min-width:0;transition:.15s}
 .mc-b:hover{border-color:#cfc6b4}
 .mc-b input{position:absolute;opacity:0;pointer-events:none}
@@ -105,7 +105,7 @@ fieldset.mc-fs{border:0;margin:0 0 1rem;padding:0;min-width:0}
 .mc-pvt{margin:.8rem 0 0;font-size:.84rem;color:var(--mc-soft);display:flex;gap:.45rem;align-items:center}
 .mc-pvt .i{color:var(--mc-teal);width:1.1em;height:1.1em}
 
-.mc-submit{display:flex;align-items:center;justify-content:center;gap:.7rem;width:100%;margin-top:1.3rem;min-height:56px;border:0;border-radius:12px;background:var(--mc-red);color:#fff;font:inherit;font-size:1.1rem;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(210,60,60,.28);transition:background .15s,transform .15s}
+ .mc-submit{display:flex;align-items:center;justify-content:center;gap:.7rem;width:100%;margin-top:.7rem;min-height:48px;border:0;border-radius:12px;background:var(--mc-red);color:#fff;font:inherit;font-size:1.1rem;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(210,60,60,.28);transition:background .15s,transform .15s}
 .mc-submit:hover{background:var(--mc-red-deep)}.mc-submit:active{transform:translateY(1px)}
 .mc-submit .i{width:1.4em;height:1.4em}
 .mc-error{min-height:1.3rem;margin:.7rem 0 0;color:#B42318;font-size:.92rem;font-weight:500}
@@ -295,17 +295,7 @@ fieldset.mc-fs{border:0;margin:0 0 1rem;padding:0;min-width:0}
             </div>
           </div>
         </div>
-        <div class="mc-field">
-          <label class="mc-label" for="model">Vehicle model <span class="req" aria-hidden="true">*</span></label>
-          <div class="cb">
-            <div class="mc-control">
-              <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
-              <input id="model" type="text" placeholder="Search or type model" autocomplete="off" aria-required="true">
-              <svg class="i chev" aria-hidden="true"><use href="#i-chev"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
+             </div>
 
       <div class="mc-row">
         <div class="mc-field">
@@ -524,7 +514,7 @@ var POPULAR = ['TOYOTA','NISSAN','MAZDA','SUBARU','HONDA','MITSUBISHI','SUZUKI',
 /* ---------- helpers ---------- */
 var $ = function (id) { return document.getElementById(id); };
 var form = $('mc-form'), errEl = $('mc-error'), resultsEl = $('mc-results'), skelEl = $('mc-skel'), selEl = $('mc-select');
-var makeEl = $('make'), modelEl = $('model'), yearEl = $('year'), siEl = $('si'), regEl = $('reg');
+var makeEl = $('make'), yearEl = $('year'), siEl = $('si'), regEl = $('reg');
 var windEl = $('wind'), louEl = $('lou'), towEl = $('b-tow'), louChk = $('b-lou');
 var modal = $('quote-modal'), quoteBody = $('quote-body'), quoteLogo = $('quote-logo');
 var lastFocus = null, calculated = false, showAll = false, timer = null, makeCatalogue = [];
@@ -595,12 +585,12 @@ function modelItems() {
   Object.keys(MODELS).forEach(function (m) { if (m.replace(/\s+/g, '') === k) list = MODELS[m]; });
   return {items: list, head: list.length ? 'Common models' : null};
 }
-var makeCb = combobox(makeEl, makeItems), modelCb = combobox(modelEl, modelItems);
+var makeCb = combobox(makeEl, makeItems);
 fetch('../vehicle-makes.json').then(function (r) { return r.json(); }).then(function (l) {
   makeCatalogue = l.filter(function (n) { return !/^\d+$/.test(n) && !/^(TO BE ADVISED|NOT|NEW|BLACK|HIGH|ROAD|WORLD|POWER|POLE|STAR|TRAIN|TRUCK|TRAILER|TRACTOR|TANKER|TIPPER|DUMP|SHOVEL)$/.test(n); });
   makeCb.refresh();
 }).catch(function () { makeCatalogue = POPULAR.slice(); });
-makeEl.addEventListener('change', function () { modelCb.refresh(); });
+/* Vehicle model is intentionally not required. */
 
 /* thousands formatting on sum insured */
 siEl.addEventListener('input', function () {
@@ -638,17 +628,17 @@ function read() {
   var cover = coverVal(), tp = cover === 'tp';
   return {
     cover: cover, tp: tp, type: tp ? 'Third Party' : 'Comprehensive',
-    make: makeEl.value.trim(), model: modelEl.value.trim(), year: yearEl.value, reg: regEl.value.trim().toUpperCase(),
+    make: makeEl.value.trim(), model: '', year: yearEl.value, reg: regEl.value.trim().toUpperCase(),
     value: tp ? 0 : siNum(), wind: tp ? FREE_WIND : Number(windEl.value),
     lou: (!tp && louChk.checked) ? Number(louEl.value) : 0, tow: towEl.checked
   };
 }
 function validate(s) {
   var bad = [], msg = '';
-  [makeEl, modelEl, yearEl, siEl].forEach(function (el) { el.closest('.mc-control').classList.remove('invalid'); el.removeAttribute('aria-invalid'); });
+  [makeEl, yearEl, siEl].forEach(function (el) { el.closest('.mc-control').classList.remove('invalid'); el.removeAttribute('aria-invalid'); });
   function flag(el) { el.closest('.mc-control').classList.add('invalid'); el.setAttribute('aria-invalid', 'true'); bad.push(el); }
-  if (!s.make) flag(makeEl); if (!s.model) flag(modelEl); if (!s.year) flag(yearEl);
-  if (bad.length) msg = 'Please enter the vehicle make, model and year.';
+  if (!s.make) flag(makeEl); if (!s.year) flag(yearEl);
+  if (bad.length) msg = 'Please enter the vehicle make and year.';
   if (!s.tp && (!s.value || s.value < MIN_SI)) { flag(siEl); msg = msg || 'Enter a vehicle value of KES 600,000 or more.'; }
   return {ok: !bad.length, msg: msg, first: bad[0]};
 }
@@ -684,7 +674,7 @@ function render(s, quotes) {
   skelEl.hidden = true;
   var names = [];
   if (!s.tp) names.push('Windscreen', 'Excess Protector'); if (s.lou) names.push('Loss of Use'); if (s.tow) names.push('Towing & Recovery');
-  $('sel-line1').textContent = [s.make, s.model].filter(Boolean).map(function (x) { return x; }).join(' ') + '  |  ' + s.year + (s.tp ? '' : '  |  ' + fmt0(s.value).replace('KES ', 'KES '));
+  $('sel-line1').textContent = s.make + '  |  ' + s.year + (s.tp ? '' : '  |  ' + fmt0(s.value).replace('KES ', 'KES '));
   $('sel-line2').textContent = s.type + ' cover' + (names.length ? '  |  Benefits: ' + names.join(', ') : '');
   selEl.hidden = false;
   resultsEl.querySelectorAll('.mc-q').forEach(function (b) { b.addEventListener('click', function () { openQuote(quotes.find(function (x) { return x.n === b.dataset.n; }), s); }); });
@@ -703,7 +693,7 @@ function clearErr() { errEl.textContent = ''; }
 form.addEventListener('submit', function (e) { e.preventDefault(); run(false); });
 /* After the first calculation, keep results live as inputs change */
 function live() { if (!calculated) return; clearTimeout(timer); timer = setTimeout(function () { run(true); }, 250); }
-form.addEventListener('change', live); form.addEventListener('input', function (e) { if (e.target === siEl || e.target === makeEl || e.target === modelEl) live(); });
+form.addEventListener('change', live); form.addEventListener('input', function (e) { if (e.target === siEl || e.target === makeEl) live(); });
 $('mc-edit').addEventListener('click', function () { form.scrollIntoView({behavior:'smooth', block:'start'}); setTimeout(function () { makeEl.focus({preventScroll:true}); }, 350); });
 
 /* ---------- quotation modal ---------- */
@@ -711,11 +701,11 @@ function openQuote(q, s) {
   lastFocus = document.activeElement;
   quoteLogo.src = RATES[q.n].logo; quoteLogo.alt = q.n + ' logo';
   var benefits = benefitList(s);
-  var wa = 'Hello Chestnut, please provide a formal ' + s.type + ' quotation from ' + q.n + ' for ' + s.make + ' ' + s.model + ' ' + s.year + (s.value ? ' valued at KES ' + s.value.toLocaleString('en-KE') : '') + (s.reg ? ' (' + s.reg + ')' : '') + (benefits.length ? ' with benefits: ' + benefits.join(', ') : '') + '.';
+  var wa = 'Hello Chestnut, please provide a formal ' + s.type + ' quotation from ' + q.n + ' for ' + s.make + ' ' + s.year + (s.value ? ' valued at KES ' + s.value.toLocaleString('en-KE') : '') + (s.reg ? ' (' + s.reg + ')' : '') + (benefits.length ? ' with benefits: ' + benefits.join(', ') : '') + '.';
   quoteBody.innerHTML =
     '<div class="quote-meta">' +
       '<div><strong>Insurer</strong>' + esc(q.n) + '</div><div><strong>Cover</strong>' + s.type + '</div>' +
-      '<div><strong>Vehicle</strong>' + esc(s.make + ' ' + s.model) + ' (' + esc(s.year) + ')</div>' +
+      '<div><strong>Vehicle</strong>' + esc(s.make) + ' (' + esc(s.year) + ')</div>' +
       '<div><strong>Vehicle value</strong>' + (s.tp ? 'Not required for Third Party' : fmt(s.value)) + '</div>' +
       (s.reg ? '<div><strong>Registration</strong>' + esc(s.reg) + '</div>' : '') +
     '</div>' +
